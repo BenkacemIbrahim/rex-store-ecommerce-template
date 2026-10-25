@@ -11,6 +11,8 @@
     <!-- Stylesheets -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/accessories.css">
 
     <!-- Fonts -->
@@ -27,6 +29,792 @@
 </head>
 
 <body class="font-sans antialiased bg-white text-gray-900 transition-colors duration-300">
+    <!-- Announcement Bar -->
+    <div class="bg-black text-white py-2 text-xs sm:text-sm overflow-hidden announcement-bar"
+        aria-label="Announcements">
+        <div class="announcement-slider flex whitespace-nowrap">
+            <p class="px-4 announcement-item">Complimentary shipping on orders over €500</p>
+            <p class="px-4 announcement-item">Personal styling appointments available in-store</p>
+            <p class="px-4 announcement-item">New arrivals: Autumn/Winter 2025 collections now in store</p>
+            <p class="px-4 announcement-item">Complimentary gift wrapping on all orders</p>
+            <!-- Duplicate for infinite scroll effect -->
+            <p class="px-4 announcement-item">Complimentary shipping on orders over €500</p>
+            <p class="px-4 announcement-item">Personal styling appointments available in-store</p>
+            <p class="px-4 announcement-item">New arrivals: Autumn/Winter 2025 collections now in store</p>
+            <p class="px-4 announcement-item">Complimentary gift wrapping on all orders</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="border-b border-gray-100" id="main-header">
+        <div class="max-w-screen-xl mx-auto px-3 sm:px-4 lg:px-8">
+            <div class="flex justify-between items-center py-3 sm:py-4">
+                <!-- Left Section - Mobile Menu Button and Search on Mobile -->
+                <div class="flex items-center">
+                    <!-- Mobile Menu Button - Only visible on mobile -->
+                    <button id="mobile-menu-button" class="p-2 focus:outline-none sm:hidden"
+                        aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+
+                    <!-- Tablet Category Selectors - Only visible on tablet -->
+                    <div class="hidden sm:flex lg:hidden tablet-nav-container">
+                        <div class="tablet-category-selector" id="tablet-men-selector">
+                            Menswear
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                            <!-- Tablet Category Dropdown - NEW -->
+                            <div class="tablet-category-dropdown" id="tablet-category-dropdown">
+                                <a href="../shop/menswear.html">Menswear</a>
+                                <a href="../shop/kidswear.html">Kidswear</a>
+                                <a href="../shop/accessories.html">Accessories</a>
+                                <a href="../index.html">Home</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Left Categories - Only visible on desktop -->
+                    <nav class="hidden lg:flex space-x-6 xl:space-x-10" aria-label="Categories">
+                        <a href="../shop/menswear.html"
+                            class="text-xs font-medium uppercase tracking-widest hover:text-gray-500 transition-colors">Men</a>
+                        <a href="../shop/kidswear.html"
+                            class="text-xs font-medium uppercase tracking-widest hover:text-gray-500 transition-colors">Kids</a>
+                        <a href="../shop/accessories.html"
+                            class="text-xs font-medium uppercase tracking-widest hover:text-gray-500 transition-colors">Accessories</a>
+                        <a href="../index.html"
+                            class="text-xs font-medium uppercase tracking-widest hover:text-gray-500 transition-colors">Home</a>
+                    </nav>
+                </div>
+
+                <!-- Logo and Store Name - Centered -->
+                <a href="../index.html" class="flex-shrink-0 flex items-center mx-auto" aria-label="REX STORE Home">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot_2025-04-17-02-08-56-207_com.zhiliaoapp.musically-Photoroom-Islpi1NVMMAb1OrIBTJq14a4AqrHNn.png"
+                        alt="REX STORE Logo" class="h-10 mr-3">
+                    <h1 class="text-xl sm:text-2xl font-light tracking-widest font-display">REX STORE</h1>
+                </a>
+
+                <!-- Right Icons -->
+                <div class="flex items-center space-x-2 sm:space-x-4 md:space-x-6">
+                    <!-- Search Icon -->
+                    <button id="search-toggle" class="p-1 sm:p-2 focus:outline-none" aria-label="Search">
+                        <svg class="h-4 w-4 sm:h-5 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+
+                    <!-- Language Selector - MODIFIED for tablet view -->
+                    <div class="relative language-selector hidden sm:block">
+                        <button id="language-toggle" class="p-2 focus:outline-none flex items-center"
+                            aria-label="Select language" aria-expanded="false" aria-controls="language-dropdown">
+                            <img src="https://flagcdn.com/w40/gb.png" alt="English"
+                                class="flag-icon w-5 h-3 object-cover mr-1 sm:mr-2">
+                            <span class="language-name text-xs font-light tracking-wide">English</span>
+                            <svg class="h-3 w-3 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="language-dropdown"
+                            class="absolute right-0 mt-2 w-48 bg-white shadow-xl rounded-none py-1 z-50 hidden language-dropdown"
+                            role="menu" aria-orientation="vertical" aria-labelledby="language-toggle">
+                            <a href="#" class="language-option flex items-center px-4 py-2 text-sm hover:bg-gray-50"
+                                data-lang="en" data-flag="https://flagcdn.com/w40/gb.png" role="menuitem">
+                                <img src="https://flagcdn.com/w40/gb.png" alt="English"
+                                    class="flag-icon w-5 h-3 object-cover mr-2">
+                                <span class="language-name">English</span>
+                            </a>
+                            <a href="#" class="language-option flex items-center px-4 py-2 text-sm hover:bg-gray-50"
+                                data-lang="fr" data-flag="https://flagcdn.com/w40/fr.png" role="menuitem">
+                                <img src="https://flagcdn.com/w40/fr.png" alt="Français"
+                                    class="flag-icon w-5 h-3 object-cover mr-2">
+                                <span class="language-name">Français</span>
+                            </a>
+                            <a href="#" class="language-option flex items-center px-4 py-2 text-sm hover:bg-gray-50"
+                                data-lang="es" data-flag="https://flagcdn.com/w40/es.png" role="menuitem">
+                                <img src="https://flagcdn.com/w40/es.png" alt="Español"
+                                    class="flag-icon w-5 h-3 object-cover mr-2">
+                                <span class="language-name">Español</span>
+                            </a>
+                            <a href="#" class="language-option flex items-center px-4 py-2 text-sm hover:bg-gray-50"
+                                data-lang="ar" data-flag="https://flagcdn.com/w40/ma.png" role="menuitem">
+                                <img src="https://flagcdn.com/w40/ma.png" alt="العربية"
+                                    class="flag-icon w-5 h-3 object-cover mr-2">
+                                <span class="language-name">العربية</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Account Button - Hidden on small mobile -->
+                    <button id="account-toggle" class="p-1 sm:p-2 hidden sm:block" aria-label="Account">
+                        <svg class="h-4 w-4 sm:h-5 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </button>
+
+                    <!-- Wishlist Button - Visible on all screens -->
+                    <a href="../cart/wishlist.html" class="p-1 sm:p-2" aria-label="Wishlist">
+                        <svg class="h-4 w-4 sm:h-5 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </a>
+
+                    <!-- Cart Button - Visible on all screens -->
+                    <a href="../cart/cart.html" class="p-1 sm:p-2 relative" aria-label="Shopping cart with 2 items">
+                        <svg class="h-4 w-4 sm:h-5 sm:w-5" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span
+                            class="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-light leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-black rounded-full">2</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation - Hidden on mobile, visible on tablet and desktop -->
+        <div class="border-t border-gray-100 hidden sm:block">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="flex justify-center py-4 relative" aria-label="Main navigation">
+                    <ul class="flex space-x-8">
+                        <li class="relative">
+                            <a href="../shop/new-arrivals.html"
+                                class="text-xs font-light uppercase tracking-widest hover:text-gray-500 transition-colors has-dropdown"
+                                data-dropdown="new-arrivals">New Arrivals</a>
+                        </li>
+                        <li class="relative">
+                            <a href="../shop/brands.html"
+                                class="text-xs font-light uppercase tracking-widest hover:text-gray-500 transition-colors has-dropdown"
+                                data-dropdown="brands">Brands</a>
+                        </li>
+                        <li class="relative">
+                            <a href="../shop/collections.html"
+                                class="text-xs font-light uppercase tracking-widest hover:text-gray-500 transition-colors has-dropdown"
+                                data-dropdown="collections">Collections</a>
+                        </li>
+                        <li class="relative">
+                            <a href="../shop/clothing.html"
+                                class="text-xs font-light uppercase tracking-widest hover:text-gray-500 transition-colors has-dropdown"
+                                data-dropdown="clothing">Clothing</a>
+                        </li>
+                        <li class="relative">
+                            <a href="../shop/shoes.html"
+                                class="text-xs font-light uppercase tracking-widest hover:text-gray-500 transition-colors has-dropdown"
+                                data-dropdown="shoes">Shoes</a>
+                        </li>
+                        <li class="relative">
+                            <a href="../shop/bags.html"
+                                class="text-xs font-light uppercase tracking-widest hover:text-gray-500 transition-colors has-dropdown"
+                                data-dropdown="bags">Bags</a>
+                        </li>
+                        <li class="relative">
+                            <a href="../shop/accessories.html"
+                                class="text-xs font-light uppercase tracking-widest hover:text-gray-500 transition-colors has-dropdown"
+                                data-dropdown="accessories">Accessories</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Mega Dropdowns remain unchanged - visible on desktop and tablet -->
+        <!-- Brands Dropdown -->
+        <div id="brands-dropdown" class="mega-dropdown">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-12 gap-4 md:gap-8 py-6 md:py-8">
+                    <!-- Featured Brands Column -->
+                    <div class="col-span-6 md:col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">FEATURED BRANDS</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Nike</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Adidas</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Lacoste</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Puma</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Under Armour</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Ralph Lauren</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Tommy Hilfiger</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Calvin Klein</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">The North Face</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Levi's</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Luxury Brands Column -->
+                    <div class="col-span-6 md:col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">LUXURY BRANDS</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Christian Dior</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Gucci</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Louis Vuitton</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Prada</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Balenciaga</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Versace</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Burberry</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Saint Laurent</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Fendi</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Valentino</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Brands A-Z Column - Added brands-az-grid class here -->
+                    <div class="col-span-6 md:col-span-3 mt-6 md:mt-0">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">BRANDS A-Z</h3>
+
+                        <div class="grid grid-cols-5 gap-2 md:gap-4 brands-az-grid">
+                            <!-- First Row -->
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">0-9</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">A</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">B</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">C</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">D</a>
+                            </div>
+
+                            <!-- Second Row -->
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">E</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">F</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">G</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">H</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">I</a>
+                            </div>
+
+                            <!-- Third Row -->
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">J</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">K</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">L</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">M</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">N</a>
+                            </div>
+
+                            <!-- Fourth Row -->
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">O</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">P</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">Q</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">R</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">S</a>
+                            </div>
+
+                            <!-- Fifth Row -->
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">T</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">U</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">V</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">W</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">X</a>
+                            </div>
+
+                            <!-- Sixth Row -->
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">Y</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">Z</a>
+                            </div>
+                            <div class="text-center col-span-3 mt-4">
+                                <a href="../shop/brands.html" class="text-sm hover:text-gray-500 transition-colors view-all-link">View
+                                    All</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Brand Focus Column -->
+                    <div class="col-span-6 md:col-span-3 mt-6 md:mt-0">
+                        <div class="h-full flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Louis Vuitton Men's Collection" class="w-full h-36 md:h-48 object-cover mb-4">
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-600">Brand focus</p>
+                                <h4 class="text-lg font-medium mb-2">LOUIS VUITTON</h4>
+                                <a href="../shop/brands.html" class="text-sm font-medium hover:underline">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collections Dropdown -->
+        <div id="collections-dropdown" class="mega-dropdown">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-12 gap-4 md:gap-8 py-6 md:py-8">
+                    <!-- Seasonal Collections Column -->
+                    <div class="col-span-6 md:col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">SEASONAL COLLECTIONS</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Summer Collection</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Winter Essentials</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Spring Lookbook</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Autumn Styles</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Holiday Edit</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Resort Collection</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Featured Collections Column -->
+                    <div class="col-span-6 md:col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">FEATURED COLLECTIONS</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="../shop/collections.html" class="text-sm hover:text-gray-500 transition-colors">New Season</a></li>
+                            <li><a href="../shop/collections.html" class="text-sm hover:text-gray-500 transition-colors">Bestsellers</a></li>
+                            <li><a href="../shop/collections.html" class="text-sm hover:text-gray-500 transition-colors">Limited Edition</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Exclusive Items</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Collaborations</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Capsule Collection</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Occasions Column -->
+                    <div class="col-span-6 md:col-span-3 mt-6 md:mt-0">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">OCCASIONS</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Evening Wear</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Workwear</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Vacation Edit</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Weekend Casual</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Special Events</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Formal Attire</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Featured Column -->
+                    <div class="col-span-6 md:col-span-3 mt-6 md:mt-0">
+                        <div class="h-full flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Featured collection" class="w-full h-36 md:h-48 object-cover mb-4">
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-600">Featured</p>
+                                <h4 class="text-lg font-medium mb-2">SUMMER COLLECTION</h4>
+                                <a href="../shop/collections.html" class="text-sm font-medium hover:underline">Explore Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Clothing Dropdown -->
+        <div id="clothing-dropdown" class="mega-dropdown">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-12 gap-4 md:gap-8 py-6 md:py-8">
+                    <!-- Tops Column -->
+                    <div class="col-span-6 md:col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">TOPS</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Sweatshirt</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Crewneck</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Hoodie</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">T-shirt</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Tank Top</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Football Jersey</a>
+                            </li>
+                        </ul>
+
+                        <!-- MATERIALS section added below TOPS -->
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 mt-6 md:mt-8">MATERIALS</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Cotton Clothes</a>
+                            </li>
+                            <li><a href="../shop/clothing.html" class="text-sm hover:text-gray-500 transition-colors">All Clothing</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Bottoms Column -->
+                    <div class="col-span-6 md:col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">BOTTOMS</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Trousers / Pants</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Track Pants</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Shorts</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Sweatpants</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Joggers</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Sets & Outerwear Column -->
+                    <div class="col-span-6 md:col-span-3 mt-6 md:mt-0">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">SETS & OUTERWEAR</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Tracksuits</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Track Jacket</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">T-shirt and Shorts
+                                    Set</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Jackets</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Long Thermal Underwear
+                                    and
+                                    Inner Hoodie</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Featured Column -->
+                    <div class="col-span-6 md:col-span-3 mt-6 md:mt-0">
+                        <div class="h-full flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Clothing Collection" class="w-full h-36 md:h-48 object-cover mb-4">
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-600">Featured</p>
+                                <h4 class="text-lg font-medium mb-2">NEW ARRIVALS</h4>
+                                <a href="../shop/clothing.html" class="text-sm font-medium hover:underline">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Arrivals Dropdown -->
+        <div id="new-arrivals-dropdown" class="mega-dropdown">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-12 gap-4 md:gap-8 py-6 md:py-8">
+                    <!-- New This Week Column -->
+                    <div class="col-span-6 md:col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">NEW THIS WEEK</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="../shop/new-arrivals.html" class="text-sm hover:text-gray-500 transition-colors">Men's New Arrivals</a>
+                            </li>
+                            <li><a href="../shop/new-arrivals.html" class="text-sm hover:text-gray-500 transition-colors">Kids' New Arrivals</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Home New Arrivals</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Accessories New
+                                    Arrivals</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Trending Now Column -->
+                    <div class="col-span-6 md:col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">TRENDING NOW</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Seasonal
+                                    Must-Haves</a>
+                            </li>
+                            <li><a href="../shop/new-arrivals.html" class="text-sm hover:text-gray-500 transition-colors">Bestsellers</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Editor's Picks</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Top Rated</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Celebrity
+                                    Favorites</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Social Media
+                                    Trends</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Just Landed Column -->
+                    <div class="col-span-6 md:col-span-3 mt-6 md:mt-0">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">JUST LANDED</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Designer
+                                    Collaborations</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Limited Editions</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Exclusive Pieces</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Pre-Order Items</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Capsule
+                                    Collections</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">New Designers</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Featured Column -->
+                    <div class="col-span-6 md:col-span-3 mt-6 md:mt-0">
+                        <div class="h-full flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="New arrivals spotlight" class="w-full h-36 md:h-48 object-cover mb-4">
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-600">Just Dropped</p>
+                                <h4 class="text-lg font-medium mb-2">EXCLUSIVE COLLECTION</h4>
+                                <a href="#" class="text-sm font-medium hover:underline">Discover Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shoes Dropdown -->
+        <div id="shoes-dropdown" class="mega-dropdown">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-12 gap-4 md:gap-8 py-6 md:py-8">
+                    <!-- Sports Shoes Column -->
+                    <div class="col-span-6 md:col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">SPORTS SHOES</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Running Shoes</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Basketball Shoes</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Football Boots</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Tennis Shoes</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Training Shoes</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Golf Shoes</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Sneakers Column -->
+                    <div class="col-span-6 md:col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">SNEAKERS</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">All Sneakers</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Hi-top</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Low-top</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Athletic Sneakers</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Retro Sneakers</a>
+                            </li>
+                            <li><a href="../shop/shoes.html" class="text-sm hover:text-gray-500 transition-colors">Limited Edition</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Sandals Column -->
+                    <div class="col-span-6 md:col-span-3 mt-6 md:mt-0">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">SANDALS</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Casual Sandals</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Leather Sandals</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Sport Sandals</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Slides</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Flip Flops</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Outdoor Sandals</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Featured Column -->
+                    <div class="col-span-6 md:col-span-3 mt-6 md:mt-0">
+                        <div class="h-full flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Men's Shoes Collection" class="w-full h-36 md:h-48 object-cover mb-4">
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-600">Featured</p>
+                                <h4 class="text-lg font-medium mb-2">MEN'S FOOTWEAR</h4>
+                                <a href="../shop/shoes.html" class="text-sm font-medium hover:underline">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bags Dropdown -->
+        <div id="bags-dropdown" class="mega-dropdown">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-12 gap-4 md:gap-8 py-6 md:py-8">
+                    <!-- Bag Types Column -->
+                    <div class="col-span-6 md:col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">BAG TYPES</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">All Bags</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Backpacks</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Crossbody Bags</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Neck Pouches</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Wallets</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Belt Bags</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Messenger Bags</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Tote Bags</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Collections Column -->
+                    <div class="col-span-6 md:col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">COLLECTIONS</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Business
+                                    Collection</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Travel Collection</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Outdoor Collection</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Casual Collection</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Luxury Collection</a>
+                            </li>
+                            <li><a href="../shop/bags.html" class="text-sm hover:text-gray-500 transition-colors">Limited Edition</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Materials Column -->
+                    <div class="col-span-6 md:col-span-3 mt-6 md:mt-0">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">MATERIALS</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Leather Bags</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Canvas Bags</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Nylon Bags</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Suede Bags</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Recycled Materials</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Waterproof Bags</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Featured Column -->
+                    <div class="col-span-6 md:col-span-3 mt-6 md:mt-0">
+                        <div class="h-full flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Men's Bags Collection" class="w-full h-36 md:h-48 object-cover mb-4">
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-600">Featured</p>
+                                <h4 class="text-lg font-medium mb-2">MEN'S LUGGAGE & HOLDALLS</h4>
+                                <a href="../shop/bags.html" class="text-sm font-medium hover:underline">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accessories Dropdown -->
+        <div id="accessories-dropdown" class="mega-dropdown">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-12 gap-4 md:gap-8 py-6 md:py-8">
+                    <!-- Accessories Column -->
+                    <div class="col-span-6 md:col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">ACCESSORIES</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Cap</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Perfumes</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Sunglasses</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Watch</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Bracelets</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Ring</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Necklace / Chain</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Belts</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Socks</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Men's Accessories Column -->
+                    <div class="col-span-6 md:col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">MEN'S ACCESSORIES</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Men's Watches</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Men's Jewelry</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Men's Belts</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Men's Hats & Caps</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Men's Ties</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Men's Sunglasses</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Men's Wallets</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Collections Column -->
+                    <div class="col-span-6 md:col-span-3 mt-6 md:mt-0">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-4 md:mb-6">COLLECTIONS</h3>
+                        <ul class="space-y-2 md:space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Luxury Accessories</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Seasonal
+                                    Accessories</a></li>
+                            <li><a href="../shop/accessories.html" class="text-sm hover:text-gray-500 transition-colors">Limited Edition</a>
+                            </li>
+                            <li><a href="../shop/new-arrivals.html" class="text-sm hover:text-gray-500 transition-colors">New Arrivals</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Best Sellers</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Featured Column -->
+                    <div class="col-span-6 md:col-span-3 mt-6 md:mt-0">
+                        <div class="h-full flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Men's Accessories Collection" class="w-full h-36 md:h-48 object-cover mb-4">
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-600">Featured</p>
+                                <h4 class="text-lg font-medium mb-2">PREMIUM ACCESSORIES</h4>
+                                <a href="../shop/accessories.html" class="text-sm font-medium hover:underline">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
     <!-- Page Title Section -->
     <section class="py-16 bg-gray-50">
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -258,7 +1046,7 @@
                         from the world's most prestigious fashion brands. From statement watches to elegant jewelry, our
                         curated selection
                         offers the perfect finishing touch to elevate your style.</p>
-                    <a href="#"
+                    <a href="../shop/accessories.html"
                         class="inline-block bg-white text-black px-10 py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-200 transition duration-300">Shop
                         Now</a>
                 </div>
@@ -1289,7 +2077,7 @@
                         class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 flex items-end justify-center pb-8">
                         <div class="text-center">
                             <h3 class="text-xl font-light text-white mb-2 font-display">Luxury Eyewear</h3>
-                            <a href="#"
+                            <a href="../shop/accessories.html"
                                 class="inline-block text-white text-sm border-b border-white pb-1 hover:border-transparent transition duration-300">Shop
                                 Now</a>
                         </div>
@@ -1305,7 +2093,7 @@
                         class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 flex items-end justify-center pb-8">
                         <div class="text-center">
                             <h3 class="text-xl font-light text-white mb-2 font-display">Timepieces</h3>
-                            <a href="#"
+                            <a href="../shop/accessories.html"
                                 class="inline-block text-white text-sm border-b border-white pb-1 hover:border-transparent transition duration-300">Shop
                                 Now</a>
                         </div>
@@ -1321,7 +2109,7 @@
                         class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 flex items-end justify-center pb-8">
                         <div class="text-center">
                             <h3 class="text-xl font-light text-white mb-2 font-display">Fine Jewelry</h3>
-                            <a href="#"
+                            <a href="../shop/accessories.html"
                                 class="inline-block text-white text-sm border-b border-white pb-1 hover:border-transparent transition duration-300">Shop
                                 Now</a>
                         </div>
@@ -1518,7 +2306,7 @@
                                     By subscribing, you consent to receiving marketing communications and acknowledge
                                     you
                                     have read our
-                                    <a href="#"
+                                    <a href="../pages/privacy-policy.html"
                                         class="underline hover:text-black transition-colors duration-200">Privacy
                                         Policy</a>.
                                     You may unsubscribe at any time.
@@ -1610,6 +2398,1027 @@
     <script src="../js/shop/accessories.js"></script>
 
     
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+    <!-- New Full-Width Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden">
+        <!-- Mobile Menu Header -->
+        <div class="mobile-menu-header">
+            <div class="flex items-center">
+                <button id="mobile-menu-close" class="p-2 focus:outline-none" aria-label="Close mobile menu">
+                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="text-center">
+                <h2 class="text-lg font-light">Menu</h2>
+            </div>
+            <div class="flex items-center">
+                <a href="../cart/cart.html" class="p-1 sm:p-2 relative" aria-label="Shopping cart with 2 items">
+                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span
+                        class="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-light leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-black rounded-full">2</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Tabs -->
+        <div class="mobile-menu-tabs">
+            <button class="mobile-menu-tab active" data-tab="account">MENSWEAR</button>
+            <button class="mobile-menu-tab" data-tab="info">KIDSWEAR</button>
+        </div>
+
+        <!-- Mobile Menu Content -->
+        <div class="mobile-menu-content">
+            <!-- Account Tab Content (Menswear) -->
+            <div class="tab-content" id="account-content">
+                <!-- Added Menswear Home Page item -->
+                <a href="#" class="mobile-menu-item">
+                    <span>Menswear Home Page</span>
+                </a>
+                <a href="../shop/new-arrivals.html" class="mobile-menu-item mobile-submenu-trigger" data-submenu="new-arrivals">
+                    <span>New Arrivals</span>
+                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="../shop/brands.html" class="mobile-menu-item mobile-submenu-trigger" data-submenu="brands">
+                    <span>Brands</span>
+                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="../shop/collections.html" class="mobile-menu-item mobile-submenu-trigger" data-submenu="collections">
+                    <span>Collections</span>
+                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="../shop/clothing.html" class="mobile-menu-item mobile-submenu-trigger" data-submenu="clothing">
+                    <span>Clothing</span>
+                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="../shop/shoes.html" class="mobile-menu-item mobile-submenu-trigger" data-submenu="shoes">
+                    <span>Shoes</span>
+                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="../shop/bags.html" class="mobile-menu-item mobile-submenu-trigger" data-submenu="bags">
+                    <span>Bags</span>
+                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="../shop/accessories.html" class="mobile-menu-item mobile-submenu-trigger" data-submenu="accessories">
+                    <span>Accessories</span>
+                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <div class="py-4">
+                    <h3 class="text-lg font-medium mb-4">My Account</h3>
+                    <div class="space-y-4">
+                        <button id="mobile-signin-button"
+                            class="block w-full bg-black text-white text-center py-3 text-sm font-light">
+                            Sign In
+                        </button>
+                        <button id="mobile-register-button"
+                            class="block w-full border border-black text-center py-3 text-sm font-light">
+                            Register
+                        </button>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="text-base font-medium mb-3">Language</h4>
+                        <div class="border-t border-b border-gray-200 py-3">
+                            <div class="flex justify-between items-center mb-4 mobile-submenu-trigger"
+                                data-submenu="language">
+                                <div class="flex items-center">
+                                    <img src="https://flagcdn.com/w40/gb.png" alt="English"
+                                        class="flag-icon w-5 h-3 object-cover mr-2">
+                                    <span>English</span>
+                                </div>
+                                <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Tab Content (Kidswear) - Simplified to only show Kidswear Home Page, My Account and Language sections -->
+            <div class="tab-content hidden" id="info-content">
+                <a href="#" class="mobile-menu-item">
+                    <span>Kidswear Home Page</span>
+                </a>
+                <!-- My Account section -->
+                <div class="py-4">
+                    <h3 class="text-lg font-medium mb-4">My Account</h3>
+                    <div class="space-y-4">
+                        <button id="mobile-signin-button-kids"
+                            class="block w-full bg-black text-white text-center py-3 text-sm font-light">
+                            Sign In
+                        </button>
+                        <button id="mobile-register-button-kids"
+                            class="block w-full border border-black text-center py-3 text-sm font-light">
+                            Register
+                        </button>
+                    </div>
+                    <!-- Language section -->
+                    <div class="mt-8">
+                        <h4 class="text-base font-medium mb-3">Language</h4>
+                        <div class="border-t border-b border-gray-200 py-3">
+                            <div class="flex justify-between items-center mb-4 mobile-submenu-trigger"
+                                data-submenu="language">
+                                <div class="flex items-center">
+                                    <img src="https://flagcdn.com/w40/gb.png" alt="English"
+                                        class="flag-icon w-5 h-3 object-cover mr-2">
+                                    <span>English</span>
+                                </div>
+                                <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Submenus -->
+    <!-- New Arrivals Submenu -->
+    <div id="new-arrivals-submenu" class="mobile-submenu">
+        <div class="mobile-submenu-header">
+            <button class="mobile-submenu-back p-2 focus:outline-none" aria-label="Back to main menu">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <div class="text-center">
+                <h2 class="text-lg font-light">New in</h2>
+            </div>
+            <div class="w-5"></div> <!-- Empty div for spacing -->
+        </div>
+        <div class="mobile-submenu-content">
+            <h3 class="text-xs font-medium uppercase tracking-widest mb-4">NEW THIS WEEK</h3>
+            <ul class="space-y-3">
+                <li><a href="../shop/new-arrivals.html" class="block text-sm">Men's New Arrivals</a></li>
+                <li><a href="../shop/new-arrivals.html" class="block text-sm">Kids' New Arrivals</a></li>
+                <li><a href="#" class="block text-sm">Home New Arrivals</a></li>
+                <li><a href="#" class="block text-sm">Accessories New Arrivals</a></li>
+            </ul>
+
+            <h3 class="text-xs font-medium uppercase tracking-widest mt-8 mb-4">TRENDING NOW</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Seasonal Must-Haves</a></li>
+                <li><a href="../shop/accessories.html" class="block text-sm">Bestsellers</a></li>
+                <li><a href="#" class="block text-sm">Editor's Picks</a></li>
+                <li><a href="#" class="block text-sm">Top Rated</a></li>
+                <li><a href="#" class="block text-sm">Celebrity Favorites</a></li>
+                <li><a href="#" class="block text-sm">Social Media Trends</a></li>
+            </ul>
+
+            <h3 class="text-xs font-medium uppercase tracking-widest mt-8 mb-4">JUST LANDED</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Designer Collaborations</a></li>
+                <li><a href="#" class="block text-sm">Limited Editions</a></li>
+                <li><a href="#" class="block text-sm">Exclusive Pieces</a></li>
+                <li><a href="#" class="block text-sm">Pre-Order Items</a></li>
+                <li><a href="#" class="block text-sm">Capsule Collections</a></li>
+                <li><a href="#" class="block text-sm">New Designers</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Brands Submenu -->
+    <div id="brands-submenu" class="mobile-submenu">
+        <div class="mobile-submenu-header">
+            <button class="mobile-submenu-back p-2 focus:outline-none" aria-label="Back to main menu">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <div class="text-center">
+                <h2 class="text-lg font-light">Brands</h2>
+            </div>
+            <div class="w-5"></div> <!-- Empty div for spacing -->
+        </div>
+        <div class="mobile-submenu-content">
+            <h3 class="text-xs font-medium uppercase tracking-widest mb-4">FEATURED BRANDS</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Nike</a></li>
+                <li><a href="#" class="block text-sm">Adidas</a></li>
+                <li><a href="#" class="block text-sm">Lacoste</a></li>
+                <li><a href="#" class="block text-sm">Puma</a></li>
+                <li><a href="#" class="block text-sm">Under Armour</a></li>
+                <li><a href="#" class="block text-sm">Ralph Lauren</a></li>
+                <li><a href="#" class="block text-sm">Tommy Hilfiger</a></li>
+                <li><a href="#" class="block text-sm">Calvin Klein</a></li>
+                <li><a href="#" class="block text-sm">The North Face</a></li>
+                <li><a href="#" class="block text-sm">Levi's</a></li>
+            </ul>
+
+            <h3 class="text-xs font-medium uppercase tracking-widest mt-8 mb-4">LUXURY BRANDS</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Christian Dior</a></li>
+                <li><a href="#" class="block text-sm">Gucci</a></li>
+                <li><a href="#" class="block text-sm">Louis Vuitton</a></li>
+                <li><a href="#" class="block text-sm">Prada</a></li>
+                <li><a href="#" class="block text-sm">Balenciaga</a></li>
+                <li><a href="#" class="block text-sm">Versace</a></li>
+                <li><a href="#" class="block text-sm">Burberry</a></li>
+                <li><a href="#" class="block text-sm">Saint Laurent</a></li>
+                <li><a href="#" class="block text-sm">Fendi</a></li>
+                <li><a href="#" class="block text-sm">Valentino</a></li>
+            </ul>
+
+            <h3 class="text-xs font-medium uppercase tracking-widest mt-8 mb-4">BRANDS A-Z</h3>
+            <div class="grid grid-cols-5 gap-2">
+                <div class="text-center"><a href="#" class="text-sm font-medium">0-9</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">A</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">B</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">C</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">D</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">E</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">F</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">G</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">H</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">I</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">J</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">K</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">L</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">M</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">N</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">O</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">P</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">Q</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">R</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">S</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">T</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">U</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">V</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">W</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">X</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">Y</a></div>
+                <div class="text-center"><a href="#" class="text-sm font-medium">Z</a></div>
+                <div class="text-center col-span-3 mt-4">
+                    <a href="../shop/accessories.html" class="text-sm">View All</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Collections Submenu -->
+    <div id="collections-submenu" class="mobile-submenu">
+        <div class="mobile-submenu-header">
+            <button class="mobile-submenu-back p-2 focus:outline-none" aria-label="Back to main menu">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <div class="text-center">
+                <h2 class="text-lg font-light">Collections</h2>
+            </div>
+            <div class="w-5"></div> <!-- Empty div for spacing -->
+        </div>
+        <div class="mobile-submenu-content">
+            <h3 class="text-xs font-medium uppercase tracking-widest mb-4">SEASONAL COLLECTIONS</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Summer Collection</a></li>
+                <li><a href="#" class="block text-sm">Winter Essentials</a></li>
+                <li><a href="#" class="block text-sm">Spring Lookbook</a></li>
+                <li><a href="#" class="block text-sm">Autumn Styles</a></li>
+                <li><a href="#" class="block text-sm">Holiday Edit</a></li>
+                <li><a href="#" class="block text-sm">Resort Collection</a></li>
+            </ul>
+
+            <h3 class="text-xs font-medium uppercase tracking-widest mt-8 mb-4">FEATURED COLLECTIONS</h3>
+            <ul class="space-y-3">
+                <li><a href="../shop/accessories.html" class="block text-sm">New Season</a></li>
+                <li><a href="../shop/accessories.html" class="block text-sm">Bestsellers</a></li>
+                <li><a href="../shop/accessories.html" class="block text-sm">Limited Edition</a></li>
+                <li><a href="#" class="block text-sm">Exclusive Items</a></li>
+                <li><a href="#" class="block text-sm">Collaborations</a></li>
+                <li><a href="#" class="block text-sm">Capsule Collection</a></li>
+            </ul>
+
+            <h3 class="text-xs font-medium uppercase tracking-widest mt-8 mb-4">OCCASIONS</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Evening Wear</a></li>
+                <li><a href="#" class="block text-sm">Workwear</a></li>
+                <li><a href="#" class="block text-sm">Vacation Edit</a></li>
+                <li><a href="#" class="block text-sm">Weekend Casual</a></li>
+                <li><a href="#" class="block text-sm">Special Events</a></li>
+                <li><a href="#" class="block text-sm">Formal Attire</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Clothing Submenu -->
+    <div id="clothing-submenu" class="mobile-submenu">
+        <div class="mobile-submenu-header">
+            <button class="mobile-submenu-back p-2 focus:outline-none" aria-label="Back to main menu">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <div class="text-center">
+                <h2 class="text-lg font-light">Clothing</h2>
+            </div>
+            <div class="w-5"></div> <!-- Empty div for spacing -->
+        </div>
+        <div class="mobile-submenu-content">
+            <h3 class="text-xs font-medium uppercase tracking-widest mb-4">TOPS</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Sweatshirt</a></li>
+                <li><a href="#" class="block text-sm">Crewneck</a></li>
+                <li><a href="#" class="block text-sm">Hoodie</a></li>
+                <li><a href="#" class="block text-sm">T-shirt</a></li>
+                <li><a href="#" class="block text-sm">Tank Top</a></li>
+                <li><a href="#" class="block text-sm">Football Jersey</a></li>
+            </ul>
+
+            <h3 class="text-xs font-medium uppercase tracking-widest mt-8 mb-4">BOTTOMS</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Trousers / Pants</a></li>
+                <li><a href="#" class="block text-sm">Track Pants</a></li>
+                <li><a href="#" class="block text-sm">Shorts</a></li>
+                <li><a href="#" class="block text-sm">Sweatpants</a></li>
+                <li><a href="#" class="block text-sm">Joggers</a></li>
+            </ul>
+
+            <h3 class="text-xs font-medium uppercase tracking-widest mt-8 mb-4">SETS & OUTERWEAR</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Tracksuits</a></li>
+                <li><a href="#" class="block text-sm">Track Jacket</a></li>
+                <li><a href="#" class="block text-sm">T-shirt and Shorts Set</a></li>
+                <li><a href="#" class="block text-sm">Jackets</a></li>
+                <li><a href="#" class="block text-sm">Long Thermal Underwear and Inner Hoodie</a></li>
+            </ul>
+
+            <h3 class="text-xs font-medium uppercase tracking-widest mt-8 mb-4">MATERIALS</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Cotton Clothes</a></li>
+                <li><a href="../shop/clothing.html" class="block text-sm">All Clothing</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Shoes Submenu -->
+    <div id="shoes-submenu" class="mobile-submenu">
+        <div class="mobile-submenu-header">
+            <button class="mobile-submenu-back p-2 focus:outline-none" aria-label="Back to main menu">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <div class="text-center">
+                <h2 class="text-lg font-light">Shoes</h2>
+            </div>
+            <div class="w-5"></div> <!-- Empty div for spacing -->
+        </div>
+        <div class="mobile-submenu-content">
+            <h3 class="text-xs font-medium uppercase tracking-widest mb-4">SPORTS SHOES</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Running Shoes</a></li>
+                <li><a href="#" class="block text-sm">Basketball Shoes</a></li>
+                <li><a href="#" class="block text-sm">Football Boots</a></li>
+                <li><a href="#" class="block text-sm">Tennis Shoes</a></li>
+                <li><a href="#" class="block text-sm">Training Shoes</a></li>
+                <li><a href="#" class="block text-sm">Golf Shoes</a></li>
+            </ul>
+
+            <h3 class="text-xs font-medium uppercase tracking-widest mt-8 mb-4">SNEAKERS</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">All Sneakers</a></li>
+                <li><a href="#" class="block text-sm">Hi-top</a></li>
+                <li><a href="#" class="block text-sm">Low-top</a></li>
+                <li><a href="#" class="block text-sm">Athletic Sneakers</a></li>
+                <li><a href="#" class="block text-sm">Retro Sneakers</a></li>
+                <li><a href="../shop/accessories.html" class="block text-sm">Limited Edition</a></li>
+            </ul>
+
+            <h3 class="text-xs font-medium uppercase tracking-widest mt-8 mb-4">SANDALS</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Casual Sandals</a></li>
+                <li><a href="#" class="block text-sm">Leather Sandals</a></li>
+                <li><a href="#" class="block text-sm">Sport Sandals</a></li>
+                <li><a href="#" class="block text-sm">Slides</a></li>
+                <li><a href="#" class="block text-sm">Flip Flops</a></li>
+                <li><a href="#" class="block text-sm">Outdoor Sandals</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bags Submenu -->
+    <div id="bags-submenu" class="mobile-submenu">
+        <div class="mobile-submenu-header">
+            <button class="mobile-submenu-back p-2 focus:outline-none" aria-label="Back to main menu">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <div class="text-center">
+                <h2 class="text-lg font-light">Bags</h2>
+            </div>
+            <div class="w-5"></div> <!-- Empty div for spacing -->
+        </div>
+        <div class="mobile-submenu-content">
+            <h3 class="text-xs font-medium uppercase tracking-widest mb-4">BAG TYPES</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">All Bags</a></li>
+                <li><a href="#" class="block text-sm">Backpacks</a></li>
+                <li><a href="#" class="block text-sm">Crossbody Bags</a></li>
+                <li><a href="#" class="block text-sm">Neck Pouches</a></li>
+                <li><a href="#" class="block text-sm">Wallets</a></li>
+                <li><a href="#" class="block text-sm">Belt Bags</a></li>
+                <li><a href="#" class="block text-sm">Messenger Bags</a></li>
+                <li><a href="#" class="block text-sm">Tote Bags</a></li>
+            </ul>
+
+            <h3 class="text-xs font-medium uppercase tracking-widest mt-8 mb-4">COLLECTIONS</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Business Collection</a></li>
+                <li><a href="#" class="block text-sm">Travel Collection</a></li>
+                <li><a href="#" class="block text-sm">Outdoor Collection</a></li>
+                <li><a href="#" class="block text-sm">Casual Collection</a></li>
+                <li><a href="#" class="block text-sm">Luxury Collection</a></li>
+                <li><a href="../shop/accessories.html" class="block text-sm">Limited Edition</a></li>
+            </ul>
+
+            <h3 class="text-xs font-medium uppercase tracking-widest mt-8 mb-4">MATERIALS</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Leather Bags</a></li>
+                <li><a href="#" class="block text-sm">Canvas Bags</a></li>
+                <li><a href="#" class="block text-sm">Nylon Bags</a></li>
+                <li><a href="#" class="block text-sm">Suede Bags</a></li>
+                <li><a href="#" class="block text-sm">Recycled Materials</a></li>
+                <li><a href="#" class="block text-sm">Waterproof Bags</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Accessories Submenu -->
+    <div id="accessories-submenu" class="mobile-submenu">
+        <div class="mobile-submenu-header">
+            <button class="mobile-submenu-back p-2 focus:outline-none" aria-label="Back to main menu">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <div class="text-center">
+                <h2 class="text-lg font-light">Accessories</h2>
+            </div>
+            <div class="w-5"></div> <!-- Empty div for spacing -->
+        </div>
+        <div class="mobile-submenu-content">
+            <h3 class="text-xs font-medium uppercase tracking-widest mb-4">ACCESSORIES</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Cap</a></li>
+                <li><a href="#" class="block text-sm">Perfumes</a></li>
+                <li><a href="#" class="block text-sm">Sunglasses</a></li>
+                <li><a href="#" class="block text-sm">Watch</a></li>
+                <li><a href="#" class="block text-sm">Bracelets</a></li>
+                <li><a href="#" class="block text-sm">Ring</a></li>
+                <li><a href="#" class="block text-sm">Necklace / Chain</a></li>
+                <li><a href="#" class="block text-sm">Belts</a></li>
+                <li><a href="#" class="block text-sm">Socks</a></li>
+            </ul>
+
+            <h3 class="text-xs font-medium uppercase tracking-widest mt-8 mb-4">MEN'S ACCESSORIES</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Men's Watches</a></li>
+                <li><a href="#" class="block text-sm">Men's Jewelry</a></li>
+                <li><a href="#" class="block text-sm">Men's Belts</a></li>
+                <li><a href="#" class="block text-sm">Men's Hats & Caps</a></li>
+                <li><a href="#" class="block text-sm">Men's Ties</a></li>
+                <li><a href="#" class="block text-sm">Men's Sunglasses</a></li>
+                <li><a href="#" class="block text-sm">Men's Wallets</a></li>
+            </ul>
+
+            <h3 class="text-xs font-medium uppercase tracking-widest mt-8 mb-4">COLLECTIONS</h3>
+            <ul class="space-y-3">
+                <li><a href="#" class="block text-sm">Luxury Accessories</a></li>
+                <li><a href="#" class="block text-sm">Seasonal Accessories</a></li>
+                <li><a href="../shop/accessories.html" class="block text-sm">Limited Edition</a></li>
+                <li><a href="../shop/new-arrivals.html" class="block text-sm">New Arrivals</a></li>
+                <li><a href="#" class="block text-sm">Best Sellers</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Language Submenu -->
+    <div id="language-submenu" class="mobile-submenu">
+        <div class="mobile-submenu-header">
+            <button class="mobile-submenu-back p-2 focus:outline-none" aria-label="Back to main menu">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <div class="text-center">
+                <h2 class="text-lg font-light">Language</h2>
+            </div>
+            <div class="w-5"></div> <!-- Empty div for spacing -->
+        </div>
+        <div class="mobile-submenu-content">
+            <ul class="space-y-4">
+                <li>
+                    <a href="#" class="mobile-language-option flex items-center py-3 border-b border-gray-100"
+                        data-lang="en" data-flag="https://flagcdn.com/w40/gb.png">
+                        <img src="https://flagcdn.com/w40/gb.png" alt="English"
+                            class="flag-icon w-5 h-3 object-cover mr-3">
+                        <span class="language-name">English</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="mobile-language-option flex items-center py-3 border-b border-gray-100"
+                        data-lang="fr" data-flag="https://flagcdn.com/w40/fr.png">
+                        <img src="https://flagcdn.com/w40/fr.png" alt="Français"
+                            class="flag-icon w-5 h-3 object-cover mr-3">
+                        <span class="language-name">Français</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="mobile-language-option flex items-center py-3 border-b border-gray-100"
+                        data-lang="es" data-flag="https://flagcdn.com/w40/es.png">
+                        <img src="https://flagcdn.com/w40/es.png" alt="Español"
+                            class="flag-icon w-5 h-3 object-cover mr-3">
+                        <span class="language-name">Español</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="mobile-language-option flex items-center py-3 border-b border-gray-100"
+                        data-lang="ar" data-flag="https://flagcdn.com/w40/ma.png">
+                        <img src="https://flagcdn.com/w40/ma.png" alt="العربية"
+                            class="flag-icon w-5 h-3 object-cover mr-3">
+                        <span class="language-name">العربية</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay"
+        class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-start justify-center pt-16 sm:pt-24 md:pt-32 hidden"
+        aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="search-title">
+        <div class="bg-white p-6 sm:p-10 max-w-xl w-full mx-4">
+            <div class="flex justify-between items-center mb-6 sm:mb-8">
+                <h3 id="search-title" class="text-lg sm:text-xl font-light font-display">Search our brands and products
+                </h3>
+                <button id="close-search" class="text-gray-500 hover:text-gray-900" aria-label="Close search">
+                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="relative">
+                <label for="search-input" class="sr-only">Search</label>
+                <input type="text" id="search-input" placeholder="Search for brands, products, categories..."
+                    class="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black text-gray-900 text-base sm:text-lg font-light">
+                <button class="absolute right-0 top-3 text-gray-500 hover:text-gray-900" aria-label="Submit search">
+                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="mt-8 sm:mt-10">
+                <h4 class="text-sm font-light text-gray-500 mb-3 sm:mb-4">Trending Searches</h4>
+                <div class="flex flex-wrap gap-2 sm:gap-3">
+                    <a href="#"
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 border border-gray-200 text-gray-800 text-xs sm:text-sm hover:bg-gray-50 transition duration-300">Men's
+                        Suits</a>
+                    <a href="#"
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 border border-gray-200 text-gray-800 text-xs sm:text-sm hover:bg-gray-50 transition duration-300">Kids'
+                        Outerwear</a>
+                    <a href="#"
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 border border-gray-200 text-gray-800 text-xs sm:text-sm hover:bg-gray-50 transition duration-300">Luxury
+                        Watches</a>
+                    <a href="../shop/accessories.html"
+                        class="px-3 sm:px-4 py-1.5 sm:py-2 border border-gray-200 text-gray-800 text-xs sm:text-sm hover:bg-gray-50 transition duration-300">New
+                        Season</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div id="auth-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center hidden"
+        aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+        <div class="bg-white p-6 max-w-md w-full mx-4 relative">
+            <button id="close-auth" class="absolute right-6 top-6 text-gray-500 hover:text-gray-900"
+                aria-label="Close authentication">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <h2 id="auth-title" class="text-2xl font-light mb-4 font-display text-center">Welcome Back</h2>
+
+            <!-- Auth Tabs -->
+            <div class="flex border-b border-gray-200 mb-6">
+                <button id="signin-tab"
+                    class="auth-tab active flex-1 text-center py-3 text-sm font-medium uppercase tracking-widest">
+                    Sign In
+                </button>
+                <button id="signup-tab"
+                    class="auth-tab flex-1 text-center py-3 text-sm font-medium uppercase tracking-widest text-gray-400">
+                    Create Account
+                </button>
+            </div>
+
+            <!-- Sign In Form -->
+            <form id="signin-form" class="space-y-4">
+                <div>
+                    <label for="email" class="block text-sm font-light text-gray-700 mb-1">Email address</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black text-gray-900 text-sm font-light">
+                </div>
+
+                <div>
+                    <label for="password" class="block text-sm font-light text-gray-700 mb-1">Password</label>
+                    <input type="password" id="password" name="password" required
+                        class="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black text-gray-900 text-sm font-light">
+                </div>
+
+                <div class="text-right">
+                    <a href="#" class="text-sm font-light text-gray-600 hover:text-black transition-colors">
+                        Forgot your password?
+                    </a>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition-all duration-300">
+                    Sign In
+                </button>
+
+                <div class="relative flex items-center py-2">
+                    <div class="flex-grow border-t border-gray-300"></div>
+                    <span class="flex-shrink mx-4 text-gray-600 text-sm font-light">OR</span>
+                    <div class="flex-grow border-t border-gray-300"></div>
+                </div>
+
+                <button type="button"
+                    class="w-full border border-gray-300 text-gray-800 py-3 text-sm font-light flex items-center justify-center hover:bg-gray-50 transition-all duration-300">
+                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google"
+                        class="h-5 w-5 mr-3">
+                    Continue With Google
+                </button>
+            </form>
+
+            <!-- Sign Up Form (Hidden by default) -->
+            <form id="signup-form" class="space-y-4 hidden">
+                <div>
+                    <label for="new-email" class="block text-sm font-light text-gray-700 mb-1">Email address</label>
+                    <input type="email" id="new-email" name="email" required
+                        class="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black text-gray-900 text-sm font-light">
+                </div>
+
+                <div>
+                    <label for="new-password" class="block text-sm font-light text-gray-700 mb-1">Create
+                        password</label>
+                    <input type="password" id="new-password" name="password" required
+                        class="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black text-gray-900 text-sm font-light">
+                </div>
+
+                <div>
+                    <label for="confirm-password" class="block text-sm font-light text-gray-700 mb-1">Confirm
+                        password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required
+                        class="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black text-gray-900 text-sm font-light">
+                </div>
+
+                <div class="custom-checkbox">
+                    <input id="terms" name="terms" type="checkbox" required>
+                    <label for="terms" class="text-sm font-light text-gray-700">
+                        I agree to the <a href="../pages/terms-of-service.html" class="text-black hover:underline">Terms of Service</a> and <a
+                            href="../pages/privacy-policy.html" class="text-black hover:underline">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition-all duration-300">
+                    Create Account
+                </button>
+
+                <div class="relative flex items-center py-2">
+                    <div class="flex-grow border-t border-gray-300"></div>
+                    <span class="flex-shrink mx-4 text-gray-600 text-sm font-light">OR</span>
+                    <div class="flex-grow border-t border-gray-300"></div>
+                </div>
+
+                <button type="button"
+                    class="w-full border border-gray-300 text-gray-800 py-3 text-sm font-light flex items-center justify-center hover:bg-gray-50 transition-all duration-300">
+                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google"
+                        class="h-5 w-5 mr-3">
+                    Continue With Google
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgot-password-modal"
+        class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center hidden" aria-hidden="true"
+        role="dialog" aria-modal="true" aria-labelledby="forgot-password-title">
+        <div class="bg-white p-6 max-w-md w-full mx-4 relative">
+            <button id="close-forgot-password" class="absolute right-6 top-6 text-gray-500 hover:text-gray-900"
+                aria-label="Close forgot password">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <h2 id="forgot-password-title" class="text-2xl font-light mb-4 font-display text-center">Reset Your Password
+            </h2>
+            <p class="text-center text-gray-600 mb-6 font-light">Enter your email address and we'll send you a link to
+                reset
+                your password.</p>
+
+            <!-- Forgot Password Form -->
+            <form id="forgot-password-form" class="space-y-4">
+                <div>
+                    <label for="reset-email" class="block text-sm font-light text-gray-700 mb-1">Email address</label>
+                    <input type="email" id="reset-email" name="email" required
+                        class="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black text-gray-900 text-sm font-light">
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition-all duration-300">
+                    Send Reset Link
+                </button>
+
+                <div class="text-center mt-4">
+                    <a href="#" id="back-to-signin"
+                        class="text-sm font-light text-gray-600 hover:text-black transition-colors">
+                        Back to Sign In
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="bg-gray-50 text-gray-800 py-12">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Customer Service Column -->
+                <div class="footer-section">
+                    <div class="footer-title md:hidden">
+                        <h3 class="text-sm font-light uppercase tracking-widest">Client Services</h3>
+                        <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="hidden md:block text-sm font-light uppercase tracking-widest mb-4">Client Services</h3>
+                    <div class="footer-content md:!max-h-none md:overflow-visible">
+                        <ul class="space-y-3 mt-3 md:mt-0">
+                            <li><a href="../pages/contact-us.html"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Contact
+                                    us</a>
+                            </li>
+                            <li><a href="../pages/faqs.html"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">FAQs</a>
+                            </li>
+                            <li><a href="../pages/shipping-delivery.html"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Shipping &
+                                    delivery</a></li>
+                            <li><a href="../pages/returns-exchanges.html"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Returns &
+                                    exchanges</a></li>
+                            <li><a href="../pages/payment-options.html"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Payment
+                                    options</a></li>
+                            <li><a href="#"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Gift
+                                    cards</a></li>
+                            <li><a href="../pages/terms-of-service.html"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Terms
+                                    & conditions</a></li>
+                            <li><a href="../pages/privacy-policy.html"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Privacy
+                                    policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- About Column -->
+                <div class="footer-section">
+                    <div class="footer-title md:hidden">
+                        <h3 class="text-sm font-light uppercase tracking-widest">About Us</h3>
+                        <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="hidden md:block text-sm font-light uppercase tracking-widest mb-4">About Us</h3>
+                    <div class="footer-content md:!max-h-none md:overflow-visible">
+                        <ul class="space-y-3 mt-3 md:mt-0">
+                            <li><a href="../pages/about.html"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Our
+                                    story</a></li>
+                            <li><a href="#"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Sustainability</a>
+                            </li>
+                            <li><a href="#"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Brand
+                                    partners</a></li>
+                            <li><a href="#"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Store
+                                    location</a></li>
+                            <li><a href="#"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Careers</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Services Column -->
+                <div class="footer-section">
+                    <div class="footer-title md:hidden">
+                        <h3 class="text-sm font-light uppercase tracking-widest">Services</h3>
+                        <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="hidden md:block text-sm font-light uppercase tracking-widest mb-4">Services</h3>
+                    <div class="footer-content md:!max-h-none md:overflow-visible">
+                        <ul class="space-y-3 mt-3 md:mt-0">
+                            <li><a href="#"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Personal
+                                    shopping</a></li>
+                            <li><a href="#"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Personal
+                                    shopping</a></li>
+                            <li><a href="#"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Style
+                                    consultation</a></li>
+                            <li><a href="#"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Alterations
+                                    services</a></li>
+                            <li><a href="#"
+                                    class="text-gray-600 hover:text-black transition duration-300 font-light">Book
+                                    an appointment</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="footer-section">
+                    <div class="footer-title md:hidden">
+                        <h3 class="text-sm font-light uppercase tracking-widest">Contact</h3>
+                        <svg class="chevron w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="hidden md:block text-sm font-light uppercase tracking-widest mb-4">Contact</h3>
+                    <div class="footer-content md:!max-h-none md:overflow-visible">
+                        <address class="not-italic text-gray-600 font-light space-y-2 mt-3 md:mt-0">
+                            <p>27 Rue Saint-Honoré</p>
+                            <p>75001 Paris, France</p>
+                            <p>+33 (0)1 42 61 10 10</p>
+                            <p><a href="mailto:info@rexstore.com"
+                                    class="hover:text-black transition duration-300">info@rexstore.com</a></p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Follow Us and Store Hours Section -->
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Follow Us Section -->
+                <div>
+                    <h3 class="text-sm font-light uppercase tracking-widest mb-4">Follow us</h3>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-600 hover:text-black transition duration-300"
+                            aria-label="Instagram">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-black transition duration-300"
+                            aria-label="Facebook">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-black transition duration-300"
+                            aria-label="Pinterest">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M12 0c-6.627 0-12 5.373-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-black transition duration-300" aria-label="Twitter">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Store Hours Section -->
+                <div>
+                    <h3 class="text-sm font-light uppercase tracking-widest mb-4">Store Hours</h3>
+                    <p class="text-gray-600 font-light">Monday to Saturday: 10am - 7pm</p>
+                    <p class="text-gray-600 font-light">Sunday: By appointment only</p>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="mt-8 pt-6 border-t border-gray-200">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <!-- Legal Links -->
+                    <div class="flex flex-wrap gap-6 mb-6 md:mb-0">
+                        <a href="../pages/privacy-policy.html"
+                            class="text-gray-600 hover:text-black text-sm transition duration-300 font-light">Privacy
+                            policy</a>
+                        <a href="../pages/terms-of-service.html"
+                            class="text-gray-600 hover:text-black text-sm transition duration-300 font-light">Terms
+                            of
+                            service</a>
+                        <a href="../pages/accessibility.html"
+                            class="text-gray-600 hover:text-black text-sm transition duration-300 font-light">Accessibility</a>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="flex space-x-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa"
+                            class="h-5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                            alt="Mastercard" class="h-5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal"
+                            class="h-5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg"
+                            alt="American Express" class="h-5">
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="mt-6 text-sm text-gray-500 font-light">
+                    <p>'REX STORE' and the 'REX STORE' logo are registered trademarks of REX STORE S.A.</p>
+                    <p>© 2025 REX STORE. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Shared Components -->
+    <script src="../js/components/header.js"></script>
+    <script src="../js/components/footer.js"></script>
 </body>
 
 </html>
