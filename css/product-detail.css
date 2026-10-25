@@ -1,0 +1,539 @@
+/* View Item Page Specific Styles */
+
+/* Product Images Gallery */
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.product-gallery img {
+    transition: transform 0.3s ease;
+}
+
+.product-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Product Details */
+.product-price {
+    display: flex;
+    align-items: center;
+}
+
+.sale-price {
+    color: var(--color-gold);
+    font-weight: 400;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 0.75rem;
+}
+
+.sale-badge {
+    background-color: var(--color-gold);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    margin-left: 0.75rem;
+}
+
+/* Size Selector */
+.size-selector {
+    appearance: none;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    background-color: white;
+    transition: border-color 0.3s ease;
+}
+
+.size-selector:focus {
+    outline: none;
+    border-color: var(--color-gold);
+}
+
+.size-guide {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.size-guide:hover {
+    color: var(--color-gold);
+}
+
+/* Add to Bag Button */
+.add-to-bag {
+    background-color: black;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.add-to-bag:hover {
+    background-color: var(--color-gold);
+    transform: translateY(-2px);
+}
+
+/* Wishlist Button */
+.wishlist-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e5e7eb;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.wishlist-button:hover {
+    border-color: var(--color-gold);
+}
+
+.wishlist-button:hover svg {
+    stroke: var(--color-gold);
+}
+
+/* Product Accordion */
+.accordion-item {
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.accordion-header {
+    cursor: pointer;
+    padding: 1rem 0;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header:hover {
+    color: var(--color-gold);
+}
+
+.accordion-content {
+    padding: 0 0 1rem 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #4b5563;
+}
+
+.accordion-content.hidden {
+    display: none;
+}
+
+/* Complete The Look Section */
+.complete-look-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.complete-look-item img {
+    transition: transform 0.7s ease;
+}
+
+.complete-look-item:hover img {
+    transform: scale(1.05);
+}
+
+.item-details {
+    margin-top: 1rem;
+}
+
+.item-brand {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.item-name {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 0.25rem;
+}
+
+.item-price {
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+/* Color Swatches */
+.color-options {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.color-swatch {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid #e5e7eb;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.color-swatch:hover,
+.color-swatch.active {
+    transform: scale(1.2);
+    border-color: var(--color-gold);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    padding: 4rem 0;
+    background-color: #f9fafb;
+}
+
+.newsletter-title {
+    font-size: 1.875rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    font-family: var(--font-display);
+}
+
+.newsletter-description {
+    font-size: 1.125rem;
+    color: #6b7280;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-gold);
+}
+
+.newsletter-submit {
+    background-color: black;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.newsletter-submit:hover {
+    background-color: var(--color-gold);
+    transform: translateY(-2px);
+}
+
+/* Custom Checkbox */
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #e5e7eb;
+    border-radius: 2px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    background-color: white;
+}
+
+.custom-checkbox input[type="checkbox"]:checked {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+.custom-checkbox input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.custom-checkbox input[type="checkbox"]:hover {
+    border-color: var(--color-gold);
+}
+
+.custom-checkbox input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(201, 169, 110, 0.3);
+}
+
+.custom-checkbox label {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .product-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .add-to-bag-container {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .wishlist-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .product-details {
+        padding-top: 2rem;
+    }
+
+    .accordion-header {
+        padding: 0.75rem 0;
+    }
+
+    .accordion-content {
+        padding: 0 0 0.75rem 0;
+    }
+}
+
+/* Social Share Icons */
+.flex.items-center.space-x-4 a {
+    transition: all 0.3s ease;
+}
+
+.flex.items-center.space-x-4 a:hover {
+    transform: translateY(-2px);
+    color: #c9a96e;
+}
+
+/* Complete the Look Section */
+.bg-white.p-4 {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.bg-white.p-4:hover {
+    border-color: #e5e7eb;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
+}
+
+/* Remove Item Button */
+.absolute.top-2.right-2.p-2 {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+}
+
+.bg-white.p-4:hover .absolute.top-2.right-2.p-2 {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.absolute.top-2.right-2.p-2:hover {
+    background-color: #c9a96e;
+}
+
+.absolute.top-2.right-2.p-2:hover svg {
+    stroke: white;
+}
+
+/* Sale Badge */
+.absolute.top-4.left-4.bg-red-600 {
+    background-color: #c9a96e;
+    color: white;
+}
+
+/* Recently Viewed Slider Navigation */
+#prev-recently-viewed,
+#next-recently-viewed {
+    border: 1px solid #c9a96e;
+    color: #c9a96e;
+    transition: all 0.3s ease;
+}
+
+#prev-recently-viewed:hover,
+#next-recently-viewed:hover {
+    background-color: #c9a96e;
+    color: white;
+}
+
+#prev-recently-viewed:hover svg,
+#next-recently-viewed:hover svg {
+    stroke: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .sticky {
+        position: relative;
+        top: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .flex.flex-col.sm\:flex-row {
+        gap: 1rem;
+    }
+
+    .flex.items-center.space-x-4 {
+        justify-content: center;
+    }
+}
+
+/* Enhanced Product Image Hover */
+.grid-cols-2 img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Product Details Animation */
+#product-details,
+#shipping-returns {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+#product-details.hidden,
+#shipping-returns.hidden {
+    max-height: 0;
+}
+
+#product-details:not(.hidden),
+#shipping-returns:not(.hidden) {
+    max-height: 500px;
+}
+
+/* Add to Bag Button Animation */
+#add-to-bag {
+    position: relative;
+    overflow: hidden;
+}
+
+#add-to-bag::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+}
+
+#add-to-bag:hover::before {
+    left: 100%;
+}
+
+/* Enhanced Complete the Look Section */
+.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-4 {
+    gap: 1.5rem;
+}
+
+.bg-white.p-4 img {
+    transition: transform 0.5s ease;
+}
+
+.bg-white.p-4:hover img {
+    transform: scale(1.05);
+}
+
+/* Enhanced Recently Viewed Section */
+#recently-viewed-slider .group {
+    transition: transform 0.3s ease;
+}
+
+#recently-viewed-slider .group:hover {
+    transform: translateY(-5px);
+}
+
+/* Custom Scrollbar for Sliders */
+.no-scrollbar::-webkit-scrollbar {
+    height: 6px;
+}
+
+.no-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb {
+    background: #c9a96e;
+    border-radius: 3px;
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #b08c4e;
+}
+
+/* Recommendation Slider Navigation */
+#prev-recommendations,
+#next-recommendations {
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    transition: all 0.3s ease;
+}
+
+#prev-recommendations:hover,
+#next-recommendations:hover {
+    background-color: var(--color-gold);
+    color: white;
+}
+
+#prev-recommendations:hover svg,
+#next-recommendations:hover svg {
+    stroke: white;
+}
+
+/* View All Recommendations Button */
+.text-center a.inline-block:hover {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+}

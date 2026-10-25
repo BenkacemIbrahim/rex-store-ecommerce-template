@@ -1,0 +1,1139 @@
+/* Custom Styles */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+:root {
+    /* Typography */
+    --font-sans: "Poppins", sans-serif;
+    --font-display: "Playfair Display", serif;
+
+    /* Colors */
+    --color-primary: #000000;
+    --color-secondary: #ffffff;
+    --color-text: #000000;
+    /* Darkened from #080808 */
+    --color-text-light: #333333;
+    /* Darkened from #444444 */
+    --color-background: #ffffff;
+    --color-background-alt: #f3f4f6;
+    --color-border: #e5e7eb;
+    --color-gold: #c9a96e;
+    /* Elegant gold accent color */
+    --color-gold-light: #d9c091;
+    /* Lighter gold for hover states */
+    --color-gold-dark: #b08c4e;
+    /* Darker gold for active states */
+    --color-footer-bg: #b8b8b8;
+    /* Darker footer background (changed from #e5e5e5) */
+
+    /* Transitions */
+    --transition-standard: all 0.3s ease;
+    --transition-slow: all 0.4s ease;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--color-text);
+    line-height: 1.6;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+}
+
+/* Header Styles */
+/* Fixed Header Styles */
+header {
+    background-color: var(--color-secondary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    z-index: 40;
+}
+
+/* When the header is fixed */
+header.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header a {
+    text-decoration: none;
+}
+
+/* Navigation Link Hover Effects */
+header nav a {
+    position: relative;
+    color: #000000;
+    /* Darkened navigation links */
+}
+
+header nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-gold);
+    /* Changed to gold */
+    transition: width 0.3s ease;
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+/* Header Icons Hover Effect */
+header .p-2:hover svg {
+    color: var(--color-gold);
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+/* Remove focus outline for all header buttons and interactive elements */
+header button:focus,
+header a:focus,
+#search-toggle:focus,
+#language-toggle:focus,
+#mobile-menu-button:focus,
+.language-option:focus,
+.mobile-language-option:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Language Selector */
+.language-selector {
+    position: relative;
+}
+
+.language-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    color: #000000;
+    /* Darkened language toggle text */
+}
+
+.language-toggle:hover {
+    color: var(--color-gold);
+    /* Changed to gold */
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 180px;
+    background-color: white;
+    box-shadow: var(--shadow-lg);
+    z-index: 50;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--color-gold);
+    /* Added gold border */
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    transition: background-color 0.3s ease;
+    color: #000000;
+    /* Darkened language option text */
+}
+
+.language-option:hover {
+    background-color: #f8f8f8;
+    color: var(--color-gold);
+    /* Added gold text on hover */
+}
+
+.language-name {
+    font-size: 0.875rem;
+}
+
+/* RTL Support */
+[dir="rtl"] .language-dropdown {
+    left: 0;
+    right: auto;
+}
+
+/* Mobile Language Selector */
+.mobile-language-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.75rem;
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+    color: #000000;
+    /* Darkened mobile language option text */
+}
+
+.mobile-language-option:hover {
+    background-color: #f8f8f8;
+    border-color: var(--color-gold);
+    /* Added gold border on hover */
+    color: var(--color-gold);
+    /* Added gold text on hover */
+}
+
+/* Announcement Bar */
+.announcement-slider {
+    display: flex;
+    white-space: nowrap;
+}
+
+.announcement-item {
+    flex-shrink: 0;
+}
+
+/* Announcement bar transition */
+.announcement-bar {
+    transition: transform 0.3s ease;
+    height: 32px;
+    /* Adjust based on your announcement bar height */
+    overflow: hidden;
+}
+
+/* Hide announcement bar when scrolling */
+.announcement-bar.hidden {
+    transform: translateY(-100%);
+}
+
+/* Add padding to body when header is fixed to prevent content jump */
+body.fixed-header {
+    padding-top: 0;
+    /* Will be dynamically set with JavaScript */
+}
+
+/* Hero Section */
+.hero-container {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+    background-size: cover;
+    background-position: center;
+    transform-origin: center;
+    animation: subtle-zoom 30s infinite alternate;
+}
+
+@keyframes subtle-zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: 4.5rem;
+    font-weight: 400;
+    /* Increased from 300 for better visibility */
+    color: white;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fade-in-up 1.5s ease forwards 0.3s;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 400;
+    /* Increased from 300 for better visibility */
+    color: rgba(255, 255, 255, 1);
+    /* Increased opacity from 0.9 to 1 */
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fade-in-up 1.5s ease forwards 0.6s;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fade-in-up 1.5s ease forwards 0.9s;
+}
+
+.hero-button {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    /* Increased from 300 for better visibility */
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: var(--transition-slow);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-button-primary {
+    background-color: white;
+    color: black;
+    border: 1px solid transparent;
+}
+
+.hero-button-primary:hover {
+    border-color: var(--color-gold);
+    /* Added gold border on hover */
+}
+
+.hero-button-secondary {
+    background-color: transparent;
+    color: var(--color-gold);
+    /* Changed to gold */
+    border: 1px solid var(--color-gold);
+    /* Changed to gold */
+}
+
+.hero-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: width 0.5s ease;
+    z-index: -1;
+}
+
+.hero-button-secondary::before {
+    background-color: rgba(201, 169, 110, 0.1);
+    /* Changed to gold with opacity */
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-button:hover::before {
+    width: 100%;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 0;
+    animation: fade-in 1s ease forwards 1.5s, bounce 2s infinite 2.5s;
+}
+
+.scroll-indicator svg {
+    color: var(--color-gold);
+    /* Changed to gold */
+}
+
+/* Animations */
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-15px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-7px);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+/* Utility Classes */
+.font-display {
+    font-family: var(--font-display);
+    font-weight: 500;
+    /* Added font weight for display font */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Smooth transitions */
+a,
+button {
+    transition: var(--transition-standard);
+}
+
+/* Remove focus styles for all interactive elements */
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .language-toggle .flag-icon {
+        margin-right: 0.25rem;
+    }
+}
+
+/* Additional Gold Accent Styles */
+
+/* Navigation arrows with gold accents */
+#prev-arrivals,
+#next-arrivals {
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+}
+
+#prev-arrivals:hover,
+#next-arrivals:hover {
+    background-color: var(--color-gold);
+    color: white;
+}
+
+/* Back to top button with gold accent */
+#back-to-top {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-gold);
+}
+
+#back-to-top:hover {
+    background-color: var(--color-gold);
+}
+
+/* Section headings with gold underline */
+h2.text-3xl.font-bold.text-center.mb-4.font-display::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: var(--color-gold);
+    margin: 0.5rem auto 0;
+}
+
+/* Gold accent for product badges */
+.absolute.top-4.left-4.bg-black {
+    background-color: var(--color-gold);
+    color: var(--color-primary);
+}
+
+/* Gold accent for wishlist icon hover */
+button.bg-white.p-2.rounded-full.shadow-md:hover {
+    background-color: var(--color-gold);
+    color: white;
+}
+
+/* Gold accent for primary buttons */
+.bg-black.text-white {
+    border: 1px solid transparent;
+}
+
+.bg-black.text-white:hover {
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 1px var(--color-gold);
+}
+
+/* Gold accent for newsletter section icons */
+.flex-shrink-0 .bg-black {
+    background-color: var(--color-gold);
+}
+
+/* Gold price text for sale items */
+.text-red-600 {
+    color: var(--color-gold) !important;
+}
+
+/* Gold accent for search icon */
+#search-toggle:hover svg {
+    stroke: var(--color-gold);
+}
+
+/* Gold accent for mobile menu button */
+#mobile-menu-button:hover svg {
+    stroke: var(--color-gold);
+}
+
+/* Gold accent for footer links hover */
+footer a:hover {
+    color: var(--color-gold) !important;
+    transition: color 0.3s ease;
+}
+
+/* Updated input styles - More specific selectors to avoid affecting checkboxes */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+input[type="password"],
+textarea,
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0;
+}
+
+/* Specifically target the email and phone inputs */
+#email-input,
+#phone-input,
+#search-input {
+    border: 0;
+    border-bottom: 1px solid #e5e7eb;
+    transition: border-color 0.3s ease;
+    background-color: transparent;
+}
+
+#email-input:focus,
+#phone-input:focus,
+#search-input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: #000000;
+}
+
+/* Override any browser-specific focus styles for text inputs */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="search"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0;
+    border-color: #000000;
+}
+
+/* Gold accent for social media icons */
+.text-gray-600.hover\:text-black:hover {
+    color: var(--color-gold) !important;
+}
+
+/* Add this to your CSS file */
+#back-to-top svg {
+    color: white;
+    /* Change the icon color to white */
+    stroke: white;
+    /* Ensure SVG stroke is also white */
+}
+
+/* Darkened text for section titles */
+h2.text-3xl {
+    color: #000000;
+    font-weight: 500;
+    /* Increased from default */
+}
+
+/* Darkened text for product titles */
+.text-base.font-light {
+    color: #000000;
+    font-weight: 400;
+    /* Increased from 300 */
+}
+
+/* Darkened text for prices */
+.text-gray-900.font-light {
+    color: #000000 !important;
+    font-weight: 500;
+    /* Increased from light */
+}
+
+/* Darkened text for product brand/designer names */
+.text-sm.text-gray-500 {
+    color: #333333 !important;
+}
+
+/* Darkened text for section descriptions */
+.text-center.text-gray-600 {
+    color: #333333;
+}
+
+/* Darkened text for footer headings */
+footer h3 {
+    color: #000000;
+    font-weight: 500;
+    /* Increased from light */
+}
+
+/* Darkened text for footer links */
+footer a.text-gray-600 {
+    color: #333333 !important;
+}
+
+/* Darkened text for newsletter section */
+.text-gray-600.text-lg {
+    color: #333333;
+}
+
+/* Darkened text for form labels */
+label.text-gray-700 {
+    color: #333333;
+}
+
+/* UPDATED: Make the footer background darker */
+footer.bg-gray-50 {
+    background-color: #a0a0a0 !important;
+    /* Significantly darker gray than the previous #d1d1d1 */
+}
+
+/* ADDED: Make heart icon in Curated Selection turn black on hover - MULTIPLE APPROACHES */
+
+/* Approach 1: Direct targeting by section and position */
+section[aria-labelledby="trending-title"] .group .absolute.top-4.right-4 button:hover svg {
+    color: black !important;
+    stroke: black !important;
+    fill: black !important;
+}
+
+/* Approach 2: Target all wishlist buttons in the Curated Selection section */
+section[aria-labelledby="trending-title"] button[aria-label="Add to wishlist"]:hover svg {
+    color: black !important;
+    stroke: black !important;
+    fill: black !important;
+}
+
+/* Approach 3: Target all heart icons in the entire page */
+button[aria-label="Add to wishlist"]:hover svg {
+    color: black !important;
+    stroke: black !important;
+    fill: black !important;
+}
+
+/* Approach 4: Target by class combination */
+.group .absolute.top-4.right-4 button:hover svg {
+    color: black !important;
+    stroke: black !important;
+    fill: black !important;
+}
+
+/* Auth Modal Styles */
+#auth-modal {
+    transition: opacity 0.3s ease;
+}
+
+#auth-modal .bg-white {
+    animation: modal-slide-in 0.4s ease forwards;
+}
+
+@keyframes modal-slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Auth Tabs */
+.auth-tab {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.auth-tab::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
+}
+
+.auth-tab.active {
+    color: var(--color-primary);
+}
+
+.auth-tab.active::after {
+    width: 100%;
+}
+
+.auth-tab:hover {
+    color: var(--color-gold);
+}
+
+/* Form Inputs */
+#auth-modal input[type="email"],
+#auth-modal input[type="password"] {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#auth-modal input[type="email"]:focus,
+#auth-modal input[type="password"]:focus {
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 1px var(--color-gold);
+}
+
+/* Button hover effects */
+#auth-modal button[type="submit"]:hover,
+#auth-modal button[type="button"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Google button */
+#auth-modal button[type="button"] img {
+    transition: transform 0.3s ease;
+}
+
+#auth-modal button[type="button"]:hover img {
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    #auth-modal .bg-white {
+        padding: 1.25rem;
+    }
+
+    #auth-modal h2 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Custom Checkbox Styling */
+.custom-checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #e5e7eb;
+    border-radius: 2px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    background-color: white;
+}
+
+.custom-checkbox input[type="checkbox"]:checked {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+.custom-checkbox input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.custom-checkbox input[type="checkbox"]:hover {
+    border-color: #c9a96e;
+}
+
+.custom-checkbox input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(201, 169, 110, 0.3);
+}
+
+.custom-checkbox label {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Mega Dropdown Styles */
+.mega-dropdown {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-secondary);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.mega-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Enhanced Mega Dropdown Menu Hover Effects */
+
+/* Main Navigation Link Hover Effects */
+.has-dropdown {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.has-dropdown::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-gold);
+    transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.has-dropdown:hover::after,
+.has-dropdown.active::after {
+    width: 100%;
+}
+
+.has-dropdown:hover,
+.has-dropdown.active {
+    color: var(--color-gold);
+}
+
+/* Mega Dropdown Enhancements */
+.mega-dropdown {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-15px);
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0.4s ease;
+}
+
+.mega-dropdown.active {
+    transform: translateY(0);
+}
+
+/* Mega Dropdown Link Hover Effects */
+.mega-dropdown h3 {
+    position: relative;
+    display: inline-block;
+}
+
+.mega-dropdown h3::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    background-color: var(--color-gold);
+    transition: width 0.3s ease;
+}
+
+.mega-dropdown ul li a {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.mega-dropdown ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-gold);
+    transition: width 0.3s ease;
+    opacity: 0;
+}
+
+.mega-dropdown ul li a:hover {
+    color: var(--color-gold);
+    transform: translateX(5px);
+}
+
+.mega-dropdown ul li a:hover::before {
+    width: 100%;
+    opacity: 1;
+}
+
+/* Featured Column Hover Effects */
+.mega-dropdown .col-span-3:last-child img {
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.mega-dropdown .col-span-3:last-child:hover img {
+    transform: scale(1.05);
+}
+
+.mega-dropdown .col-span-3:last-child a {
+    position: relative;
+    display: inline-block;
+}
+
+.mega-dropdown .col-span-3:last-child a::after {
+    content: "→";
+    opacity: 0;
+    margin-left: -10px;
+    transition: opacity 0.3s ease, margin-left 0.3s ease;
+}
+
+.mega-dropdown .col-span-3:last-child a:hover::after {
+    opacity: 1;
+    margin-left: 5px;
+}
+
+/* Mobile Menu Enhancements */
+#mobile-menu li a {
+    position: relative;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+#mobile-menu li a:hover {
+    color: var(--color-gold);
+    padding-left: 5px;
+}
+
+#mobile-menu li a::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-gold);
+    transition: width 0.3s ease;
+    transform: translateY(-50%);
+}
+
+#mobile-menu li a:hover::before {
+    width: 8px;
+}
+
+/* Language Dropdown Enhanced Hover Effects */
+.language-option {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.language-option:hover {
+    background-color: rgba(201, 169, 110, 0.1);
+    color: var(--color-gold);
+    transform: translateX(5px);
+}
+
+/* Mobile Language Options Enhanced Hover */
+.mobile-language-option {
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.mobile-language-option:hover {
+    background-color: rgba(201, 169, 110, 0.1);
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Alphabet Grid Hover Effects in Brands Dropdown */
+.mega-dropdown .grid-cols-5 a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.mega-dropdown .grid-cols-5 a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-gold);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.mega-dropdown .grid-cols-5 a:hover {
+    color: var(--color-gold);
+}
+
+.mega-dropdown .grid-cols-5 a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* "View All" link special hover effect */
+.mega-dropdown .col-span-3 a[href="#"]:last-child {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.mega-dropdown .col-span-3 a[href="#"]:last-child::after {
+    content: "→";
+    opacity: 0;
+    margin-left: -10px;
+    transition: opacity 0.3s ease, margin-left 0.3s ease;
+}
+
+.mega-dropdown .col-span-3 a[href="#"]:last-child:hover {
+    color: var(--color-gold);
+}
+
+.mega-dropdown .col-span-3 a[href="#"]:last-child:hover::after {
+    opacity: 1;
+    margin-left: 5px;
+}
+/* Forgot Password Modal Styles */
+#forgot-password-modal {
+    transition: opacity 0.3s ease;
+}
+
+#forgot-password-modal .bg-white {
+    animation: modal-slide-in 0.4s ease forwards;
+}
+
+#forgot-password-form input[type="email"]:focus {
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 1px var(--color-gold);
+}
+
+#forgot-password-form button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Confirmation message styling */
+.confirmation-message {
+    display: none;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.confirmation-message.active {
+    display: block;
+    animation: fade-in 0.5s ease forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

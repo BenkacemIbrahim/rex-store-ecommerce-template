@@ -1,0 +1,107 @@
+/* Kidswear Page Specific Styles */
+
+/* Hero Section Customization */
+.hero-background {
+    background-image: url("https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80") !important;
+    background-position: center 30%;
+}
+
+/* Colorful accents for kids section */
+.hero-button-secondary {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+/* Category Section Enhancements */
+.grid-cols-3 .group .absolute.inset-0 {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+}
+
+/* Product Card Hover Effects */
+.group:hover .absolute.top-4.right-4 button {
+    transform: scale(1.1);
+}
+
+/* Kids-specific color swatches */
+[role="radio"][aria-label="Pink"] {
+    background-color: #f9a8d4;
+}
+
+[role="radio"][aria-label="Yellow"] {
+    background-color: #fef08a;
+}
+
+[role="radio"][aria-label="Blue"] {
+    background-color: #93c5fd;
+}
+
+[role="radio"][aria-label="Red"] {
+    background-color: #fca5a5;
+}
+
+[role="radio"][aria-label="Beige"] {
+    background-color: #e5e5d5;
+}
+
+/* Seasonal Banner Customization */
+.bg-gray-900 {
+    background-color: #2a4365;
+    background-image: linear-gradient(135deg, #2a4365 0%, #1e3a8a 100%);
+}
+
+/* New Arrivals Badge */
+.absolute.top-4.left-4.bg-black {
+    background-color: #ec4899;
+    color: white;
+}
+
+/* Sale Badge */
+.absolute.top-4.left-4.bg-black:contains("SALE") {
+    background-color: #f59e0b;
+}
+
+/* Instagram Section Customization */
+.aspect-square:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Newsletter Section Customization */
+.bg-gray-50 {
+    background-color: #f8fafc;
+}
+
+/* Back to Top Button */
+#back-to-top {
+    background-color: #ec4899;
+    border-color: #ec4899;
+}
+
+#back-to-top:hover {
+    background-color: #db2777;
+    border-color: #db2777;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .grid-cols-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .grid-cols-3 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}

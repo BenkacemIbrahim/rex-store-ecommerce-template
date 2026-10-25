@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="REX STORE - Frequently Asked Questions | Premium Fashion Retailer">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>FAQs | REX STORE - Premium Men's & Kids' Fashion</title>
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/faqs.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="font-sans antialiased bg-white text-gray-900 transition-colors duration-300">
+    <!-- Page Title Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-light text-center font-display" data-aos="fade-up">Frequently Asked Questions</h1>
+            <p class="text-center text-gray-600 mt-4 max-w-2xl mx-auto font-light" data-aos="fade-up"
+                data-aos-delay="100">
+                Find answers to common questions about our products, services, and policies.
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Categories Section -->
+    <section class="py-12 border-b border-gray-100">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-6 mb-8" data-aos="fade-up" data-aos-delay="100">
+                <button class="category-button active" data-category="all">All Questions</button>
+                <button class="category-button" data-category="orders">Orders & Shipping</button>
+                <button class="category-button" data-category="returns">Returns & Exchanges</button>
+                <button class="category-button" data-category="products">Products & Sizing</button>
+                <button class="category-button" data-category="account">Account & Payment</button>
+                <button class="category-button" data-category="services">Services</button>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="relative w-full max-w-md mx-auto mb-12" data-aos="fade-up" data-aos-delay="200">
+                <input type="text" id="faq-search" placeholder="Search frequently asked questions..."
+                    class="w-full px-4 py-3 border border-gray-200 focus:outline-none focus:border-black text-gray-900 text-sm font-light">
+                <button class="absolute right-3 top-3 text-gray-500 hover:text-black" aria-label="Search FAQs">
+                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="py-16">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto">
+                <!-- Orders & Shipping FAQs -->
+                <div class="faq-category" data-category="orders">
+                    <h2 class="text-2xl font-light mb-8 pb-2 border-b border-gray-200 font-display" data-aos="fade-up">
+                        Orders & Shipping</h2>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                        <button class="faq-question">
+                            <span>How long will my order take to arrive?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Standard shipping typically takes 3-5 business days within Europe and 7-10 business days
+                                for international orders. Express shipping is available for 1-2 business day delivery
+                                within Europe and 3-5 business days internationally.</p>
+                            <p class="mt-4">Please note that delivery times may vary during peak seasons or due to
+                                customs clearance for international shipments.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                        <button class="faq-question">
+                            <span>Do you offer free shipping?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer complimentary standard shipping on all orders over €500. For orders under
+                                €500, standard shipping fees apply based on your location:</p>
+                            <ul class="list-disc pl-5 mt-4 space-y-2">
+                                <li>France: €10</li>
+                                <li>Europe: €15</li>
+                                <li>International: €25</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                        <button class="faq-question">
+                            <span>Can I track my order?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, once your order has been shipped, you will receive a confirmation email with a
+                                tracking number. You can use this number to track your package on our website or
+                                directly through the carrier's website.</p>
+                            <p class="mt-4">You can also view your order status and tracking information in your account
+                                under "Order History".</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+                        <button class="faq-question">
+                            <span>Which countries do you ship to?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We ship to most countries worldwide. During checkout, you can select your country to see
+                                if we deliver to your location and to calculate shipping costs.</p>
+                            <p class="mt-4">Please note that for some countries, additional customs duties and taxes may
+                                apply, which are the responsibility of the recipient.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Returns & Exchanges FAQs -->
+                <div class="faq-category" data-category="returns">
+                    <h2 class="text-2xl font-light mb-8 pb-2 border-b border-gray-200 font-display mt-16"
+                        data-aos="fade-up">Returns & Exchanges</h2>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                        <button class="faq-question">
+                            <span>What is your return policy?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer a 30-day return policy for all unworn, unwashed, and unaltered items with
+                                original tags attached and in their original packaging. Returns initiated within 30 days
+                                of delivery are eligible for a full refund to the original payment method.</p>
+                            <p class="mt-4">Please note that certain items, such as personalized products or intimate
+                                apparel, are not eligible for return due to hygiene reasons.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                        <button class="faq-question">
+                            <span>How do I initiate a return or exchange?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>To initiate a return or exchange:</p>
+                            <ol class="list-decimal pl-5 mt-4 space-y-2">
+                                <li>Log in to your account and go to "Order History"</li>
+                                <li>Select the order containing the item(s) you wish to return</li>
+                                <li>Click "Return Items" and follow the instructions</li>
+                                <li>Print the return label and attach it to your package</li>
+                                <li>Drop off the package at your nearest authorized shipping location</li>
+                            </ol>
+                            <p class="mt-4">If you prefer, you can also contact our Customer Service team for assistance
+                                with your return or exchange.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                        <button class="faq-question">
+                            <span>How long does it take to process a return?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Once we receive your return, it typically takes 3-5 business days to inspect and process.
+                                After processing, refunds will be issued to your original payment method and may take an
+                                additional 5-10 business days to appear on your statement, depending on your financial
+                                institution.</p>
+                            <p class="mt-4">For exchanges, once your return is processed, we will ship the new item to
+                                you. You will receive a confirmation email with tracking information when your exchange
+                                is shipped.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+                        <button class="faq-question">
+                            <span>Are return shipping costs covered?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>For standard returns, a flat fee of €10 will be deducted from your refund amount to cover
+                                return shipping costs. However, return shipping is complimentary for:</p>
+                            <ul class="list-disc pl-5 mt-4 space-y-2">
+                                <li>Exchanges for a different size or color</li>
+                                <li>Items that arrived damaged or defective</li>
+                                <li>Incorrect items shipped</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products & Sizing FAQs -->
+                <div class="faq-category" data-category="products">
+                    <h2 class="text-2xl font-light mb-8 pb-2 border-b border-gray-200 font-display mt-16"
+                        data-aos="fade-up">Products & Sizing</h2>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                        <button class="faq-question">
+                            <span>How do I find the right size?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We provide detailed size guides for all our products. To find the right size:</p>
+                            <ol class="list-decimal pl-5 mt-4 space-y-2">
+                                <li>Go to the product page of the item you're interested in</li>
+                                <li>Click on the "Size Guide" link near the size selection options</li>
+                                <li>Follow the measuring instructions and compare your measurements to our size chart
+                                </li>
+                            </ol>
+                            <p class="mt-4">If you're between sizes, we generally recommend sizing up for a more
+                                comfortable fit. For specific sizing advice, please contact our Customer Service team.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                        <button class="faq-question">
+                            <span>Are your products authentic?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we guarantee that all products sold on REX STORE are 100% authentic. We source our
+                                products directly from the brands or their authorized distributors. Each item undergoes
+                                a rigorous authentication process before being listed on our website.</p>
+                            <p class="mt-4">All products come with original brand packaging, tags, and authenticity
+                                cards where applicable. We have zero tolerance for counterfeit products.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                        <button class="faq-question">
+                            <span>How do I care for my products?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Care instructions vary by product and material. Detailed care information is provided on
+                                each product page and on the care label attached to the item. Generally, we recommend:
+                            </p>
+                            <ul class="list-disc pl-5 mt-4 space-y-2">
+                                <li>Following the specific care instructions on the product label</li>
+                                <li>Storing items properly when not in use</li>
+                                <li>Using specialized cleaning services for luxury items</li>
+                                <li>Avoiding exposure to direct sunlight, moisture, and extreme temperatures</li>
+                            </ul>
+                            <p class="mt-4">For specific care advice for your purchase, please contact our Customer
+                                Service team.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+                        <button class="faq-question">
+                            <span>Do you offer alterations or customization?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer professional alteration services for purchases made at REX STORE. Basic
+                                alterations such as hemming and sleeve adjustments are complimentary for full-price
+                                items. More complex alterations are available for an additional fee.</p>
+                            <p class="mt-4">We also offer select customization services for certain products, including
+                                monogramming and personalization. These services are available for an additional fee and
+                                may extend the delivery time.</p>
+                            <p class="mt-4">To inquire about alterations or customization options, please contact our
+                                Customer Service team or visit our store in person.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account & Payment FAQs -->
+                <div class="faq-category" data-category="account">
+                    <h2 class="text-2xl font-light mb-8 pb-2 border-b border-gray-200 font-display mt-16"
+                        data-aos="fade-up">Account & Payment</h2>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                        <button class="faq-question">
+                            <span>What payment methods do you accept?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We accept the following payment methods:</p>
+                            <ul class="list-disc pl-5 mt-4 space-y-2">
+                                <li>Credit/Debit Cards (Visa, Mastercard, American Express)</li>
+                                <li>PayPal</li>
+                                <li>Apple Pay</li>
+                                <li>Google Pay</li>
+                                <li>Bank Transfer (for orders over €1,000)</li>
+                            </ul>
+                            <p class="mt-4">All transactions are processed securely using industry-standard encryption
+                                technology.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                        <button class="faq-question">
+                            <span>How do I create an account?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Creating an account is simple:</p>
+                            <ol class="list-decimal pl-5 mt-4 space-y-2">
+                                <li>Click on the account icon in the top right corner of our website</li>
+                                <li>Select "Create Account" from the dropdown menu</li>
+                                <li>Enter your email address and create a password</li>
+                                <li>Fill in your personal information</li>
+                                <li>Click "Create Account" to complete the process</li>
+                            </ol>
+                            <p class="mt-4">You can also create an account during the checkout process by selecting
+                                "Create an account" before completing your purchase.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                        <button class="faq-question">
+                            <span>Is my payment information secure?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, your payment information is completely secure. We use industry-standard SSL
+                                encryption to protect all sensitive data. We are PCI DSS compliant, which means we
+                                adhere to the highest security standards for handling credit card information.</p>
+                            <p class="mt-4">We never store your full credit card details on our servers. For recurring
+                                customers who choose to save their payment information, we use tokenization technology,
+                                which replaces sensitive data with non-sensitive equivalents that cannot be exploited
+                                even in the unlikely event of a data breach.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+                        <button class="faq-question">
+                            <span>Can I place an order without creating an account?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer a guest checkout option that allows you to place an order without creating
+                                an account. During checkout, simply proceed without logging in or creating an account.
+                            </p>
+                            <p class="mt-4">However, creating an account offers several benefits:</p>
+                            <ul class="list-disc pl-5 mt-4 space-y-2">
+                                <li>Faster checkout for future purchases</li>
+                                <li>Order tracking and history</li>
+                                <li>Saved shipping addresses and payment methods</li>
+                                <li>Access to exclusive offers and early sales</li>
+                                <li>Ability to create and manage wishlists</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services FAQs -->
+                <div class="faq-category" data-category="services">
+                    <h2 class="text-2xl font-light mb-8 pb-2 border-b border-gray-200 font-display mt-16"
+                        data-aos="fade-up">Services</h2>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                        <button class="faq-question">
+                            <span>Do you offer personal shopping services?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer complimentary personal shopping services both in-store and virtually. Our
+                                experienced stylists can help you find the perfect items based on your preferences,
+                                style, and needs.</p>
+                            <p class="mt-4">To book a personal shopping appointment:</p>
+                            <ul class="list-disc pl-5 mt-4 space-y-2">
+                                <li>In-store: Visit our store in Paris or call +33 (0)1 42 61 10 10</li>
+                                <li>Virtual: Book through our website or contact our Customer Service team</li>
+                            </ul>
+                            <p class="mt-4">Appointments typically last 60-90 minutes and are tailored to your specific
+                                requirements.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                        <button class="faq-question">
+                            <span>What is your gift wrapping policy?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer complimentary gift wrapping for all purchases. During checkout, you can select
+                                the gift wrapping option and add a personalized message that will be printed on a
+                                premium card.</p>
+                            <p class="mt-4">Our signature gift wrapping includes:</p>
+                            <ul class="list-disc pl-5 mt-4 space-y-2">
+                                <li>Premium black matte paper with gold accents</li>
+                                <li>Satin ribbon</li>
+                                <li>REX STORE wax seal</li>
+                                <li>Personalized message card</li>
+                                <li>Dust bag or box (depending on the item)</li>
+                            </ul>
+                            <p class="mt-4">For special requests or custom gift wrapping, please contact our Customer
+                                Service team.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                        <button class="faq-question">
+                            <span>Do you offer gift cards?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer both physical and digital gift cards in denominations ranging from €100 to
+                                €5,000. Gift cards are valid for 12 months from the date of purchase and can be used
+                                both online and in-store.</p>
+                            <p class="mt-4">Physical gift cards are presented in premium packaging and can be shipped to
+                                your address or directly to the recipient. Digital gift cards are delivered via email
+                                and can be personalized with a message.</p>
+                            <p class="mt-4">To purchase a gift card, visit the "Gift Cards" section of our website or
+                                contact our Customer Service team.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+                        <button class="faq-question">
+                            <span>Can I book an in-store appointment?</span>
+                            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we welcome in-store appointments for a more personalized shopping experience. You
+                                can book appointments for:</p>
+                            <ul class="list-disc pl-5 mt-4 space-y-2">
+                                <li>Personal shopping and styling</li>
+                                <li>Product consultations</li>
+                                <li>Alterations and customization</li>
+                                <li>Special orders</li>
+                            </ul>
+                            <p class="mt-4">To book an appointment, you can use our online booking system, call our
+                                store directly at +33 (0)1 42 61 10 10, or email us at appointments@rexstore.com with
+                                your preferred date and time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="mt-16 pt-8 border-t border-gray-200 max-w-3xl mx-auto" data-aos="fade-up">
+                <h2 class="text-2xl font-light text-center mb-8 font-display">Still Have Questions?</h2>
+                <p class="text-center text-gray-600 mb-8 font-light">If you couldn't find the answer to your question,
+                    our customer service team is here to help.</p>
+                <div class="flex flex-col md:flex-row justify-center gap-6">
+                    <a href="mailto:info@rexstore.com"
+                        class="inline-flex items-center justify-center bg-black text-white px-8 py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition-all duration-300">
+                        <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        Email Us
+                    </a>
+                    <a href="tel:+33142611010"
+                        class="inline-flex items-center justify-center border border-black text-black px-8 py-3 text-sm font-light uppercase tracking-widest hover:bg-black hover:text-white transition-all duration-300">
+                        <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        Call Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <!-- Left Column - Newsletter Signup -->
+                <div class="lg:w-3/5">
+                    <div class="max-w-2xl">
+                        <h2 class="text-3xl font-display font-light mb-4">Join our mailing list</h2>
+                        <p class="text-gray-600 text-lg mb-10 font-light leading-relaxed">Be the first to know about new
+                            brand arrivals, seasonal collections, and exclusive promotions from REX STORE.</p>
+
+                        <form class="space-y-8">
+                            <div class="space-y-6">
+                                <h3 class="text-sm font-light uppercase tracking-widest mb-3">Receive updates via</h3>
+
+                                <!-- Email Option -->
+                                <div>
+                                    <div class="custom-checkbox mb-3">
+                                        <input id="email-option" name="notification-method" type="checkbox" checked>
+                                        <label for="email-option" class="text-sm font-light text-gray-700">Email</label>
+                                    </div>
+
+                                    <div class="relative" id="email-input-container">
+                                        <input type="email" id="email-input" placeholder="Your email address"
+                                            class="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-all duration-300 font-light">
+                                    </div>
+                                </div>
+
+                                <!-- SMS Option -->
+                                <div>
+                                    <div class="custom-checkbox mb-3">
+                                        <input id="sms-option" name="notification-method" type="checkbox">
+                                        <label for="sms-option" class="text-sm font-light text-gray-700">SMS</label>
+                                    </div>
+
+                                    <div class="relative" id="phone-input-container" style="display: none;">
+                                        <input type="tel" id="phone-input" placeholder="Your phone number"
+                                            class="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-all duration-300 font-light">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-4">
+                                <button type="submit"
+                                    class="w-full sm:w-auto bg-black text-white px-10 py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition-all duration-300">
+                                    Subscribe
+                                </button>
+
+                                <p class="text-xs text-gray-500 mt-4 max-w-lg font-light">
+                                    By subscribing, you consent to receiving marketing communications and acknowledge
+                                    you
+                                    have read our
+                                    <a href="#"
+                                        class="underline hover:text-black transition-colors duration-200">Privacy
+                                        Policy</a>.
+                                    You may unsubscribe at any time.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Column - Benefits & Social Proof -->
+                <div class="lg:w-2/5 mt-12 lg:mt-0">
+                    <div class="bg-gray-50 p-10 h-full">
+                        <h3 class="text-xl font-light mb-8 font-display">Subscriber benefits</h3>
+
+                        <ul class="space-y-8">
+                            <li class="flex">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="flex items-center justify-center h-10 w-10 border border-black text-black">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M12 8v13m0-13V6a4 4 0 00-4-4H8.8a4 4 0 00-3.6 2.3L3 8m9 4v5m0-5H4.5a2 2 0 01-2-2v-.5a2 2 0 01.6-1.4L9 2.8M3.2 7.8L2 9.5M15 8h5.5a2 2 0 012 2v.5a2 2 0 01-.6 1.4L16 13.2m5.8-5.4L22.8 9.5" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-light">Early Access</h4>
+                                    <p class="mt-2 text-gray-600 font-light">Be the first to shop new arrivals from your
+                                        favorite brands.</p>
+                                </div>
+                            </li>
+
+                            <li class="flex">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="flex items-center justify-center h-10 w-10 border border-black text-black">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-light">Exclusive Offers</h4>
+                                    <p class="mt-2 text-gray-600 font-light">Receive special promotions and discounts
+                                        available only to subscribers.</p>
+                                </div>
+                            </li>
+
+                            <li class="flex">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="flex items-center justify-center h-10 w-10 border border-black text-black">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-light">Styling Tips</h4>
+                                    <p class="mt-2 text-gray-600 font-light">Get expert advice on how to style the
+                                        latest brand collections.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-black text-white p-3 opacity-0 invisible transition-all duration-300 z-40"
+        aria-label="Back to top">
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 1000,
+            delay: 100
+        });
+
+        // FAQ Accordion Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function () {
+                    // Toggle active class on the question
+                    this.classList.toggle('active');
+
+                    // Get the answer element
+                    const answer = this.nextElementSibling;
+
+                    // Toggle the answer visibility
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    }
+
+                    // Rotate the icon
+                    const icon = this.querySelector('.faq-icon');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+
+            // Category Filtering
+            const categoryButtons = document.querySelectorAll('.category-button');
+            const faqCategories = document.querySelectorAll('.faq-category');
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const category = this.getAttribute('data-category');
+
+                    if (category === 'all') {
+                        // Show all categories
+                        faqCategories.forEach(cat => cat.style.display = 'block');
+                        faqItems.forEach(item => item.style.display = 'block');
+                    } else {
+                        // Hide all categories first
+                        faqCategories.forEach(cat => {
+                            if (cat.getAttribute('data-category') === category) {
+                                cat.style.display = 'block';
+                            } else {
+                                cat.style.display = 'none';
+                            }
+                        });
+                    }
+
+                    // Close all open accordions
+                    faqQuestions.forEach(q => {
+                        q.classList.remove('active');
+                        const ans = q.nextElementSibling;
+                        ans.style.maxHeight = null;
+                        const icon = q.querySelector('.faq-icon');
+                        icon.classList.remove('rotate-180');
+                    });
+                });
+            });
+
+            // FAQ Search Functionality
+            const searchInput = document.getElementById('faq-search');
+
+            searchInput.addEventListener('keyup', function () {
+                const searchTerm = this.value.toLowerCase();
+
+                if (searchTerm.length > 2) {
+                    // Show all categories for searching
+                    faqCategories.forEach(cat => cat.style.display = 'block');
+
+                    // Filter FAQ items
+                    faqItems.forEach(item => {
+                        const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                        const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+
+                        if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                            item.style.display = 'block';
+
+                            // Highlight the search term in the question
+                            const questionText = item.querySelector('.faq-question span');
+                            const originalText = questionText.textContent;
+
+                            // Only apply highlighting if not already highlighted
+                            if (!questionText.innerHTML.includes('<mark>')) {
+                                const regex = new RegExp(`(${searchTerm})`, 'gi');
+                                questionText.innerHTML = originalText.replace(regex, '<mark>$1</mark>');
+                            }
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    // Set "All Questions" category as active
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    document.querySelector('[data-category="all"]').classList.add('active');
+                } else if (searchTerm.length === 0) {
+                    // Reset to default state
+                    faqItems.forEach(item => {
+                        item.style.display = 'block';
+
+                        // Remove highlighting
+                        const questionText = item.querySelector('.faq-question span');
+                        questionText.innerHTML = questionText.textContent;
+                    });
+                }
+            });
+
+            // Newsletter form toggle functionality
+            const emailCheckbox = document.getElementById('email-option');
+            const emailInputContainer = document.getElementById('email-input-container');
+            const smsCheckbox = document.getElementById('sms-option');
+            const phoneInputContainer = document.getElementById('phone-input-container');
+
+            if (emailCheckbox && emailInputContainer) {
+                // Initial state check
+                emailInputContainer.style.display = emailCheckbox.checked ? 'block' : 'none';
+
+                // Add event listener
+                emailCheckbox.addEventListener('change', function () {
+                    emailInputContainer.style.display = this.checked ? 'block' : 'none';
+                });
+            }
+
+            if (smsCheckbox && phoneInputContainer) {
+                // Initial state check
+                phoneInputContainer.style.display = smsCheckbox.checked ? 'block' : 'none';
+
+                // Add event listener
+                smsCheckbox.addEventListener('change', function () {
+                    phoneInputContainer.style.display = this.checked ? 'block' : 'none';
+                });
+            }
+
+            // Form submission handling (prevent default for demo)
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Validate that at least one option is selected
+                    if (!emailCheckbox.checked && !smsCheckbox.checked) {
+                        alert('Please select at least one contact method (Email or SMS)');
+                        return;
+                    }
+
+                    // Validate email if that option is checked
+                    if (emailCheckbox.checked) {
+                        const emailInput = document.getElementById('email-input');
+                        if (!emailInput.value.trim()) {
+                            alert('Please enter your email address');
+                            emailInput.focus();
+                            return;
+                        }
+                    }
+
+                    // Validate phone if SMS option is checked
+                    if (smsCheckbox.checked) {
+                        const phoneInput = document.getElementById('phone-input');
+                        if (!phoneInput.value.trim()) {
+                            alert('Please enter your phone number');
+                            phoneInput.focus();
+                            return;
+                        }
+                    }
+
+                    alert('Thank you for subscribing to REX STORE');
+                });
+            }
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

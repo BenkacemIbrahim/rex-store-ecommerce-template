@@ -1,0 +1,163 @@
+/* Brands Page Specific Styles */
+
+/* Fixed Alphabet Navigation Styles */
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Alphabet Container Styles */
+.alphabet-container {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.alphabet-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+/* Alphabet Link Styles */
+.alphabet-link {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.alphabet-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-gold);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.alphabet-link:hover {
+    color: var(--color-gold);
+}
+
+.alphabet-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.alphabet-link.active {
+    color: var(--color-gold);
+}
+
+.alphabet-link.active::after {
+    width: 100%;
+    left: 0;
+    height: 2px;
+}
+
+/* Brand Search Input */
+#brand-search {
+    transition: all 0.3s ease;
+}
+
+#brand-search:focus {
+    border-color: var(--color-gold);
+}
+
+#brand-search:focus+button svg {
+    stroke: var(--color-gold);
+}
+
+/* Brand Card Styles */
+.brand-card {
+    transition: all 0.3s ease;
+}
+
+.brand-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Load More Button */
+#load-more:hover {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+/* Back to Top Button */
+#back-to-top {
+    border: 1px solid var(--color-gold);
+}
+
+#back-to-top:hover {
+    background-color: var(--color-gold);
+}
+
+#back-to-top:hover svg {
+    stroke: white;
+}
+
+/* Brand Spotlight Section */
+.brand-spotlight-image {
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.brand-spotlight-image:hover {
+    transform: scale(1.03);
+}
+
+/* Featured Brand Hover Effects */
+.group:hover .group-hover\:scale-105 {
+    transform: scale(1.05);
+}
+
+.group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+}
+
+/* Category Links Hover */
+.bg-white.p-8 a:hover {
+    transform: translateX(5px);
+}
+
+/* New Brand Arrivals Badge */
+.bg-gold {
+    background-color: var(--color-gold);
+}
+
+
+/* Text color variable */
+.text-gold {
+    color: var(--color-gold);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .alphabet-link {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.75rem;
+    }
+
+    .brand-card {
+        padding: 1rem;
+    }
+
+    .fixed-nav {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .alphabet-container {
+        padding-bottom: 0.5rem;
+    }
+
+    #brand-search {
+        margin-top: 0.5rem;
+    }
+}

@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="REX STORE - Premium Bags Collection | Luxury Bags for Men and Kids">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>Shopping Cart | REX STORE - Premium Men's & Kids' Fashion</title>
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/cart.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+
+
+        /* Responsive styles for tablet and mobile */
+        @media (max-width: 1023px) {
+            /* Tablet view adjustments */
+
+            /* Scale down elements for tablet */
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .page-subtitle {
+                font-size: 0.95rem;
+            }
+
+            /* Cart items adjustments */
+            #cart-items h3 {
+                font-size: 0.95rem;
+            }
+
+            #cart-items p {
+                font-size: 0.85rem;
+            }
+
+            #cart-items button {
+                font-size: 0.75rem;
+            }
+
+            /* Adjust select dropdown for tablet */
+            .select-selected {
+                height: 2.3rem;
+                font-size: 0.8rem;
+                padding: 0.45rem 1.8rem 0.45rem 0.7rem;
+            }
+
+            .select-selected::after {
+                width: 11px;
+                height: 11px;
+                right: 0.7rem;
+            }
+
+            .custom-dropdown-option {
+                padding: 7px 11px;
+                font-size: 0.8rem;
+            }
+
+            /* Adjust recommendations section */
+            #recommendations-section h2 {
+                font-size: 2.2rem;
+            }
+
+            #recommendations-section p {
+                font-size: 0.9rem;
+                margin-bottom: 2.5rem;
+            }
+
+            /* Adjust recommendation items */
+            #recommendations-slider .flex-shrink-0 {
+                width: 250px;
+            }
+
+            #recommendations-slider img {
+                height: 320px;
+            }
+
+            #recommendations-slider h3 {
+                font-size: 0.9rem;
+            }
+
+            #recommendations-slider p {
+                font-size: 0.8rem;
+            }
+
+            #recommendations-slider button {
+                font-size: 0.8rem;
+                padding: 0.6rem;
+            }
+
+            /* Move recommendation navigation buttons higher on tablet */
+            #prev-recommendations,
+            #next-recommendations {
+                top: 35%;
+                /* Move up from 50% to 35% on tablet */
+            }
+        }
+
+        @media (max-width: 767px) {
+            /* Mobile view adjustments */
+
+            /* Scale down elements for mobile */
+            .page-title {
+                font-size: 2rem;
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            .page-subtitle {
+                font-size: 0.9rem;
+            }
+
+            /* Cart items adjustments for mobile - NEW LAYOUT */
+            /* Make cart items display in a row on mobile */
+            #cart-items .cart-item-mobile {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 10px;
+                position: relative;
+            }
+
+            /* Product image takes less width */
+            #cart-items .cart-item-mobile .product-image {
+                width: 35%;
+                flex-shrink: 0;
+                height: 180px;
+                /* INCREASED HEIGHT */
+                overflow: hidden;
+            }
+
+            /* Make all product images the same size and centered */
+            #cart-items .cart-item-mobile .product-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            /* Product details take remaining width */
+            #cart-items .cart-item-mobile .product-details {
+                width: 65%;
+                padding-right: 10px;
+            }
+
+            /* Product title and brand */
+            #cart-items .cart-item-mobile h3 {
+                font-size: 0.85rem;
+                margin-bottom: 0.25rem;
+            }
+
+            #cart-items .cart-item-mobile .brand {
+                font-size: 0.75rem;
+                margin-bottom: 0.5rem;
+            }
+
+            /* Size and color selectors */
+            #cart-items .cart-item-mobile .selectors {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-bottom: 0.5rem;
+            }
+
+            #cart-items .cart-item-mobile .selector-group {
+                width: calc(50% - 4px);
+                min-width: 0;
+            }
+
+            #cart-items .cart-item-mobile label {
+                font-size: 0.7rem;
+                margin-bottom: 0.25rem;
+            }
+
+            /* Adjust select dropdown for mobile */
+            #cart-items .cart-item-mobile .select-selected {
+                height: 2rem;
+                font-size: 0.7rem;
+                padding: 0.3rem 1.5rem 0.3rem 0.5rem;
+                min-width: 0;
+            }
+
+            #cart-items .cart-item-mobile .select-selected::after {
+                width: 10px;
+                height: 10px;
+                right: 0.5rem;
+            }
+
+            /* Quantity and action buttons */
+            #cart-items .cart-item-mobile .actions {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                align-items: center;
+            }
+
+            /* Adjust quantity selector */
+            #cart-items .cart-item-mobile .custom-quantity-selector {
+                transform: scale(0.85);
+                transform-origin: left;
+                margin-right: 5px;
+            }
+
+            /* Action buttons */
+            #cart-items .cart-item-mobile .action-btn {
+                font-size: 0.65rem;
+                white-space: nowrap;
+            }
+
+            /* Price display */
+            #cart-items .cart-item-mobile .price {
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 0.9rem;
+                font-weight: 400;
+            }
+
+            /* Adjust order summary */
+            .order-summary h2 {
+                font-size: 1.8rem;
+            }
+
+            .order-summary p {
+                font-size: 0.9rem;
+            }
+
+            .order-summary button {
+                font-size: 0.75rem;
+                padding: 0.8rem 0;
+            }
+
+            /* Adjust recommendations section */
+            #recommendations-section h2 {
+                font-size: 1.8rem;
+            }
+
+            #recommendations-section p {
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
+            }
+
+            /* Make "You May Also Like" section content smaller on mobile */
+            #recommendations-slider .flex-shrink-0 {
+                width: 220px;
+                /* Smaller width for recommendation items */
+            }
+
+            #recommendations-slider img {
+                height: 280px;
+                /* Smaller height for recommendation images */
+            }
+
+            #recommendations-slider h3 {
+                font-size: 0.8rem;
+                /* Smaller product title */
+            }
+
+            #recommendations-slider p {
+                font-size: 0.7rem;
+                /* Smaller text */
+            }
+
+            #recommendations-slider button {
+                font-size: 0.7rem;
+                padding: 0.5rem;
+            }
+
+            #recommendations-slider .absolute.top-4.right-4 button {
+                padding: 0.35rem;
+            }
+
+            #recommendations-slider .absolute.top-4.right-4 svg {
+                height: 0.9rem;
+                width: 0.9rem;
+            }
+
+            #prev-recommendations,
+            #next-recommendations {
+                padding: 0.5rem;
+            }
+
+            #prev-recommendations svg,
+            #next-recommendations svg {
+                height: 1rem;
+                width: 1rem;
+            }
+
+            /* Adjust position of recommendation navigation buttons on mobile */
+            #prev-recommendations,
+            #next-recommendations {
+                padding: 0.5rem;
+                top: 40%;
+                /* Move up from 50% to 40% */
+            }
+
+            /* Promo code section */
+            input[type="text"] {
+                font-size: 0.8rem;
+                padding: 0.6rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased bg-white text-gray-900 transition-colors duration-300">
+    <!-- Page Title Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-light text-center font-display page-title" data-aos="fade-up">Shopping Cart</h1>
+            <p class="text-center text-gray-600 mt-4 max-w-2xl mx-auto font-light page-subtitle" data-aos="fade-up"
+                data-aos-delay="100">
+                Review your items and proceed to checkout
+            </p>
+        </div>
+    </section>
+
+    <!-- Cart Content Section -->
+    <section class="py-16">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Cart Items -->
+                <div class="lg:w-2/3" data-aos="fade-up">
+                    <div class="mb-8 pb-4 border-b border-gray-200">
+                        <h2 class="text-2xl font-light font-display mb-6">Your Items</h2>
+
+                        <!-- Empty Cart Message (hidden when items exist) -->
+                        <div id="empty-cart-message" class="hidden text-center py-12">
+                            <p class="text-gray-500 font-light mb-6">Your shopping cart is empty</p>
+                            <a href="index.html"
+                                class="inline-block bg-black text-white px-8 py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">
+                                Continue Shopping
+                            </a>
+                        </div>
+
+                        <!-- Cart Items List -->
+                        <div id="cart-items">
+                            <!-- Cart Item 1 -->
+                            <div class="py-8 border-b border-gray-100">
+                                <!-- Mobile Layout (only shows on mobile) -->
+                                <div class="md:hidden cart-item-mobile">
+                                    <div class="product-image">
+                                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                            alt="Designer Sneakers" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="product-details">
+                                        <h3 class="text-base font-light">Triple S Sneakers</h3>
+                                        <p class="text-sm text-gray-500 brand">Balenciaga</p>
+                                        <div class="price">€895</div>
+                                        <div class="selectors">
+                                            <div class="selector-group relative">
+                                                <label for="size-item1-mobile" class="block">Size:</label>
+                                                <div class="custom-select">
+                                                    <select id="size-item1-mobile" class="size-select">
+                                                        <option value="40">40 EU</option>
+                                                        <option value="41">41 EU</option>
+                                                        <option value="42" selected>42 EU</option>
+                                                        <option value="43">43 EU</option>
+                                                        <option value="44">44 EU</option>
+                                                    </select>
+                                                    <div class="select-selected">42 EU</div>
+                                                </div>
+                                            </div>
+                                            <div class="selector-group relative">
+                                                <label for="color-item1-mobile" class="block">Color:</label>
+                                                <div class="custom-select">
+                                                    <select id="color-item1-mobile" class="color-select">
+                                                        <option value="black" data-color="black" selected>Black</option>
+                                                        <option value="white" data-color="white">White</option>
+                                                        <option value="red" data-color="red">Red</option>
+                                                    </select>
+                                                    <div class="select-selected">
+                                                        <div class="color-option">
+                                                            <span class="color-circle color-black"></span>
+                                                            Black
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="actions">
+                                            <div class="custom-quantity-selector">
+                                                <button class="quantity-btn minus">-</button>
+                                                <input type="number" min="1" value="1" class="quantity-input">
+                                                <button class="quantity-btn plus">+</button>
+                                            </div>
+                                            <button
+                                                class="text-sm text-gray-500 hover:text-black transition-colors action-btn move-to-wishlist">
+                                                Move to Wishlist
+                                            </button>
+                                            <button
+                                                class="text-sm text-gray-500 hover:text-black transition-colors action-btn remove-item">
+                                                Remove
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tablet/Desktop Layout (hidden on mobile) -->
+                                <div class="hidden md:flex md:flex-row items-start md:items-center">
+                                    <div class="w-24 h-40 flex-shrink-0 mb-4 md:mb-0 md:mr-6">
+                                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                            alt="Designer Sneakers" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="flex-grow md:mr-6">
+                                        <h3 class="text-base font-light mb-1">Triple S Sneakers</h3>
+                                        <p class="text-sm text-gray-500 mb-2">Balenciaga</p>
+                                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-3">
+                                            <div class="relative">
+                                                <label for="size-item1" class="block mb-1">Size:</label>
+                                                <div class="custom-select">
+                                                    <select id="size-item1" class="size-select">
+                                                        <option value="40">40 EU</option>
+                                                        <option value="41">41 EU</option>
+                                                        <option value="42" selected>42 EU</option>
+                                                        <option value="43">43 EU</option>
+                                                        <option value="44">44 EU</option>
+                                                    </select>
+                                                    <div class="select-selected">42 EU</div>
+                                                </div>
+                                            </div>
+                                            <div class="relative">
+                                                <label for="color-item1" class="block mb-1">Color:</label>
+                                                <div class="custom-select">
+                                                    <select id="color-item1" class="color-select">
+                                                        <option value="black" data-color="black" selected>Black</option>
+                                                        <option value="white" data-color="white">White</option>
+                                                        <option value="red" data-color="red">Red</option>
+                                                    </select>
+                                                    <div class="select-selected">
+                                                        <div class="color-option">
+                                                            <span class="color-circle color-black"></span>
+                                                            Black
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-4">
+                                            <div class="custom-quantity-selector">
+                                                <button class="quantity-btn minus">-</button>
+                                                <input type="number" min="1" value="1" class="quantity-input">
+                                                <button class="quantity-btn plus">+</button>
+                                            </div>
+                                            <button
+                                                class="text-sm text-gray-500 hover:text-black transition-colors move-to-wishlist">
+                                                Move to Wishlist
+                                            </button>
+                                            <button
+                                                class="text-sm text-gray-500 hover:text-black transition-colors remove-item">
+                                                Remove
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 md:mt-0 text-right">
+                                        <p class="text-lg font-light">€895</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cart Item 2 -->
+                            <div class="py-8 border-b border-gray-100">
+                                <!-- Mobile Layout (only shows on mobile) -->
+                                <div class="md:hidden cart-item-mobile">
+                                    <div class="product-image">
+                                        <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                            alt="Leather Biker Jacket" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="product-details">
+                                        <h3 class="text-base font-light">Leather Biker Jacket</h3>
+                                        <p class="text-sm text-gray-500 brand">Gucci</p>
+                                        <div class="price">€3,250</div>
+                                        <div class="selectors">
+                                            <div class="selector-group relative">
+                                                <label for="size-item2-mobile" class="block">Size:</label>
+                                                <div class="custom-select">
+                                                    <select id="size-item2-mobile" class="size-select">
+                                                        <option value="s">S</option>
+                                                        <option value="m" selected>M</option>
+                                                        <option value="l">L</option>
+                                                        <option value="xl">XL</option>
+                                                    </select>
+                                                    <div class="select-selected">M</div>
+                                                </div>
+                                            </div>
+                                            <div class="selector-group relative">
+                                                <label for="color-item2-mobile" class="block">Color:</label>
+                                                <div class="custom-select">
+                                                    <select id="color-item2-mobile" class="color-select">
+                                                        <option value="black" data-color="black" selected>Black</option>
+                                                        <option value="brown" data-color="brown">Brown</option>
+                                                    </select>
+                                                    <div class="select-selected">
+                                                        <div class="color-option">
+                                                            <span class="color-circle color-black"></span>
+                                                            Black
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="actions">
+                                            <div class="custom-quantity-selector">
+                                                <button class="quantity-btn minus">-</button>
+                                                <input type="number" min="1" value="1" class="quantity-input">
+                                                <button class="quantity-btn plus">+</button>
+                                            </div>
+                                            <button
+                                                class="text-sm text-gray-500 hover:text-black transition-colors action-btn move-to-wishlist">
+                                                Move to Wishlist
+                                            </button>
+                                            <button
+                                                class="text-sm text-gray-500 hover:text-black transition-colors action-btn remove-item">
+                                                Remove
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tablet/Desktop Layout (hidden on mobile) -->
+                                <div class="hidden md:flex md:flex-row items-start md:items-center">
+                                    <div class="w-24 h-40 flex-shrink-0 mb-4 md:mb-0 md:mr-6">
+                                        <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                            alt="Leather Biker Jacket" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="flex-grow md:mr-6">
+                                        <h3 class="text-base font-light mb-1">Leather Biker Jacket</h3>
+                                        <p class="text-sm text-gray-500 mb-2">Gucci</p>
+                                        <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-3">
+                                            <div class="relative">
+                                                <label for="size-item2" class="block mb-1">Size:</label>
+                                                <div class="custom-select">
+                                                    <select id="size-item2" class="size-select">
+                                                        <option value="s">S</option>
+                                                        <option value="m" selected>M</option>
+                                                        <option value="l">L</option>
+                                                        <option value="xl">XL</option>
+                                                    </select>
+                                                    <div class="select-selected">M</div>
+                                                </div>
+                                            </div>
+                                            <div class="relative">
+                                                <label for="color-item2" class="block mb-1">Color:</label>
+                                                <div class="custom-select">
+                                                    <select id="color-item2" class="color-select">
+                                                        <option value="black" data-color="black" selected>Black</option>
+                                                        <option value="brown" data-color="brown">Brown</option>
+                                                    </select>
+                                                    <div class="select-selected">
+                                                        <div class="color-option">
+                                                            <span class="color-circle color-black"></span>
+                                                            Black
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center gap-4">
+                                            <div class="custom-quantity-selector">
+                                                <button class="quantity-btn minus">-</button>
+                                                <input type="number" min="1" value="1" class="quantity-input">
+                                                <button class="quantity-btn plus">+</button>
+                                            </div>
+                                            <button
+                                                class="text-sm text-gray-500 hover:text-black transition-colors move-to-wishlist">
+                                                Move to Wishlist
+                                            </button>
+                                            <button
+                                                class="text-sm text-gray-500 hover:text-black transition-colors remove-item">
+                                                Remove
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 md:mt-0 text-right">
+                                        <p class="text-lg font-light">€3,250</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Promo Code Section -->
+                    <div class="mb-8" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-lg font-light mb-4">Promo Code</h3>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input type="text" placeholder="Enter promo code"
+                                class="flex-grow px-4 py-3 border border-gray-200 focus:outline-none focus:border-black transition-colors">
+                            <button
+                                class="bg-black text-white px-8 py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">
+                                Apply
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Continue Shopping Button -->
+                    <div class="mb-12" data-aos="fade-up" data-aos-delay="150">
+                        <a href="index.html"
+                            class="inline-flex items-center text-sm font-light hover:text-gray-500 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                            </svg>
+                            Continue Shopping
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="lg:w-1/3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-gray-50 p-8 sticky top-8 order-summary">
+                        <h2 class="text-2xl font-light font-display mb-6">Order Summary</h2>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="flex justify-between">
+                                <p class="text-gray-600 font-light">Subtotal</p>
+                                <p class="font-light">€4,145.00</p>
+                            </div>
+                            <div class="flex justify-between">
+                                <p class="text-gray-600 font-light">Shipping</p>
+                                <p class="font-light">€25.00</p>
+                            </div>
+                            <div class="flex justify-between">
+                                <p class="text-gray-600 font-light">Tax</p>
+                                <p class="font-light">€415.00</p>
+                            </div>
+                            <div class="flex justify-between border-t border-gray-200 pt-4">
+                                <p class="font-medium">Total</p>
+                                <p class="font-medium">€4,585.00</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-6 text-xs text-gray-500 font-light">
+                            <p>Shipping and taxes calculated at checkout</p>
+                        </div>
+
+                        <button
+                            class="w-full bg-black text-white py-4 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300 mb-4">
+                            Finish Order
+                        </button>
+
+                        <div class="flex justify-center space-x-4 mt-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa"
+                                class="h-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                                alt="Mastercard" class="h-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal"
+                                class="h-6">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg"
+                                alt="American Express" class="h-6">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- You May Also Like Section -->
+    <section class="py-24 bg-gray-50" id="recommendations-section">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-light text-center mb-4 font-display" data-aos="fade-up">You May Also Like</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-light" data-aos="fade-up"
+                data-aos-delay="100">
+                Curated recommendations based on your shopping preferences
+            </p>
+            <div class="relative" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex overflow-x-auto pb-8 space-x-8 no-scrollbar" id="recommendations-slider">
+                    <!-- Recommendation 1 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Luxury Sneakers"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                    <button
+                                        class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                        View</button>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button
+                                        class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                        aria-label="Add to wishlist">
+                                        <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Luxury Sneakers</h3>
+                                <p class="text-sm text-gray-500">Balenciaga</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€795</p>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 2 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1607522370275-f14206abe5d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Formal Shoes"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                    <button
+                                        class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                        View</button>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button
+                                        class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                        aria-label="Add to wishlist">
+                                        <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Oxford Shoes</h3>
+                                <p class="text-sm text-gray-500">Prada</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€850</p>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 3 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Luxury Sunglasses"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                    <button
+                                        class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                        View</button>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button
+                                        class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                        aria-label="Add to wishlist">
+                                        <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Oversized Sunglasses</h3>
+                                <p class="text-sm text-gray-500">Gucci</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€375</p>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 4 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1605812860427-4024433a70fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Combat Boots"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                    <button
+                                        class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                        View</button>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button
+                                        class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                        aria-label="Add to wishlist">
+                                        <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Combat Boots</h3>
+                                <p class="text-sm text-gray-500">Saint Laurent</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€950</p>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 5 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1531310197839-ccf54634509e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Loafers"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                    <button
+                                        class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                        View</button>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button
+                                        class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                        aria-label="Add to wishlist">
+                                        <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Leather Loafers</h3>
+                                <p class="text-sm text-gray-500">Louis Vuitton</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€780</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button id="prev-recommendations"
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-3 shadow-md z-10 focus:outline-none hover:bg-gray-50 transition duration-300"
+                    aria-label="Previous items">
+                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="next-recommendations"
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-3 shadow-md z-10 focus:outline-none hover:bg-gray-50 transition duration-300"
+                    aria-label="Next items">
+                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-black text-white p-3 opacity-0 invisible transition-all duration-300 z-40"
+        aria-label="Back to top">
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 1000,
+            delay: 100
+        });
+
+        // Enhanced Custom Dropdowns
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize all custom select elements
+            const customSelects = document.querySelectorAll('.custom-select');
+
+            customSelects.forEach(customSelect => {
+                const select = customSelect.querySelector('select');
+                const selectSelected = customSelect.querySelector('.select-selected');
+
+                // Create custom dropdown
+                const customDropdown = document.createElement('div');
+                customDropdown.classList.add('custom-dropdown');
+
+                // Create dropdown options
+                Array.from(select.options).forEach((option, index) => {
+                    const dropdownOption = document.createElement('div');
+                    dropdownOption.classList.add('custom-dropdown-option');
+
+                    if (option.selected) {
+                        dropdownOption.classList.add('selected');
+                    }
+
+                    // Handle color options
+                    if (select.classList.contains('color-select')) {
+                        const color = option.getAttribute('data-color');
+
+                        const colorOption = document.createElement('div');
+                        colorOption.classList.add('color-option');
+
+                        const colorCircle = document.createElement('span');
+                        colorCircle.classList.add('color-circle', `color-${color}`);
+
+                        colorOption.appendChild(colorCircle);
+                        colorOption.appendChild(document.createTextNode(option.textContent));
+
+                        dropdownOption.appendChild(colorOption);
+                    } else {
+                        dropdownOption.textContent = option.textContent;
+                    }
+
+                    // Add click event to select option
+                    dropdownOption.addEventListener('click', () => {
+                        // Update the original select  () => {
+                        // Update the original select element
+                        select.selectedIndex = index;
+
+                        // Update the displayed value
+                        if (select.classList.contains('color-select')) {
+                            // Clone the color option but maintain the fixed height
+                            const newColorOption = document.createElement('div');
+                            newColorOption.classList.add('color-option');
+
+                            const colorCircle = dropdownOption.querySelector('.color-circle').cloneNode(true);
+                            const textContent = dropdownOption.querySelector('.color-option').textContent;
+
+                            newColorOption.appendChild(colorCircle);
+                            newColorOption.appendChild(document.createTextNode(textContent));
+
+                            // Clear and set the new content
+                            selectSelected.innerHTML = '';
+                            selectSelected.appendChild(newColorOption);
+                        } else {
+                            selectSelected.textContent = option.textContent;
+                        }
+
+                        // Update selected class
+                        customDropdown.querySelectorAll('.custom-dropdown-option').forEach(opt => {
+                            opt.classList.remove('selected');
+                        });
+                        dropdownOption.classList.add('selected');
+
+                        // Hide dropdown
+                        customDropdown.style.display = 'none';
+
+                        // Remove active class from select-selected
+                        selectSelected.classList.remove('active');
+
+                        // Trigger change event on the original select
+                        const event = new Event('change', { bubbles: true });
+                        select.dispatchEvent(event);
+                    });
+
+                    customDropdown.appendChild(dropdownOption);
+                });
+
+                // Add dropdown to the custom select container
+                customSelect.appendChild(customDropdown);
+
+                // Toggle dropdown on click
+                selectSelected.addEventListener('click', (e) => {
+                    e.stopPropagation();
+
+                    // Close all other dropdowns and remove active class
+                    document.querySelectorAll('.custom-dropdown').forEach(dropdown => {
+                        if (dropdown !== customDropdown) {
+                            dropdown.style.display = 'none';
+                            dropdown.parentElement.querySelector('.select-selected').classList.remove('active');
+                        }
+                    });
+
+                    // Toggle this dropdown
+                    const isOpen = customDropdown.style.display === 'block';
+                    customDropdown.style.display = isOpen ? 'none' : 'block';
+
+                    // Toggle active class for rotation
+                    selectSelected.classList.toggle('active', !isOpen);
+                });
+            });
+
+            // Close all dropdowns when clicking outside
+            document.addEventListener('click', () => {
+                document.querySelectorAll('.custom-dropdown').forEach(dropdown => {
+                    dropdown.style.display = 'none';
+                    dropdown.parentElement.querySelector('.select-selected').classList.remove('active');
+                });
+            });
+
+            // Initialize the recommendations slider navigation
+            const slider = document.getElementById('recommendations-slider');
+            const prevBtn = document.getElementById('prev-recommendations');
+            const nextBtn = document.getElementById('next-recommendations');
+
+            // Set scroll amount (width of one item plus gap)
+            const scrollAmount = 300; // Approximate width of item (272px) + gap (28px)
+
+            // Add click event for previous button
+            prevBtn.addEventListener('click', () => {
+                slider.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Add click event for next button
+            nextBtn.addEventListener('click', () => {
+                slider.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Quantity Selector
+        const quantityBtns = document.querySelectorAll('.quantity-btn');
+
+        quantityBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const input = btn.parentElement.querySelector('.quantity-input');
+                let value = parseInt(input.value);
+
+                if (btn.classList.contains('plus')) {
+                    value++;
+                } else if (btn.classList.contains('minus') && value > 1) {
+                    value--;
+                }
+
+                input.value = value;
+                updateCartTotals();
+            });
+        });
+
+        // Remove Item
+        const removeButtons = document.querySelectorAll('.remove-item');
+
+        removeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const cartItem = button.closest('.py-8.border-b.border-gray-100');
+                cartItem.remove();
+
+                // Check if cart is empty
+                const cartItems = document.querySelectorAll('#cart-items > div');
+                if (cartItems.length === 0) {
+                    document.getElementById('empty-cart-message').classList.remove('hidden');
+                }
+
+                updateCartTotals();
+            });
+        });
+
+        // Move to Wishlist
+        const wishlistButtons = document.querySelectorAll('.move-to-wishlist');
+
+        wishlistButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Item moved to wishlist');
+                const cartItem = button.closest('.py-8.border-b.border-gray-100');
+                cartItem.remove();
+
+                // Check if cart is empty
+                const cartItems = document.querySelectorAll('#cart-items > div');
+                if (cartItems.length === 0) {
+                    document.getElementById('empty-cart-message').classList.remove('hidden');
+                }
+
+                updateCartTotals();
+            });
+        });
+
+        // Update Cart Totals (placeholder function)
+        function updateCartTotals() {
+            // In a real implementation, this would recalculate totals based on quantities and prices
+            console.log('Cart totals updated');
+        }
+
+        // Handle size and color changes
+        const sizeSelects = document.querySelectorAll('.size-select');
+        const colorSelects = document.querySelectorAll('.color-select');
+
+        sizeSelects.forEach(select => {
+            select.addEventListener('change', function () {
+                console.log(`Size changed to ${this.value} for item ${this.id.split('-')[1]}`);
+                // In a real implementation, this would update the product details and possibly the price
+                // We don't need the alert anymore since we're handling the UI update in the custom dropdown
+            });
+        });
+
+        colorSelects.forEach(select => {
+            select.addEventListener('change', function () {
+                console.log(`Color changed to ${this.value} for item ${this.id.split('-')[1]}`);
+                // In a real implementation, this would update the product image and details
+                // We don't need the alert anymore since we're handling the UI update in the custom dropdown
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

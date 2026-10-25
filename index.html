@@ -1,0 +1,2663 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="REX STORE - Premium Fashion Retailer offering curated collections for men and kids">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>REX STORE | Premium Men's & Kids' Fashion</title>
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="font-sans antialiased bg-white text-gray-900 transition-colors duration-300">
+    <!-- Announcement Bar -->
+    <div class="bg-black text-white py-2 text-xs overflow-hidden announcement-bar" aria-label="Announcements">
+        <div class="announcement-slider flex whitespace-nowrap">
+            <p class="px-4 announcement-item">Complimentary shipping on orders over €500</p>
+            <p class="px-4 announcement-item">Personal styling appointments available in-store</p>
+            <p class="px-4 announcement-item">New arrivals: Autumn/Winter 2025 collections now in store</p>
+            <p class="px-4 announcement-item">Complimentary gift wrapping on all orders</p>
+            <!-- Duplicate for infinite scroll effect -->
+            <p class="px-4 announcement-item">Complimentary shipping on orders over €500</p>
+            <p class="px-4 announcement-item">Personal styling appointments available in-store</p>
+            <p class="px-4 announcement-item">New arrivals: Autumn/Winter 2025 collections now in store</p>
+            <p class="px-4 announcement-item">Complimentary gift wrapping on all orders</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="border-b border-gray-100">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Left Categories -->
+                <nav class="hidden md:flex space-x-10" aria-label="Categories">
+                    <a href="#"
+                        class="text-xs font-medium uppercase tracking-widest hover:text-gray-500 transition-colors">Men</a>
+                    <a href="#"
+                        class="text-xs font-medium uppercase tracking-widest hover:text-gray-500 transition-colors">Kids</a>
+                    <a href="#"
+                        class="text-xs font-medium uppercase tracking-widest hover:text-gray-500 transition-colors">Accessories</a>
+                    <a href="#"
+                        class="text-xs font-medium uppercase tracking-widest hover:text-gray-500 transition-colors">Home</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden p-2 focus:outline-none" aria-label="Toggle mobile menu"
+                    aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+
+                <!-- Logo and Store Name -->
+                <a href="index.html" class="flex-shrink-0 flex items-center" aria-label="REX STORE Home">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot_2025-04-17-02-08-56-207_com.zhiliaoapp.musically-Photoroom-Islpi1NVMMAb1OrIBTJq14a4AqrHNn.png"
+                        alt="REX STORE Logo" class="h-10 mr-3">
+                    <h1 class="text-2xl font-light tracking-widest font-display">REX STORE</h1>
+                </a>
+
+                <!-- Right Icons with Language Selector -->
+                <div class="flex items-center space-x-6">
+                    <div class="relative language-selector">
+                        <button id="language-toggle" class="p-2 focus:outline-none flex items-center"
+                            aria-label="Select language" aria-expanded="false" aria-controls="language-dropdown">
+                            <img src="https://flagcdn.com/w40/gb.png" alt="English"
+                                class="flag-icon w-5 h-3 object-cover mr-2">
+                            <span class="language-name text-xs font-light tracking-wide hidden sm:inline">English</span>
+                            <span class="language-code text-xs font-light sm:hidden">EN</span>
+                            <svg class="h-3 w-3 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div id="language-dropdown"
+                            class="absolute right-0 mt-2 w-48 bg-white shadow-xl rounded-none py-1 z-50 hidden language-dropdown"
+                            role="menu" aria-orientation="vertical" aria-labelledby="language-toggle">
+                            <a href="#" class="language-option flex items-center px-4 py-2 text-sm hover:bg-gray-50"
+                                data-lang="en" data-flag="https://flagcdn.com/w40/gb.png" role="menuitem">
+                                <img src="https://flagcdn.com/w40/gb.png" alt="English"
+                                    class="flag-icon w-5 h-3 object-cover mr-2">
+                                <span class="language-name">English</span>
+                            </a>
+                            <a href="#" class="language-option flex items-center px-4 py-2 text-sm hover:bg-gray-50"
+                                data-lang="fr" data-flag="https://flagcdn.com/w40/fr.png" role="menuitem">
+                                <img src="https://flagcdn.com/w40/fr.png" alt="Français"
+                                    class="flag-icon w-5 h-3 object-cover mr-2">
+                                <span class="language-name">Français</span>
+                            </a>
+                            <a href="#" class="language-option flex items-center px-4 py-2 text-sm hover:bg-gray-50"
+                                data-lang="it" data-flag="https://flagcdn.com/w40/it.png" role="menuitem">
+                                <img src="https://flagcdn.com/w40/it.png" alt="Italiano"
+                                    class="flag-icon w-5 h-3 object-cover mr-2">
+                                <span class="language-name">Italiano</span>
+                            </a>
+                            <a href="#" class="language-option flex items-center px-4 py-2 text-sm hover:bg-gray-50"
+                                data-lang="ar" data-flag="https://flagcdn.com/w40/ma.png" role="menuitem">
+                                <img src="https://flagcdn.com/w40/ma.png" alt="العربية"
+                                    class="flag-icon w-5 h-3 object-cover mr-2">
+                                <span class="language-name">العربية</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Other header icons -->
+                    <button id="search-toggle" class="p-2 focus:outline-none" aria-label="Search">
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+
+                    <!-- Account Button -->
+                    <button id="account-toggle" class="p-2" aria-label="Account">
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </button>
+
+                    <!-- Wishlist Button -->
+                    <a href="#" class="p-2" aria-label="Wishlist">
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </a>
+
+                    <!-- Cart Button -->
+                    <a href="#" class="p-2 relative" aria-label="Shopping cart with 2 items">
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        <span
+                            class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-light leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-black rounded-full">2</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Replace your Main Navigation section with this updated version -->
+        <!-- Main Navigation -->
+        <div class="border-t border-gray-100">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="hidden md:flex justify-center py-4 relative" aria-label="Main navigation">
+                    <ul class="flex space-x-8">
+                        <li class="relative">
+                            <a href="#"
+                                class="text-xs font-light uppercase tracking-widest hover:text-gray-500 transition-colors has-dropdown"
+                                data-dropdown="new-arrivals">New Arrivals</a>
+                        </li>
+                        <li class="relative">
+                            <a href="#"
+                                class="text-xs font-light uppercase tracking-widest hover:text-gray-500 transition-colors has-dropdown"
+                                data-dropdown="brands">Brands</a>
+                        </li>
+                        <li class="relative">
+                            <a href="#"
+                                class="text-xs font-light uppercase tracking-widest hover:text-gray-500 transition-colors has-dropdown"
+                                data-dropdown="collections">Collections</a>
+                        </li>
+                        <li class="relative">
+                            <a href="#"
+                                class="text-xs font-light uppercase tracking-widest hover:text-gray-500 transition-colors has-dropdown"
+                                data-dropdown="clothing">Clothing</a>
+                        </li>
+                        <li class="relative">
+                            <a href="#"
+                                class="text-xs font-light uppercase tracking-widest hover:text-gray-500 transition-colors has-dropdown"
+                                data-dropdown="shoes">Shoes</a>
+                        </li>
+                        <li class="relative">
+                            <a href="#"
+                                class="text-xs font-light uppercase tracking-widest hover:text-gray-500 transition-colors has-dropdown"
+                                data-dropdown="bags">Bags</a>
+                        </li>
+                        <li class="relative">
+                            <a href="#"
+                                class="text-xs font-light uppercase tracking-widest hover:text-gray-500 transition-colors has-dropdown"
+                                data-dropdown="accessories">Accessories</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Add the Mega Dropdowns -->
+        <!-- Pre-Owned Dropdown -->
+        <!-- Brands Dropdown (Updated with Luxury Brands Column) -->
+        <div id="brands-dropdown" class="mega-dropdown">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-12 gap-8 py-8">
+                    <!-- Featured Brands Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">FEATURED BRANDS</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Nike</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Adidas</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Lacoste</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Puma</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Under Armour</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Ralph Lauren</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Tommy Hilfiger</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Calvin Klein</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">The North Face</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Levi's</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Luxury Brands Column (NEW) -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">LUXURY BRANDS</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Christian Dior</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Gucci</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Louis Vuitton</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Prada</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Balenciaga</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Versace</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Burberry</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Saint Laurent</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Fendi</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Valentino</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Brands A-Z Column (Adjusted width) -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">BRANDS A-Z</h3>
+
+                        <div class="grid grid-cols-5 gap-4">
+                            <!-- First Row -->
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">0-9</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">A</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">B</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">C</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">D</a>
+                            </div>
+
+                            <!-- Second Row -->
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">E</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">F</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">G</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">H</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">I</a>
+                            </div>
+
+                            <!-- Third Row -->
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">J</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">K</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">L</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">M</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">N</a>
+                            </div>
+
+                            <!-- Fourth Row -->
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">O</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">P</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">Q</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">R</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">S</a>
+                            </div>
+
+                            <!-- Fifth Row -->
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">T</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">U</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">V</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">W</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">X</a>
+                            </div>
+
+                            <!-- Sixth Row -->
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">Y</a>
+                            </div>
+                            <div class="text-center">
+                                <a href="#" class="text-sm font-medium">Z</a>
+                            </div>
+                            <div class="text-center col-span-3 mt-4">
+                                <a href="#" class="text-sm hover:text-gray-500 transition-colors">View All</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Brand Focus Column -->
+                    <div class="col-span-3">
+                        <div class="h-full flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Louis Vuitton Men's Collection" class="w-full h-48 object-cover mb-4">
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-600">Brand focus</p>
+                                <h4 class="text-lg font-medium mb-2">LOUIS VUITTON</h4>
+                                <a href="#" class="text-sm font-medium hover:underline">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Collections Dropdown (Updated to match Brands dropdown style) -->
+        <div id="collections-dropdown" class="mega-dropdown">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-12 gap-8 py-8">
+                    <!-- Seasonal Collections Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">SEASONAL COLLECTIONS</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Summer Collection</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Winter Essentials</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Spring Lookbook</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Autumn Styles</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Holiday Edit</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Resort Collection</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Featured Collections Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">FEATURED COLLECTIONS</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">New Season</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Bestsellers</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Limited Edition</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Exclusive Items</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Collaborations</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Capsule Collection</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Occasions Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">OCCASIONS</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Evening Wear</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Workwear</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Vacation Edit</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Weekend Casual</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Special Events</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Formal Attire</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Featured Column -->
+                    <div class="col-span-3">
+                        <div class="h-full flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Featured collection" class="w-full h-48 object-cover mb-4">
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-600">Featured</p>
+                                <h4 class="text-lg font-medium mb-2">SUMMER COLLECTION</h4>
+                                <a href="#" class="text-sm font-medium hover:underline">Explore Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Clothing Dropdown (Updated with MATERIALS section) -->
+        <div id="clothing-dropdown" class="mega-dropdown">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-12 gap-8 py-8">
+                    <!-- Tops Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">TOPS</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Sweatshirt</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Crewneck</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Hoodie</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">T-shirt</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Tank Top</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Football Jersey</a>
+                            </li>
+                        </ul>
+
+                        <!-- MATERIALS section added below TOPS -->
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6 mt-8">MATERIALS</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Cotton Clothes</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">All Clothing</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Bottoms Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">BOTTOMS</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Trousers / Pants</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Track Pants</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Shorts</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Sweatpants</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Joggers</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Sets & Outerwear Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">SETS & OUTERWEAR</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Tracksuits</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Track Jacket</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">T-shirt and Shorts
+                                    Set</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Jackets</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Long Thermal Underwear
+                                    and
+                                    Inner Hoodie</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Featured Column -->
+                    <div class="col-span-3">
+                        <div class="h-full flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Clothing Collection" class="w-full h-48 object-cover mb-4">
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-600">Featured</p>
+                                <h4 class="text-lg font-medium mb-2">NEW ARRIVALS</h4>
+                                <a href="#" class="text-sm font-medium hover:underline">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Arrivals Dropdown (Updated to match Brands dropdown style) -->
+        <div id="new-arrivals-dropdown" class="mega-dropdown">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-12 gap-8 py-8">
+                    <!-- New This Week Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">NEW THIS WEEK</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Women's New
+                                    Arrivals</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Men's New Arrivals</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Kids' New Arrivals</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Home New Arrivals</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Beauty New
+                                    Arrivals</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Accessories New
+                                    Arrivals</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Trending Now Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">TRENDING NOW</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Seasonal
+                                    Must-Haves</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Bestsellers</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Editor's Picks</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Top Rated</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Celebrity
+                                    Favorites</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Social Media
+                                    Trends</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Just Landed Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">JUST LANDED</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Designer
+                                    Collaborations</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Limited Editions</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Exclusive Pieces</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Pre-Order Items</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Capsule
+                                    Collections</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">New Designers</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Featured Column -->
+                    <div class="col-span-3">
+                        <div class="h-full flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="New arrivals spotlight" class="w-full h-48 object-cover mb-4">
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-600">Just Dropped</p>
+                                <h4 class="text-lg font-medium mb-2">EXCLUSIVE COLLECTION</h4>
+                                <a href="#" class="text-sm font-medium hover:underline">Discover Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Shoes Dropdown -->
+        <div id="shoes-dropdown" class="mega-dropdown">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-12 gap-8 py-8">
+                    <!-- Sports Shoes Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">SPORTS SHOES</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Running Shoes</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Basketball Shoes</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Football Boots</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Tennis Shoes</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Training Shoes</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Golf Shoes</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Sneakers Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">SNEAKERS</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">All Sneakers</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Hi-top</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Low-top</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Athletic Sneakers</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Retro Sneakers</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Limited Edition</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Sandals Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">SANDALS</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Casual Sandals</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Leather Sandals</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Sport Sandals</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Slides</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Flip Flops</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Outdoor Sandals</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Featured Column -->
+                    <div class="col-span-3">
+                        <div class="h-full flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Men's Shoes Collection" class="w-full h-48 object-cover mb-4">
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-600">Featured</p>
+                                <h4 class="text-lg font-medium mb-2">MEN'S FOOTWEAR</h4>
+                                <a href="#" class="text-sm font-medium hover:underline">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bags Dropdown -->
+        <div id="bags-dropdown" class="mega-dropdown">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-12 gap-8 py-8">
+                    <!-- Bag Types Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">BAG TYPES</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">All Bags</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Backpacks</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Crossbody Bags</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Neck Pouches</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Wallets</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Belt Bags</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Messenger Bags</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Tote Bags</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Collections Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">COLLECTIONS</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Business
+                                    Collection</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Travel Collection</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Outdoor Collection</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Casual Collection</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Luxury Collection</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Limited Edition</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Materials Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">MATERIALS</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Leather Bags</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Canvas Bags</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Nylon Bags</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Suede Bags</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Recycled Materials</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Waterproof Bags</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Featured Column -->
+                    <div class="col-span-3">
+                        <div class="h-full flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Men's Bags Collection" class="w-full h-48 object-cover mb-4">
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-600">Featured</p>
+                                <h4 class="text-lg font-medium mb-2">MEN'S LUGGAGE & HOLDALLS</h4>
+                                <a href="#" class="text-sm font-medium hover:underline">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accessories Dropdown -->
+        <div id="accessories-dropdown" class="mega-dropdown">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-12 gap-8 py-8">
+                    <!-- Accessories Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">ACCESSORIES</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Cap</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Perfumes</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Sunglasses</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Watch</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Bracelets</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Ring</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Necklace / Chain</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Belts</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Socks</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Men's Accessories Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">MEN'S ACCESSORIES</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Men's Watches</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Men's Jewelry</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Men's Belts</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Men's Hats & Caps</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Men's Ties</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Men's Sunglasses</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Men's Wallets</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Collections Column -->
+                    <div class="col-span-3">
+                        <h3 class="text-xs font-medium uppercase tracking-widest mb-6">COLLECTIONS</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Luxury Accessories</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Seasonal
+                                    Accessories</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Limited Edition</a>
+                            </li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">New Arrivals</a></li>
+                            <li><a href="#" class="text-sm hover:text-gray-500 transition-colors">Best Sellers</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Featured Column -->
+                    <div class="col-span-3">
+                        <div class="h-full flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                                alt="Men's Accessories Collection" class="w-full h-48 object-cover mb-4">
+                            <div class="mt-auto">
+                                <p class="text-sm text-gray-600">Featured</p>
+                                <h4 class="text-lg font-medium mb-2">PREMIUM ACCESSORIES</h4>
+                                <a href="#" class="text-sm font-medium hover:underline">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100">
+            <div class="px-4 py-6 space-y-6">
+                <!-- Mobile Language Selector -->
+                <div class="border-b border-gray-100 pb-4">
+                    <h3 class="text-xs font-medium uppercase tracking-widest mb-3">Language</h3>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button
+                            class="mobile-language-option flex items-center justify-center px-3 py-2 text-sm border border-gray-200 hover:bg-gray-50"
+                            data-lang="en" data-flag="https://flagcdn.com/w40/gb.png">
+                            <img src="https://flagcdn.com/w40/gb.png" alt="English"
+                                class="flag-icon w-5 h-3 object-cover mr-2">
+                            <span class="language-name">English</span>
+                        </button>
+                        <button
+                            class="mobile-language-option flex items-center justify-center px-3 py-2 text-sm border border-gray-200 hover:bg-gray-50"
+                            data-lang="fr" data-flag="https://flagcdn.com/w40/fr.png">
+                            <img src="https://flagcdn.com/w40/fr.png" alt="Français"
+                                class="flag-icon w-5 h-3 object-cover mr-2">
+                            <span class="language-name">Français</span>
+                        </button>
+                        <button
+                            class="mobile-language-option flex items-center justify-center px-3 py-2 text-sm border border-gray-200 hover:bg-gray-50"
+                            data-lang="it" data-flag="https://flagcdn.com/w40/it.png">
+                            <img src="https://flagcdn.com/w40/it.png" alt="Italiano"
+                                class="flag-icon w-5 h-3 object-cover mr-2">
+                            <span class="language-name">Italiano</span>
+                        </button>
+                        <button
+                            class="mobile-language-option flex items-center justify-center px-3 py-2 text-sm border border-gray-200 hover:bg-gray-50"
+                            data-lang="ar" data-flag="https://flagcdn.com/w40/ma.png">
+                            <img src="https://flagcdn.com/w40/ma.png" alt="العربية"
+                                class="flag-icon w-5 h-3 object-cover mr-2">
+                            <span class="language-name">العربية</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Categories -->
+                <div class="border-b border-gray-100 pb-4">
+                    <h3 class="text-xs font-medium uppercase tracking-widest mb-3">Categories</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="block text-sm hover:text-gray-500">Men</a></li>
+                        <li><a href="#" class="block text-sm hover:text-gray-500">Kids</a></li>
+                        <li><a href="#" class="block text-sm hover:text-gray-500">Accessories</a></li>
+                        <li><a href="#" class="block text-sm hover:text-gray-500">Home</a></li>
+                    </ul>
+                </div>
+
+                <!-- Mobile Shop Links -->
+                <div>
+                    <h3 class="text-xs font-medium uppercase tracking-widest mb-3">Shop</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="block text-sm hover:text-gray-500">New Arrivals</a></li>
+                        <li><a href="#" class="block text-sm hover:text-gray-500">Brands</a></li>
+                        <li><a href="#" class="block text-sm hover:text-gray-500">Collections</a></li>
+                        <li><a href="#" class="block text-sm hover:text-gray-500">Clothing</a></li>
+                        <li><a href="#" class="block text-sm hover:text-gray-500">Shoes</a>
+                            <ul class="pl-4 mt-2 space-y-2">
+                                <li><a href="#" class="block text-sm hover:text-gray-500">Sports Shoes</a></li>
+                                <li><a href="#" class="block text-sm hover:text-gray-500">Sneakers</a></li>
+                                <li><a href="#" class="block text-sm hover:text-gray-500">Sandals</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="block text-sm hover:text-gray-500">Bags</a></li>
+                        <li><a href="#" class="block text-sm hover:text-gray-500">Accessories</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay"
+        class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-start justify-center pt-32 hidden"
+        aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="search-title">
+        <div class="bg-white p-10 max-w-2xl w-full mx-4">
+            <div class="flex justify-between items-center mb-8">
+                <h3 id="search-title" class="text-xl font-light font-display">Search our brands and products</h3>
+                <button id="close-search" class="text-gray-500 hover:text-gray-900" aria-label="Close search">
+                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="relative">
+                <label for="search-input" class="sr-only">Search</label>
+                <input type="text" id="search-input" placeholder="Search for brands, products, categories..."
+                    class="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black text-gray-900 text-lg font-light">
+                <button class="absolute right-0 top-3 text-gray-500 hover:text-gray-900" aria-label="Submit search">
+                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="mt-10">
+                <h4 class="text-sm font-light text-gray-500 mb-4">Trending Searches</h4>
+                <div class="flex flex-wrap gap-3">
+                    <a href="#"
+                        class="px-4 py-2 border border-gray-200 text-gray-800 text-sm hover:bg-gray-50 transition duration-300">Men's
+                        Suits</a>
+                    <a href="#"
+                        class="px-4 py-2 border border-gray-200 text-gray-800 text-sm hover:bg-gray-50 transition duration-300">Kids'
+                        Outerwear</a>
+                    <a href="#"
+                        class="px-4 py-2 border border-gray-200 text-gray-800 text-sm hover:bg-gray-50 transition duration-300">Luxury
+                        Watches</a>
+                    <a href="#"
+                        class="px-4 py-2 border border-gray-200 text-gray-800 text-sm hover:bg-gray-50 transition duration-300">New
+                        Season</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign In Modal -->
+    <div id="auth-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center hidden"
+        aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+        <div class="bg-white p-6 max-w-md w-full mx-4 relative">
+            <button id="close-auth" class="absolute right-6 top-6 text-gray-500 hover:text-gray-900"
+                aria-label="Close authentication">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <h2 id="auth-title" class="text-2xl font-light mb-4 font-display text-center">Welcome Back</h2>
+
+            <!-- Auth Tabs -->
+            <div class="flex border-b border-gray-200 mb-6">
+                <button id="signin-tab"
+                    class="auth-tab active flex-1 text-center py-3 text-sm font-medium uppercase tracking-widest">
+                    Sign In
+                </button>
+                <button id="signup-tab"
+                    class="auth-tab flex-1 text-center py-3 text-sm font-medium uppercase tracking-widest text-gray-400">
+                    Create Account
+                </button>
+            </div>
+
+            <!-- Sign In Form -->
+            <form id="signin-form" class="space-y-4">
+                <div>
+                    <label for="email" class="block text-sm font-light text-gray-700 mb-1">Email address</label>
+                    <input type="email" id="email" name="email" required
+                        class="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black text-gray-900 text-sm font-light">
+                </div>
+
+                <div>
+                    <label for="password" class="block text-sm font-light text-gray-700 mb-1">Password</label>
+                    <input type="password" id="password" name="password" required
+                        class="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black text-gray-900 text-sm font-light">
+                </div>
+
+                <div class="text-right">
+                    <a href="#" class="text-sm font-light text-gray-600 hover:text-black transition-colors">
+                        Forgot your password?
+                    </a>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition-all duration-300">
+                    Sign In
+                </button>
+
+                <div class="relative flex items-center py-2">
+                    <div class="flex-grow border-t border-gray-300"></div>
+                    <span class="flex-shrink mx-4 text-gray-600 text-sm font-light">OR</span>
+                    <div class="flex-grow border-t border-gray-300"></div>
+                </div>
+
+                <button type="button"
+                    class="w-full border border-gray-300 text-gray-800 py-3 text-sm font-light flex items-center justify-center hover:bg-gray-50 transition-all duration-300">
+                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google"
+                        class="h-5 w-5 mr-3">
+                    Continue With Google
+                </button>
+            </form>
+
+            <!-- Sign Up Form (Hidden by default) -->
+            <form id="signup-form" class="space-y-4 hidden">
+                <div>
+                    <label for="new-email" class="block text-sm font-light text-gray-700 mb-1">Email address</label>
+                    <input type="email" id="new-email" name="email" required
+                        class="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black text-gray-900 text-sm font-light">
+                </div>
+
+                <div>
+                    <label for="new-password" class="block text-sm font-light text-gray-700 mb-1">Create
+                        password</label>
+                    <input type="password" id="new-password" name="password" required
+                        class="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black text-gray-900 text-sm font-light">
+                </div>
+
+                <div>
+                    <label for="confirm-password" class="block text-sm font-light text-gray-700 mb-1">Confirm
+                        password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required
+                        class="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black text-gray-900 text-sm font-light">
+                </div>
+
+                <div class="custom-checkbox">
+                    <input id="terms" name="terms" type="checkbox" required>
+                    <label for="terms" class="text-sm font-light text-gray-700">
+                        I agree to the <a href="#" class="text-black hover:underline">Terms of Service</a> and <a
+                            href="#" class="text-black hover:underline">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition-all duration-300">
+                    Create Account
+                </button>
+
+                <div class="relative flex items-center py-2">
+                    <div class="flex-grow border-t border-gray-300"></div>
+                    <span class="flex-shrink mx-4 text-gray-600 text-sm font-light">OR</span>
+                    <div class="flex-grow border-t border-gray-300"></div>
+                </div>
+
+                <button type="button"
+                    class="w-full border border-gray-300 text-gray-800 py-3 text-sm font-light flex items-center justify-center hover:bg-gray-50 transition-all duration-300">
+                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google"
+                        class="h-5 w-5 mr-3">
+                    Continue With Google
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- Forgot Password Modal -->
+    <div id="forgot-password-modal"
+        class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center hidden" aria-hidden="true"
+        role="dialog" aria-modal="true" aria-labelledby="forgot-password-title">
+        <div class="bg-white p-6 max-w-md w-full mx-4 relative">
+            <button id="close-forgot-password" class="absolute right-6 top-6 text-gray-500 hover:text-gray-900"
+                aria-label="Close forgot password">
+                <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <h2 id="forgot-password-title" class="text-2xl font-light mb-4 font-display text-center">Reset Your Password
+            </h2>
+            <p class="text-center text-gray-600 mb-6 font-light">Enter your email address and we'll send you a link to
+                reset
+                your password.</p>
+
+            <!-- Forgot Password Form -->
+            <form id="forgot-password-form" class="space-y-4">
+                <div>
+                    <label for="reset-email" class="block text-sm font-light text-gray-700 mb-1">Email address</label>
+                    <input type="email" id="reset-email" name="email" required
+                        class="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black text-gray-900 text-sm font-light">
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition-all duration-300">
+                    Send Reset Link
+                </button>
+
+                <div class="text-center mt-4">
+                    <a href="#" id="back-to-signin"
+                        class="text-sm font-light text-gray-600 hover:text-black transition-colors">
+                        Back to Sign In
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-container" aria-label="Featured promotion">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2 class="hero-title">Autumn Collections 2025</h2>
+            <p class="hero-subtitle">Discover the latest arrivals from top designer brands for men and kids, carefully
+                selected for our discerning customers.</p>
+            <div class="hero-buttons">
+                <a href="#" class="hero-button hero-button-primary">Shop Men's</a>
+                <a href="#" class="hero-button hero-button-secondary">Shop Kids'</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#featured-brands" class="text-white" aria-label="Scroll to featured brands">
+                <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="  fill=" none" viewBox="0 0 24 24" stroke="currentColor"
+                    aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Brands Section -->
+    <section id="featured-brands" class="py-24 bg-gray-50">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-light text-center mb-4 font-display" data-aos="fade-up">Featured Brands</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-light" data-aos="fade-up"
+                data-aos-delay="100">Explore our carefully curated selection of premium fashion brands for men and kids.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Brand 1 -->
+                <div class="relative group overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Balenciaga men's collection"
+                        class="w-full h-80 object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 flex items-end justify-center pb-8">
+                        <div class="text-center">
+                            <h3 class="text-xl font-light text-white mb-2 font-display">Balenciaga</h3>
+                            <a href="#"
+                                class="inline-block text-white text-sm border-b border-white pb-1 hover:border-transparent transition duration-300">Shop
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brand 2 -->
+                <div class="relative group overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Gucci men's collection"
+                        class="w-full h-80 object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 flex items-end justify-center pb-8">
+                        <div class="text-center">
+                            <h3 class="text-xl font-light text-white mb-2 font-display">Gucci</h3>
+                            <a href="#"
+                                class="inline-block text-white text-sm border-b border-white pb-1 hover:border-transparent transition duration-300">Shop
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brand 3 -->
+                <div class="relative group overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1600574691453-499962cc0611?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Saint Laurent men's collection"
+                        class="w-full h-80 object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 flex items-end justify-center pb-8">
+                        <div class="text-center">
+                            <h3 class="text-xl font-light text-white mb-2 font-display">Saint Laurent</h3>
+                            <a href="#"
+                                class="inline-block text-white text-sm border-b border-white pb-1 hover:border-transparent transition duration-300">Shop
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brand 4 -->
+                <div class="relative group overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Prada men's collection"
+                        class="w-full h-80 object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80 flex items-end justify-center pb-8">
+                        <div class="text-center">
+                            <h3 class="text-xl font-light text-white mb-2 font-display">Prada</h3>
+                            <a href="#"
+                                class="inline-block text-white text-sm border-b border-white pb-1 hover:border-transparent transition duration-300">Shop
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="600">
+                <a href="#"
+                    class="inline-block border border-black text-black px-10 py-3 text-sm font-light uppercase tracking-widest hover:bg-black hover:text-white transition duration-300">View
+                    All Brands</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Now Section -->
+    <section class="py-24" aria-labelledby="trending-title">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="trending-title" class="text-3xl font-light text-center mb-4 font-display" data-aos="fade-up">
+                Trending Now</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-light" data-aos="fade-up"
+                data-aos-delay="100">Popular items selected by our fashion experts.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                <!-- Product 1 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Designer Sneakers"
+                            class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                            <button
+                                class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                View</button>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                aria-label="Add to wishlist">
+                                <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="text-base font-light">Leather Sneakers</h3>
+                        <p class="text-sm text-gray-500">Balenciaga</p>
+                    </div>
+                    <p class="text-gray-900 font-light mb-2">€895</p>
+                    <div class="flex space-x-2" role="radiogroup" aria-label="Available colors">
+                        <button
+                            class="w-4 h-4 rounded-full bg-black border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                            aria-label="Black" role="radio" aria-checked="false"></button>
+                        <button
+                            class="w-4 h-4 rounded-full bg-white border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                            aria-label="White" role="radio" aria-checked="false"></button>
+                        <button
+                            class="w-4 h-4 rounded-full bg-red-600 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                            aria-label="Red" role="radio" aria-checked="false"></button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Luxury Sunglasses"
+                            class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                            <button
+                                class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                View</button>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                aria-label="Add to wishlist">
+                                <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="text-base font-light">Oversized Sunglasses</h3>
+                        <p class="text-sm text-gray-500">Gucci</p>
+                    </div>
+                    <p class="text-gray-900 font-light mb-2">€375</p>
+                    <div class="flex space-x-2" role="radiogroup" aria-label="Available colors">
+                        <button
+                            class="w-4 h-4 rounded-full bg-black border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                            aria-label="Black" role="radio" aria-checked="false"></button>
+                        <button
+                            class="w-4 h-4 rounded-full bg-yellow-800 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                            aria-label="Tortoiseshell" role="radio" aria-checked="false"></button>
+                    </div>
+                </div>
+
+                <!-- Product 3  -->
+                <div class="group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Men's Designer Briefcase"
+                            class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                            <button
+                                class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                View</button>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                aria-label="Add to wishlist">
+                                <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                            SALE
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="text-base font-light">Leather Briefcase</h3>
+                        <p class="text-sm text-gray-500">Saint Laurent</p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <p class="text-gray-500 line-through font-light">€1,950</p>
+                        <p class="text-gray-900 font-light">€1,560</p>
+                    </div>
+                    <div class="flex space-x-2 mt-2" role="radiogroup" aria-label="Available colors">
+                        <button
+                            class="w-4 h-4 rounded-full bg-black border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                            aria-label="Black" role="radio" aria-checked="false"></button>
+                        <button
+                            class="w-4 h-4 rounded-full bg-yellow-700 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                            aria-label="Brown" role="radio" aria-checked="false"></button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="relative overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Luxury Watch"
+                            class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                            <button
+                                class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                View</button>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                aria-label="Add to wishlist">
+                                <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="text-base font-light">Automatic Timepiece</h3>
+                        <p class="text-sm text-gray-500">Prada</p>
+                    </div>
+                    <p class="text-gray-900 font-light mb-2">€2,450</p>
+                    <div class="flex space-x-2" role="radiogroup" aria-label="Available finishes">
+                        <button
+                            class="w-4 h-4 rounded-full bg-gray-300 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                            aria-label="Silver" role="radio" aria-checked="false"></button>
+                        <button
+                            class="w-4 h-4 rounded-full bg-yellow-500 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                            aria-label="Gold" role="radio" aria-checked="false"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="600">
+                <a href="#"
+                    class="inline-block border border-black text-black px-10 py-3 text-sm font-light uppercase tracking-widest hover:bg-black hover:text-white transition duration-300">View
+                    All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Banner -->
+    <section class="py-24 bg-gray-900 text-white">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-light mb-6 font-display">Autumn Essentials</h2>
+                    <p class="text-lg mb-8 font-light leading-relaxed">Discover our carefully selected collection of
+                        seasonal must-haves for men and boys from the world's most prestigious fashion brands, perfect
+                        for the cooler
+                        months ahead.</p>
+                    <a href="#"
+                        class="inline-block bg-white text-black px-10 py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-200 transition duration-300">Shop
+                        the Collection</a>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Men's Fashion Editorial" class="w-full h-auto">
+                    <div
+                        class="absolute -bottom-8 -left-8 bg-white text-black p-6 shadow-xl transform transition-transform duration-300 hover:translate-y-1">
+                        <p class="text-sm font-light uppercase tracking-widest">New Arrivals</p>
+                        <p class="text-2xl font-display">Just Landed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Slider  -->
+    <section class="py-24" aria-labelledby="new-arrivals-title">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="new-arrivals-title" class="text-3xl font-light text-center mb-4 font-display" data-aos="fade-up">New
+                Arrivals</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-light" data-aos="fade-up"
+                data-aos-delay="100">The latest additions to our brand collections.</p>
+            <div class="relative" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex overflow-x-auto pb-8 space-x-8 no-scrollbar" id="new-arrivals-slider">
+                    <!-- Product 1 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Men's Designer Suit"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                    NEW ARRIVAL
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Wool Tailored Suit</h3>
+                                <p class="text-sm text-gray-500">Gucci</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€2,895</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Men's Blazer"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                    NEW ARRIVAL
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Wool Tailored Blazer</h3>
+                                <p class="text-sm text-gray-500">Balenciaga</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€2,250</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Designer Boots"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                    NEW ARRIVAL
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Leather Ankle Boots</h3>
+                                <p class="text-sm text-gray-500">Saint Laurent</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€1,295</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Designer Watch"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                    NEW ARRIVAL
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Chronograph Watch</h3>
+                                <p class="text-sm text-gray-500">Prada</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€3,450</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Kid's Designer Outfit"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                    NEW ARRIVAL
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Boy's Casual Set</h3>
+                                <p class="text-sm text-gray-500">Gucci</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€795</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button id="prev-arrivals"
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-3 shadow-md z-10 focus:outline-none hover:bg-gray-50 transition duration-300"
+                    aria-label="Previous items">
+                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="next-arrivals"
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-3 shadow-md z-10 focus:outline-none hover:bg-gray-50 transition duration-300"
+                    aria-label="Next items">
+                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="py-24 bg-gray-50" aria-labelledby="instagram-title">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 id="instagram-title" class="text-3xl font-light text-center mb-4 font-display" data-aos="fade-up">Follow
+                Our Style</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-light" data-aos="fade-up"
+                data-aos-delay="100">Join our community and share your style with #REXSTORE for a chance to be featured.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4" data-aos="fade-up"
+                data-aos-delay="200">
+                <a href="#" class="block relative group overflow-hidden" aria-label="Instagram post 1">
+                    <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                        alt="Men's fashion model in urban setting"
+                        class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="block relative group overflow-hidden" aria-label="Instagram post 2">
+                    <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                        alt="Men's fashion accessories flatlay"
+                        class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="block relative group overflow-hidden" aria-label="Instagram post 3">
+                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                        alt="Men's designer shoes close-up"
+                        class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="block relative group overflow-hidden" aria-label="Instagram post 4">
+                    <img src="https://images.unsplash.com/photo-1600574691453-499962cc0611?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                        alt="Men's model in designer outfit"
+                        class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="block relative group overflow-hidden" aria-label="Instagram post 5">
+                    <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                        alt="Kid's fashion model"
+                        class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="block relative group overflow-hidden" aria-label="Instagram post 6">
+                    <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                        alt="Men's designer outfit showcase"
+                        class="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute inset-0 bg-black bg-opacity-30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <svg class="h-8 w-8 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="300">
+                <a href="#" class="inline-flex items-center text-gray-900 hover:underline group">
+                    <span class="mr-2 font-light">Follow @rexstore</span>
+                    <svg class="h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-2"
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-display font-light text-center mb-4" data-aos="fade-up">Visit Our Store</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-light" data-aos="fade-up"
+                data-aos-delay="100">
+                We invite you to experience our brand collections in person. Our store specialists are available to
+                assist
+                with personalized styling and recommendations.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Store Locations -->
+                <div class="bg-gray-50 p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-10 w-10 border border-black text-black">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="ml-4 text-lg font-light">Our Store Location</h3>
+                    </div>
+                    <address class="not-italic text-gray-600 font-light space-y-3 ml-14">
+                        <p>27 Rue Saint-Honoré</p>
+                        <p>75001 Paris, France</p>
+                        <p class="mt-4">Monday to Saturday: 10am - 7pm</p>
+                        <p>Sunday: By appointment only</p>
+                    </address>
+                    <div class="mt-6 ml-14">
+                        <a href="#"
+                            class="inline-block text-black text-sm border-b border-black pb-1 hover:border-transparent transition duration-300">Get
+                            Directions</a>
+                    </div>
+                </div>
+
+                <!-- Book an Appointment -->
+                <div class="bg-gray-50 p-8" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-6">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-10 w-10 border border-black text-black">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="ml-4 text-lg font-light">Book an Appointment</h3>
+                    </div>
+                    <p class="text-gray-600 font-light ml-14 mb-6">
+                        Schedule a personal shopping session with our styling specialists for a tailored shopping
+                        experience.
+                    </p>
+                    <div class="space-y-4 ml-14">
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 mr-3" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <p class="text-gray-600 font-light">Duration: 60-90 minutes</p>
+                        </div>
+                        <div class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 mr-3" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                    d="M5 13l4 4L19 7" />
+                            </svg>
+                            <p class="text-gray-600 font-light">Complimentary for all clients</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 ml-14">
+                        <a href="#"
+                            class="inline-block bg-black text-white px-8 py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Book
+                            Now</a>
+                    </div>
+                </div>
+
+                <!-- Contact Methods -->
+                <div class="bg-gray-50 p-8" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center mb-6">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-10 w-10 border border-black text-black">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="ml-4 text-lg font-light">Contact Us</h3>
+                    </div>
+                    <div class="space-y-6 ml-14">
+                        <div>
+                            <p class="text-gray-600 font-light mb-2">By Phone:</p>
+                            <a href="tel:+33142611010"
+                                class="text-black font-light text-lg hover:text-gray-700 transition duration-300">+33
+                                (0)1
+                                42 61 10 10</a>
+                        </div>
+                        <div>
+                            <p class="text-gray-600 font-light mb-2">By Email:</p>
+                            <a href="mailto:info@rexstore.com"
+                                class="text-black font-light text-lg hover:text-gray-700 transition duration-300">info@rexstore.com</a>
+                        </div>
+                        <div>
+                            <p class="text-gray-600 font-light mb-2">For Orders:</p>
+                            <a href="mailto:orders@rexstore.com"
+                                class="text-black font-light text-lg hover:text-gray-700 transition duration-300">orders@rexstore.com</a>
+                        </div>
+                    </div>
+                    <div class="mt-6 ml-14">
+                        <a href="#"
+                            class="inline-block text-black text-sm border-b border-black pb-1 hover:border-transparent transition duration-300">View
+                            FAQs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <!-- Left Column - Newsletter Signup -->
+                <div class="lg:w-3/5">
+                    <div class="max-w-2xl">
+                        <h2 class="text-3xl font-display font-light mb-4">Join our mailing list</h2>
+                        <p class="text-gray-600 text-lg mb-10 font-light leading-relaxed">Be the first to know about new
+                            brand arrivals, seasonal collections, and exclusive promotions from REX STORE.</p>
+
+                        <form class="space-y-8">
+                            <div class="space-y-6">
+                                <h3 class="text-sm font-light uppercase tracking-widest mb-3">Receive updates via</h3>
+
+                                <!-- Email Option -->
+                                <div>
+                                    <div class="custom-checkbox mb-3">
+                                        <input id="email-option" name="notification-method" type="checkbox" checked>
+                                        <label for="email-option" class="text-sm font-light text-gray-700">Email</label>
+                                    </div>
+
+                                    <div class="relative" id="email-input-container">
+                                        <input type="email" id="email-input" placeholder="Your email address"
+                                            class="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-all duration-300 font-light">
+                                    </div>
+                                </div>
+
+                                <!-- SMS Option -->
+                                <div>
+                                    <div class="custom-checkbox mb-3">
+                                        <input id="sms-option" name="notification-method" type="checkbox">
+                                        <label for="sms-option" class="text-sm font-light text-gray-700">SMS</label>
+                                    </div>
+
+                                    <div class="relative" id="phone-input-container" style="display: none;">
+                                        <input type="tel" id="phone-input" placeholder="Your phone number"
+                                            class="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-all duration-300 font-light">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-4">
+                                <button type="submit"
+                                    class="w-full sm:w-auto bg-black text-white px-10 py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition-all duration-300">
+                                    Subscribe
+                                </button>
+
+                                <p class="text-xs text-gray-500 mt-4 max-w-lg font-light">
+                                    By subscribing, you consent to receiving marketing communications and acknowledge
+                                    you
+                                    have read our
+                                    <a href="#"
+                                        class="underline hover:text-black transition-colors duration-200">Privacy
+                                        Policy</a>.
+                                    You may unsubscribe at any time.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Column - Benefits & Social Proof -->
+                <div class="lg:w-2/5 mt-12 lg:mt-0">
+                    <div class="bg-gray-50 p-10 h-full">
+                        <h3 class="text-xl font-light mb-8 font-display">Subscriber benefits</h3>
+
+                        <ul class="space-y-8">
+                            <li class="flex">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="flex items-center justify-center h-10 w-10 border border-black text-black">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M12 8v13m0-13V6a4 4 0 00-4-4H8.8a4 4 0 00-3.6 2.3L3 8m9 4v5m0-5H4.5a2 2 0 01-2-2v-.5a2 2 0 01.6-1.4L9 2.8M3.2 7.8L2 9.5M15 8h5.5a2 2 0 012 2v.5a2 2 0 01-.6 1.4L16 13.2m5.8-5.4L22.8 9.5" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-light">Early Access</h4>
+                                    <p class="mt-2 text-gray-600 font-light">Be the first to shop new arrivals from your
+                                        favorite brands.</p>
+                                </div>
+                            </li>
+
+                            <li class="flex">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="flex items-center justify-center h-10 w-10 border border-black text-black">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-light">Exclusive Offers</h4>
+                                    <p class="mt-2 text-gray-600 font-light">Receive special promotions and discounts
+                                        available only to subscribers.</p>
+                                </div>
+                            </li>
+
+                            <li class="flex">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="flex items-center justify-center h-10 w-10 border border-black text-black">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-light">Styling Tips</h4>
+                                    <p class="mt-2 text-gray-600 font-light">Get expert advice on how to style the
+                                        latest brand collections.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 text-gray-800 py-20">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <!-- Customer Service Column -->
+                <div>
+                    <h3 class="text-sm font-light uppercase tracking-widest mb-6">Client Services</h3>
+                    <ul class="space-y-4">
+                        <li><a href="#"
+                                class="text-gray-600 hover:text-black transition duration-300 font-light">Contact
+                                us</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-600 hover:text-black transition duration-300 font-light">FAQs</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-gray-600 hover:text-black transition duration-300 font-light">Shipping &
+                                delivery</a></li>
+                        <li><a href="#"
+                                class="text-gray-600 hover:text-black transition duration-300 font-light">Returns &
+                                exchanges</a></li>
+                        <li><a href="#"
+                                class="text-gray-600 hover:text-black transition duration-300 font-light">Payment
+                                options</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-black transition duration-300 font-light">Gift
+                                cards</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-black transition duration-300 font-light">Terms
+                                & conditions</a></li>
+                        <li><a href="#"
+                                class="text-gray-600 hover:text-black transition duration-300 font-light">Privacy
+                                policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- About Column -->
+                <div>
+                    <h3 class="text-sm font-light uppercase tracking-widest mb-6">About Us</h3>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-600 hover:text-black transition duration-300 font-light">Our
+                                story</a></li>
+                        <li><a href="#"
+                                class="text-gray-600 hover:text-black transition duration-300 font-light">Sustainability</a>
+                        </li>
+                        <li><a href="#" class="text-gray-600 hover:text-black transition duration-300 font-light">Brand
+                                partners</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-black transition duration-300 font-light">Store
+                                location</a></li>
+                        <li><a href="#"
+                                class="text-gray-600 hover:text-black transition duration-300 font-light">Careers</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services Column -->
+                <div>
+                    <h3 class="text-sm font-light uppercase tracking-widest mb-6">Services</h3>
+                    <ul class="space-y-4">
+                        <li><a href="#"
+                                class="text-gray-600 hover:text-black transition duration-300 font-light">Personal
+                                shopping</a></li>
+                        <li><a href="#"
+                                class="text-gray-600 hover:text-black transition duration-300 font-light">Personal
+                                shopping</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-black transition duration-300 font-light">Style
+                                consultation</a></li>
+                        <li><a href="#"
+                                class="text-gray-600 hover:text-black transition duration-300 font-light">Alterations
+                                services</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-black transition duration-300 font-light">Book
+                                an appointment</a></li>
+                    </ul>
+
+                    <!-- Social Media Section -->
+                    <div class="mt-10">
+                        <h3 class="text-sm font-light uppercase tracking-widest mb-6">Follow us</h3>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-gray-600 hover:text-black transition duration-300"
+                                aria-label="Instagram">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-black transition duration-300"
+                                aria-label="Facebook">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-black transition duration-300"
+                                aria-label="Pinterest">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M12 0c-6.627 0-12 5.373-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-600 hover:text-black transition duration-300"
+                                aria-label="Twitter">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Column -->
+                <div>
+                    <h3 class="text-sm font-light uppercase tracking-widest mb-6">Contact</h3>
+                    <address class="not-italic text-gray-600 font-light space-y-3 mb-8">
+                        <p>27 Rue Saint-Honoré</p>
+                        <p>75001 Paris, France</p>
+                        <p>+33 (0)1 42 61 10 10</p>
+                        <p><a href="mailto:info@rexstore.com"
+                                class="hover:text-black transition duration-300">info@rexstore.com</a></p>
+                    </address>
+
+                    <h3 class="text-sm font-light uppercase tracking-widest mb-6">Store Hours</h3>
+                    <p class="text-gray-600 font-light">Monday to Saturday: 10am - 7pm</p>
+                    <p class="text-gray-600 font-light">Sunday: By appointment only</p>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="mt-16 pt-8 border-t border-gray-200">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <!-- Legal Links -->
+                    <div class="flex flex-wrap gap-8 mb-6 md:mb-0">
+                        <a href="#"
+                            class="text-gray-600 hover:text-black text-sm transition duration-300 font-light">Privacy
+                            policy</a>
+                        <a href="#"
+                            class="text-gray-600 hover:text-black text-sm transition duration-300 font-light">Terms
+                            of
+                            service</a>
+                        <a href="#"
+                            class="text-gray-600 hover:text-black text-sm transition duration-300 font-light">Accessibility</a>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="flex space-x-6">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa"
+                            class="h-5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                            alt="Mastercard" class="h-5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal"
+                            class="h-5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg"
+                            alt="American Express" class="h-5">
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="mt-8 text-sm text-gray-500 font-light">
+                    <p>'REX STORE' and the 'REX STORE' logo are registered trademarks of REX STORE S.A.</p>
+                    <p>© 2025 REX STORE. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-white text-black p-3 border border-black opacity-0 invisible transition-all duration-300 z-40"
+        aria-label="Back to top">
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 1000,
+            delay: 100
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Search Overlay
+        const searchToggle = document.getElementById('search-toggle');
+        const searchOverlay = document.getElementById('search-overlay');
+        const closeSearch = document.getElementById('close-search');
+        const searchInput = document.getElementById('search-input');
+
+        searchToggle.addEventListener('click', () => {
+            searchOverlay.classList.remove('hidden');
+            searchOverlay.setAttribute('aria-hidden', 'false');
+            setTimeout(() => {
+                searchInput.focus();
+            }, 100);
+        });
+
+        closeSearch.addEventListener('click', () => {
+            searchOverlay.classList.add('hidden');
+            searchOverlay.setAttribute('aria-hidden', 'true');
+        });
+
+        // Close search when clicking outside
+        searchOverlay.addEventListener('click', (e) => {
+            if (e.target === searchOverlay) {
+                searchOverlay.classList.add('hidden');
+                searchOverlay.setAttribute('aria-hidden', 'true');
+            }
+        });
+        // Auth Modal
+        const accountToggle = document.getElementById('account-toggle');
+        const authModal = document.getElementById('auth-modal');
+        const closeAuth = document.getElementById('close-auth');
+        const signinTab = document.getElementById('signin-tab');
+        const signupTab = document.getElementById('signup-tab');
+        const signinForm = document.getElementById('signin-form');
+        const signupForm = document.getElementById('signup-form');
+
+        // Open auth modal when clicking account icon
+        accountToggle.addEventListener('click', () => {
+            authModal.classList.remove('hidden');
+            authModal.setAttribute('aria-hidden', 'false');
+        });
+
+        // Close auth modal
+        closeAuth.addEventListener('click', () => {
+            authModal.classList.add('hidden');
+            authModal.setAttribute('aria-hidden', 'true');
+        });
+
+        // Close auth modal when clicking outside
+        authModal.addEventListener('click', (e) => {
+            if (e.target === authModal) {
+                authModal.classList.add('hidden');
+                authModal.setAttribute('aria-hidden', 'true');
+            }
+        });
+
+        // Tab switching
+        signinTab.addEventListener('click', () => {
+            signinTab.classList.add('active');
+            signupTab.classList.remove('active');
+            signinForm.classList.remove('hidden');
+            signupForm.classList.add('hidden');
+            signupTab.classList.add('text-gray-400');
+            signinTab.classList.remove('text-gray-400');
+        });
+
+        signupTab.addEventListener('click', () => {
+            signupTab.classList.add('active');
+            signinTab.classList.remove('active');
+            signupForm.classList.remove('hidden');
+            signinForm.classList.add('hidden');
+            signinTab.classList.add('text-gray-400');
+            signupTab.classList.remove('text-gray-400');
+        });
+
+        // Form submission (prevent default for demo)
+        signinForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Sign in functionality would be implemented here.');
+        });
+
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Sign up functionality would be implemented here.');
+        });
+
+        // Language Selector
+        const languageToggle = document.getElementById('language-toggle');
+        const languageDropdown = document.getElementById('language-dropdown');
+        const languageOptions = document.querySelectorAll('.language-option');
+        const mobileLanguageOptions = document.querySelectorAll('.mobile-language-option');
+        const languageCode = document.querySelector('.language-code');
+        const languageName = document.querySelector('.language-name');
+
+        // Language dropdown toggle
+        languageToggle.addEventListener('click', () => {
+            const expanded = languageToggle.getAttribute('aria-expanded') === 'true';
+            languageToggle.setAttribute('aria-expanded', !expanded);
+            languageDropdown.classList.toggle('hidden');
+        });
+
+        // Close language dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!languageToggle.contains(e.target) && !languageDropdown.contains(e.target)) {
+                languageDropdown.classList.add('hidden');
+                languageToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Language selection functionality
+        function changeLanguage(lang, flagUrl, name) {
+            // Update the language code display
+            languageCode.textContent = lang.toUpperCase();
+
+            // Update the language name
+            languageName.textContent = name;
+
+            // Update the flag icon if it exists
+            const flagIcon = document.querySelector('#language-toggle .flag-icon');
+            if (flagIcon) {
+                flagIcon.src = flagUrl;
+                flagIcon.alt = name;
+            }
+
+            // Close the dropdown
+            languageDropdown.classList.add('hidden');
+            languageToggle.setAttribute('aria-expanded', 'false');
+
+            // Here would typically implement the actual language change
+            console.log(`Language changed to: ${lang}`);
+
+            // You could store the language preference in localStorage
+            localStorage.setItem('preferredLanguage', lang);
+
+            // Optional: Set the document language attribute
+            document.documentElement.lang = lang;
+
+            // Optional: Set RTL for Arabic or other RTL languages
+            if (lang === 'ar') {
+                document.documentElement.dir = 'rtl';
+            } else {
+                document.documentElement.dir = 'ltr';
+            }
+        }
+
+        // Add click event listeners to language options
+        languageOptions.forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = option.getAttribute('data-lang');
+                const flagUrl = option.getAttribute('data-flag');
+                const name = option.querySelector('.language-name').textContent;
+                changeLanguage(lang, flagUrl, name);
+            });
+        });
+
+        // Add click event listeners to mobile language options
+        mobileLanguageOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const lang = option.getAttribute('data-lang');
+                const flagUrl = option.getAttribute('data-flag');
+                const name = option.querySelector('.language-name').textContent;
+                changeLanguage(lang, flagUrl, name);
+                // Close mobile menu after selection
+                document.getElementById('mobile-menu').classList.add('hidden');
+                document.getElementById('mobile-menu-button').setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // New Arrivals Slider
+        const slider = document.getElementById('new-arrivals-slider');
+        const prevButton = document.getElementById('prev-arrivals');
+        const nextButton = document.getElementById('next-arrivals');
+
+        const scrollStep = 300;
+
+        nextButton.addEventListener('click', () => {
+            slider.scrollBy({ left: scrollStep, behavior: 'smooth' });
+        });
+
+        prevButton.addEventListener('click', () => {
+            slider.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Announcement Bar Animation
+        const announcementSlider = document.querySelector('.announcement-slider');
+
+        if (announcementSlider) {
+            // Set the animation
+            announcementSlider.style.animation = 'slide 30s linear infinite';
+
+            // Add the keyframes animation
+            const style = document.createElement('style');
+            style.textContent = `
+                                                                @keyframes slide {
+                                                                    0% { transform: translateX(0); }
+                                                                    100% { transform: translateX(-50%); }
+                                                                }
+                                                            `;
+            document.head.appendChild(style);
+        }
+
+        // Color swatch selection
+        const colorButtons = document.querySelectorAll('[role="radio"]');
+        colorButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Find all buttons in the same radiogroup
+                const radiogroup = button.closest('[role="radiogroup"]');
+                const buttons = radiogroup.querySelectorAll('[role="radio"]');
+
+                // Reset all buttons
+                buttons.forEach(btn => {
+                    btn.setAttribute('aria-checked', 'false');
+                    btn.classList.remove('ring-1');
+                });
+
+                // Set the clicked button as checked
+                button.setAttribute('aria-checked', 'true');
+                button.classList.add('ring-1');
+            });
+        });
+
+        // Newsletter form toggle functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Email toggle functionality
+            const emailCheckbox = document.getElementById('email-option');
+            const emailInputContainer = document.getElementById('email-input-container');
+
+            if (emailCheckbox && emailInputContainer) {
+                // Initial state check
+                emailInputContainer.style.display = emailCheckbox.checked ? 'block' : 'none';
+
+                // Add event listener
+                emailCheckbox.addEventListener('change', function () {
+                    emailInputContainer.style.display = this.checked ? 'block' : 'none';
+                });
+            }
+
+            // SMS toggle functionality
+            const smsCheckbox = document.getElementById('sms-option');
+            const phoneInputContainer = document.getElementById('phone-input-container');
+
+            if (smsCheckbox && phoneInputContainer) {
+                // Initial state check
+                phoneInputContainer.style.display = smsCheckbox.checked ? 'block' : 'none';
+
+                // Add event listener
+                smsCheckbox.addEventListener('change', function () {
+                    phoneInputContainer.style.display = this.checked ? 'block' : 'none';
+                });
+            }
+
+            // Form submission handling (prevent default for demo)
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Validate that at least one option is selected
+                    if (!emailCheckbox.checked && !smsCheckbox.checked) {
+                        alert('Please select at least one contact method (Email or SMS)');
+                        return;
+                    }
+
+                    // Validate email if that option is checked
+                    if (emailCheckbox.checked) {
+                        const emailInput = document.getElementById('email-input');
+                        if (!emailInput.value.trim()) {
+                            alert('Please enter your email address');
+                            emailInput.focus();
+                            return;
+                        }
+                    }
+
+                    // Validate phone if SMS option is checked
+                    if (smsCheckbox.checked) {
+                        const phoneInput = document.getElementById('phone-input');
+                        if (!phoneInput.value.trim()) {
+                            alert('Please enter your phone number');
+                            phoneInput.focus();
+                            return;
+                        }
+                    }
+
+                    alert('Thank you for subscribing to REX STORE');
+                });
+            }
+        });
+        // Mega Dropdown Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownTriggers = document.querySelectorAll('.has-dropdown');
+            const megaDropdowns = document.querySelectorAll('.mega-dropdown');
+            let activeDropdown = null;
+            let isMouseOverDropdown = false;
+            let isMouseOverTrigger = false;
+            let closeTimeout = null;
+
+            // Function to close all dropdowns
+            function closeAllDropdowns() {
+                dropdownTriggers.forEach(trigger => {
+                    trigger.classList.remove('active');
+                });
+
+                megaDropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+
+                activeDropdown = null;
+            }
+
+            // Function to open a specific dropdown
+            function openDropdown(dropdownId) {
+                // Close any open dropdown first
+                closeAllDropdowns();
+
+                // Find the dropdown element
+                const dropdown = document.getElementById(`${dropdownId}-dropdown`);
+                if (!dropdown) return;
+
+                // Find the trigger element
+                const trigger = document.querySelector(`[data-dropdown="${dropdownId}"]`);
+                if (!trigger) return;
+
+                // Activate the dropdown and trigger
+                dropdown.classList.add('active');
+                trigger.classList.add('active');
+
+                activeDropdown = dropdown;
+            }
+
+            // Add event listeners to dropdown triggers
+            dropdownTriggers.forEach(trigger => {
+                const dropdownId = trigger.getAttribute('data-dropdown');
+                if (!dropdownId) return;
+
+                // Mouse enter event
+                trigger.addEventListener('mouseenter', function () {
+                    isMouseOverTrigger = true;
+                    clearTimeout(closeTimeout);
+                    openDropdown(dropdownId);
+                });
+
+                // Mouse leave event
+                trigger.addEventListener('mouseleave', function () {
+                    isMouseOverTrigger = false;
+
+                    closeTimeout = setTimeout(() => {
+                        if (!isMouseOverDropdown) {
+                            closeAllDropdowns();
+                        }
+                    }, 200);
+                });
+
+                // Click event (for touch devices)
+                trigger.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const isActive = trigger.classList.contains('active');
+
+                    if (isActive) {
+                        closeAllDropdowns();
+                    } else {
+                        openDropdown(dropdownId);
+                    }
+                });
+            });
+
+            // Add event listeners to mega dropdowns
+            megaDropdowns.forEach(dropdown => {
+                // Mouse enter event
+                dropdown.addEventListener('mouseenter', function () {
+                    isMouseOverDropdown = true;
+                    clearTimeout(closeTimeout);
+                });
+
+                // Mouse leave event
+                dropdown.addEventListener('mouseleave', function () {
+                    isMouseOverDropdown = false;
+
+                    closeTimeout = setTimeout(() => {
+                        if (!isMouseOverTrigger) {
+                            closeAllDropdowns();
+                        }
+                    }, 200);
+                });
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function (e) {
+                const isDropdownClick = e.target.closest('.mega-dropdown') || e.target.closest('.has-dropdown');
+
+                if (!isDropdownClick) {
+                    closeAllDropdowns();
+                }
+            });
+        });
+        // Add this JavaScript to your existing script at the bottom of your HTML file
+
+        // Fixed Header Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const header = document.querySelector('header');
+            const announcementBar = document.querySelector('.bg-black.text-white.py-2'); // Your announcement bar
+            const body = document.body;
+
+            // Add a class to the announcement bar for easier targeting
+            announcementBar.classList.add('announcement-bar');
+
+            let lastScrollTop = 0;
+            let headerHeight = header.offsetHeight;
+            let announcementHeight = announcementBar.offsetHeight;
+
+            // Function to handle scroll events
+            function handleScroll() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                // If we've scrolled more than the announcement bar height
+                if (scrollTop > announcementHeight) {
+                    // Add fixed class to header
+                    if (!header.classList.contains('fixed')) {
+                        header.classList.add('fixed');
+                        body.classList.add('fixed-header');
+                        body.style.paddingTop = `${headerHeight}px`;
+                    }
+
+                    // Hide announcement bar
+                    announcementBar.classList.add('hidden');
+                } else {
+                    // Remove fixed class from header
+                    header.classList.remove('fixed');
+                    body.classList.remove('fixed-header');
+                    body.style.paddingTop = '0';
+
+                    // Show announcement bar
+                    announcementBar.classList.remove('hidden');
+                }
+
+                lastScrollTop = scrollTop;
+            }
+
+            // Listen for scroll events
+            window.addEventListener('scroll', handleScroll);
+
+            // Recalculate heights on window resize
+            window.addEventListener('resize', function () {
+                headerHeight = header.offsetHeight;
+                announcementHeight = announcementBar.offsetHeight;
+
+                // Update body padding if header is fixed
+                if (header.classList.contains('fixed')) {
+                    body.style.paddingTop = `${headerHeight}px`;
+                }
+            });
+        });
+        // Forgot Password Modal Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get DOM elements
+            const forgotPasswordLink = document.querySelector('a[href="#"].text-sm.font-light.text-gray-600.hover\\:text-black');
+            const forgotPasswordModal = document.getElementById('forgot-password-modal');
+            const closeForgotPassword = document.getElementById('close-forgot-password');
+            const backToSignin = document.getElementById('back-to-signin');
+            const forgotPasswordForm = document.getElementById('forgot-password-form');
+            const authModal = document.getElementById('auth-modal');
+
+            // Open forgot password modal when clicking "Forgot your password?"
+            if (forgotPasswordLink) {
+                forgotPasswordLink.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Hide the auth modal
+                    authModal.classList.add('hidden');
+                    authModal.setAttribute('aria-hidden', 'true');
+
+                    // Show the forgot password modal
+                    forgotPasswordModal.classList.remove('hidden');
+                    forgotPasswordModal.setAttribute('aria-hidden', 'false');
+
+                    // Focus on the email input
+                    setTimeout(() => {
+                        document.getElementById('reset-email').focus();
+                    }, 100);
+                });
+            }
+
+            // Close forgot password modal
+            if (closeForgotPassword) {
+                closeForgotPassword.addEventListener('click', function () {
+                    forgotPasswordModal.classList.add('hidden');
+                    forgotPasswordModal.setAttribute('aria-hidden', 'true');
+                });
+            }
+
+            // Close forgot password modal when clicking outside
+            forgotPasswordModal.addEventListener('click', function (e) {
+                if (e.target === forgotPasswordModal) {
+                    forgotPasswordModal.classList.add('hidden');
+                    forgotPasswordModal.setAttribute('aria-hidden', 'true');
+                }
+            });
+
+            // Back to sign in
+            if (backToSignin) {
+                backToSignin.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Hide forgot password modal
+                    forgotPasswordModal.classList.add('hidden');
+                    forgotPasswordModal.setAttribute('aria-hidden', 'true');
+
+                    // Show auth modal
+                    authModal.classList.remove('hidden');
+                    authModal.setAttribute('aria-hidden', 'false');
+
+                    // Make sure the sign in tab is active
+                    document.getElementById('signin-tab').click();
+                });
+            }
+
+            // Handle form submission
+            if (forgotPasswordForm) {
+                forgotPasswordForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const emailInput = document.getElementById('reset-email');
+                    const email = emailInput.value.trim();
+
+                    if (!email) {
+                        alert('Please enter your email address');
+                        emailInput.focus();
+                        return;
+                    }
+
+                    // Hide the form
+                    forgotPasswordForm.style.display = 'none';
+
+                    // Create and show confirmation message
+                    const confirmationMessage = document.createElement('div');
+                    confirmationMessage.className = 'confirmation-message';
+                    confirmationMessage.innerHTML = `
+                <svg class="h-16 w-16 text-green-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <h3 class="text-xl font-light mb-2">Check Your Email</h3>
+                <p class="text-gray-600 font-light mb-6">We've sent a password reset link to:<br><strong>${email}</strong></p>
+                <button id="close-confirmation" class="bg-black text-white px-8 py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition-all duration-300">
+                    Close
+                </button>
+            `;
+
+                    // Add the confirmation message to the modal
+                    forgotPasswordForm.parentNode.appendChild(confirmationMessage);
+
+                    // Add the active class after a small delay for animation
+                    setTimeout(() => {
+                        confirmationMessage.classList.add('active');
+                    }, 10);
+
+                    // Add event listener to the close button
+                    document.getElementById('close-confirmation').addEventListener('click', function () {
+                        forgotPasswordModal.classList.add('hidden');
+                        forgotPasswordModal.setAttribute('aria-hidden', 'true');
+
+                        // Reset the form for future use
+                        setTimeout(() => {
+                            forgotPasswordForm.style.display = 'block';
+                            confirmationMessage.remove();
+                            forgotPasswordForm.reset();
+                        }, 300);
+                    });
+                });
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="REX STORE - Wishlist | Your saved items">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>Wishlist | REX STORE - Premium Men's & Kids' Fashion</title>
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/wishlist.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="font-sans antialiased bg-white text-gray-900 transition-colors duration-300">
+    <!-- Page Title Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-light text-center font-display" data-aos="fade-up">Wishlist</h1>
+            <p class="text-center text-gray-600 mt-4 max-w-2xl mx-auto font-light page-subtitle" data-aos="fade-up"
+                data-aos-delay="100">
+                Your saved items from our premium collections.
+            </p>
+        </div>
+    </section>
+
+    <!-- Empty Wishlist Content Section -->
+    <section class="py-16">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center py-16" data-aos="fade-up">
+                <!-- Empty Wishlist Icon -->
+                <div class="empty-wishlist-icon" data-aos="fade-up" data-aos-delay="100">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                        class="heart-pulse">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                        </path>
+                    </svg>
+                </div>
+                <p class="text-gray-600 font-light text-lg mb-8">Add your favourite items to your wishlist and they'll
+                    appear here</p>
+                <a href="index.html"
+                    class="inline-block bg-black text-white px-8 py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">
+                    Shop Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- You May Also Like Section -->
+    <section class="py-24 bg-gray-50" id="recommendations-section">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-light text-center mb-4 font-display" data-aos="fade-up">You May Also Like</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-light" data-aos="fade-up"
+                data-aos-delay="100">
+                Curated recommendations based on your shopping preferences
+            </p>
+            <div class="relative" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex overflow-x-auto pb-8 space-x-8 no-scrollbar" id="recommendations-slider">
+                    <!-- Recommendation 1 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Luxury Sneakers"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                    <button
+                                        class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                        View</button>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button
+                                        class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                        aria-label="Add to wishlist">
+                                        <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Luxury Sneakers</h3>
+                                <p class="text-sm text-gray-500">Balenciaga</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€795</p>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 2 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1607522370275-f14206abe5d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Formal Shoes"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                    <button
+                                        class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                        View</button>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button
+                                        class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                        aria-label="Add to wishlist">
+                                        <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Oxford Shoes</h3>
+                                <p class="text-sm text-gray-500">Prada</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€850</p>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 3 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Luxury Sunglasses"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                    <button
+                                        class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                        View</button>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button
+                                        class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                        aria-label="Add to wishlist">
+                                        <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Oversized Sunglasses</h3>
+                                <p class="text-sm text-gray-500">Gucci</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€375</p>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 4 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1605812860427-4024433a70fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Combat Boots"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                    <button
+                                        class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                        View</button>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button
+                                        class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                        aria-label="Add to wishlist">
+                                        <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Combat Boots</h3>
+                                <p class="text-sm text-gray-500">Saint Laurent</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€950</p>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 5 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1531310197839-ccf54634509e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Loafers"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                    <button
+                                        class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                        View</button>
+                                </div>
+                                <div class="absolute top-4 right-4">
+                                    <button
+                                        class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                        aria-label="Add to wishlist">
+                                        <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Leather Loafers</h3>
+                                <p class="text-sm text-gray-500">Louis Vuitton</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€780</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button id="prev-recommendations"
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-3 shadow-md z-10 focus:outline-none hover:bg-gray-50 transition duration-300"
+                    aria-label="Previous items">
+                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="next-recommendations"
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-3 shadow-md z-10 focus:outline-none hover:bg-gray-50 transition duration-300"
+                    aria-label="Next items">
+                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-black text-white p-3 opacity-0 invisible transition-all duration-300 z-40"
+        aria-label="Back to top">
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 1000,
+            delay: 100
+        });
+
+        // Recommendations Slider
+        const recommendationsSlider = document.getElementById('recommendations-slider');
+        const prevRecommendations = document.getElementById('prev-recommendations');
+        const nextRecommendations = document.getElementById('next-recommendations');
+
+        const scrollStep = 300;
+
+        nextRecommendations.addEventListener('click', () => {
+            recommendationsSlider.scrollBy({ left: scrollStep, behavior: 'smooth' });
+        });
+
+        prevRecommendations.addEventListener('click', () => {
+            recommendationsSlider.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

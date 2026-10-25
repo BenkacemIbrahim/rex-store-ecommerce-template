@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="REX STORE - Orders and Returns | Track your orders and manage returns">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>Orders and Returns | REX STORE - Premium Men's & Kids' Fashion</title>
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/order-and-returns.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="font-sans antialiased bg-white text-gray-900 transition-colors duration-300">
+    <main class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Page Title -->
+        <h1 class="text-3xl font-light mb-10 font-display">Orders and Returns</h1>
+
+        <!-- Tabs -->
+        <div class="border-b border-gray-200 mb-8">
+            <div class="flex -mb-px">
+                <button id="orders-tab"
+                    class="tab-button active mr-8 py-4 text-sm font-medium tracking-widest uppercase">
+                    Orders
+                </button>
+                <button id="returns-tab"
+                    class="tab-button py-4 text-sm font-medium tracking-widest uppercase text-gray-500">
+                    Returns
+                </button>
+            </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="orders-content" class="tab-content">
+            <p class="text-gray-700 mb-8">Track your orders, request a return or check your order history</p>
+
+            <!-- Orders List -->
+            <div id="orders-list">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Order</th>
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Date</th>
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Status</th>
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Total</th>
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Order 1 -->
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4 text-sm font-light">#ORD-2025-7842</td>
+                                <td class="py-4 text-sm font-light">April 28, 2025</td>
+                                <td class="py-4">
+                                    <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-sm">
+                                        Delivered
+                                    </span>
+                                </td>
+                                <td class="py-4 text-sm font-light">€1,250.00</td>
+                                <td class="py-4">
+                                    <div class="flex space-x-3">
+                                        <a href="#"
+                                            class="text-sm font-light hover:text-gold transition-colors">View</a>
+                                        <a href="#"
+                                            class="text-sm font-light hover:text-gold transition-colors">Return</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Order 2 -->
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4 text-sm font-light">#ORD-2025-6953</td>
+                                <td class="py-4 text-sm font-light">March 15, 2025</td>
+                                <td class="py-4">
+                                    <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-sm">
+                                        Delivered
+                                    </span>
+                                </td>
+                                <td class="py-4 text-sm font-light">€895.00</td>
+                                <td class="py-4">
+                                    <div class="flex space-x-3">
+                                        <a href="#"
+                                            class="text-sm font-light hover:text-gold transition-colors">View</a>
+                                        <a href="#"
+                                            class="text-sm font-light hover:text-gold transition-colors">Return</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Order 3 -->
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4 text-sm font-light">#ORD-2025-5421</td>
+                                <td class="py-4 text-sm font-light">February 3, 2025</td>
+                                <td class="py-4">
+                                    <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-sm">
+                                        Processing
+                                    </span>
+                                </td>
+                                <td class="py-4 text-sm font-light">€2,450.00</td>
+                                <td class="py-4">
+                                    <div class="flex space-x-3">
+                                        <a href="#"
+                                            class="text-sm font-light hover:text-gold transition-colors">View</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Order Details (Hidden by default) -->
+            <div id="order-details" class="hidden mt-10">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-light">Order #ORD-2025-7842</h2>
+                    <button id="back-to-orders"
+                        class="text-sm font-light flex items-center hover:text-gold transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Back to Orders
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+                    <!-- Order Information -->
+                    <div class="bg-gray-50 p-6">
+                        <h3 class="text-sm font-medium uppercase tracking-widest mb-4">Order Information</h3>
+                        <div class="space-y-3 text-sm font-light">
+                            <p><span class="text-gray-600">Order Number:</span> #ORD-2025-7842</p>
+                            <p><span class="text-gray-600">Date Placed:</span> April 28, 2025</p>
+                            <p><span class="text-gray-600">Status:</span> <span class="text-green-600">Delivered</span>
+                            </p>
+                            <p><span class="text-gray-600">Total:</span> €1,250.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Information -->
+                    <div class="bg-gray-50 p-6">
+                        <h3 class="text-sm font-medium uppercase tracking-widest mb-4">Shipping Information</h3>
+                        <div class="space-y-3 text-sm font-light">
+                            <p><span class="text-gray-600">Name:</span> John Doe</p>
+                            <p><span class="text-gray-600">Address:</span> 123 Rue Saint-Honoré</p>
+                            <p><span class="text-gray-600">City:</span> Paris</p>
+                            <p><span class="text-gray-600">Postal Code:</span> 75001</p>
+                            <p><span class="text-gray-600">Country:</span> France</p>
+                        </div>
+                    </div>
+
+                    <!-- Payment Information -->
+                    <div class="bg-gray-50 p-6">
+                        <h3 class="text-sm font-medium uppercase tracking-widest mb-4">Payment Information</h3>
+                        <div class="space-y-3 text-sm font-light">
+                            <p><span class="text-gray-600">Payment Method:</span> Credit Card</p>
+                            <p><span class="text-gray-600">Card:</span> •••• •••• •••• 4242</p>
+                            <p><span class="text-gray-600">Subtotal:</span> €1,041.67</p>
+                            <p><span class="text-gray-600">Tax:</span> €208.33</p>
+                            <p><span class="text-gray-600">Total:</span> €1,250.00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Items -->
+                <h3 class="text-lg font-light mb-4">Order Items</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Product</th>
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Price</th>
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Quantity</th>
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Item 1 -->
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4">
+                                    <div class="flex items-center">
+                                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                            alt="Leather Briefcase" class="w-16 h-16 object-cover mr-4">
+                                        <div>
+                                            <p class="text-sm font-light">Leather Briefcase</p>
+                                            <p class="text-xs text-gray-500">Saint Laurent</p>
+                                            <p class="text-xs text-gray-500">Color: Black</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4 text-sm font-light">€1,250.00</td>
+                                <td class="py-4 text-sm font-light">1</td>
+                                <td class="py-4 text-sm font-light">€1,250.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Return Button -->
+                <div class="mt-8 text-center">
+                    <button id="initiate-return"
+                        class="inline-block border border-black text-black px-8 py-3 text-sm font-light uppercase tracking-widest hover:bg-black hover:text-white transition duration-300">
+                        Initiate Return
+                    </button>
+                </div>
+            </div>
+
+            <!-- No Orders State (Hidden) -->
+            <div id="no-orders" class="text-center py-16 hidden">
+                <div class="inline-flex items-center justify-center h-16 w-16 border border-gray-200 rounded-none mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-400" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M9 5l7 7-7 7M5 5l7 7-7 7" />
+                    </svg>
+                </div>
+                <h2 class="text-xl font-light mb-3">You currently have no orders</h2>
+                <p class="text-gray-600 font-light mb-8">When you've placed an order, you'll find all the details here
+                </p>
+                <a href="#"
+                    class="inline-block border border-black text-black px-8 py-3 text-sm font-light uppercase tracking-widest hover:bg-black hover:text-white transition duration-300">
+                    Shop New In
+                </a>
+            </div>
+        </div>
+
+        <div id="returns-content" class="tab-content hidden">
+            <p class="text-gray-700 mb-8">Initiate and track your return requests</p>
+
+            <!-- Returns List -->
+            <div id="returns-list">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Return ID</th>
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Order</th>
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Date</th>
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Status</th>
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Return 1 -->
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4 text-sm font-light">#RTN-2025-1234</td>
+                                <td class="py-4 text-sm font-light">#ORD-2025-6953</td>
+                                <td class="py-4 text-sm font-light">April 20, 2025</td>
+                                <td class="py-4">
+                                    <span
+                                        class="px-2 py-1 text-xs font-medium bg-yellow-100 text-yellow-800 rounded-sm">
+                                        In Progress
+                                    </span>
+                                </td>
+                                <td class="py-4">
+                                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">View
+                                        Details</a>
+                                </td>
+                            </tr>
+                            <!-- Return 2 -->
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4 text-sm font-light">#RTN-2025-0987</td>
+                                <td class="py-4 text-sm font-light">#ORD-2025-5421</td>
+                                <td class="py-4 text-sm font-light">March 5, 2025</td>
+                                <td class="py-4">
+                                    <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-sm">
+                                        Completed
+                                    </span>
+                                </td>
+                                <td class="py-4">
+                                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">View
+                                        Details</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Return Details (Hidden by default) -->
+            <div id="return-details" class="hidden mt-10">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-light">Return #RTN-2025-1234</h2>
+                    <button id="back-to-returns"
+                        class="text-sm font-light flex items-center hover:text-gold transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Back to Returns
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                    <!-- Return Information -->
+                    <div class="bg-gray-50 p-6">
+                        <h3 class="text-sm font-medium uppercase tracking-widest mb-4">Return Information</h3>
+                        <div class="space-y-3 text-sm font-light">
+                            <p><span class="text-gray-600">Return Number:</span> #RTN-2025-1234</p>
+                            <p><span class="text-gray-600">Order Number:</span> #ORD-2025-6953</p>
+                            <p><span class="text-gray-600">Date Requested:</span> April 20, 2025</p>
+                            <p><span class="text-gray-600">Status:</span> <span class="text-yellow-600">In
+                                    Progress</span></p>
+                            <p><span class="text-gray-600">Refund Amount:</span> €895.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Return Status Timeline -->
+                    <div class="bg-gray-50 p-6">
+                        <h3 class="text-sm font-medium uppercase tracking-widest mb-4">Return Status</h3>
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="flex flex-col items-center mr-4">
+                                    <div class="rounded-full h-4 w-4 bg-green-500 flex items-center justify-center">
+                                        <svg class="h-3 w-3 text-white" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <div class="h-full w-0.5 bg-gray-300"></div>
+                                </div>
+                                <div class="pb-6">
+                                    <p class="text-sm font-medium">Return Requested</p>
+                                    <p class="text-xs text-gray-500">April 20, 2025 at 10:23 AM</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex flex-col items-center mr-4">
+                                    <div class="rounded-full h-4 w-4 bg-green-500 flex items-center justify-center">
+                                        <svg class="h-3 w-3 text-white" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                    <div class="h-full w-0.5 bg-gray-300"></div>
+                                </div>
+                                <div class="pb-6">
+                                    <p class="text-sm font-medium">Return Approved</p>
+                                    <p class="text-xs text-gray-500">April 21, 2025 at 2:45 PM</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex flex-col items-center mr-4">
+                                    <div class="rounded-full h-4 w-4 bg-yellow-500 flex items-center justify-center">
+                                        <div class="h-2 w-2 bg-white rounded-full"></div>
+                                    </div>
+                                    <div class="h-full w-0.5 bg-gray-300"></div>
+                                </div>
+                                <div class="pb-6">
+                                    <p class="text-sm font-medium">Awaiting Item</p>
+                                    <p class="text-xs text-gray-500">Please return the item by May 5, 2025</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex flex-col items-center mr-4">
+                                    <div class="rounded-full h-4 w-4 bg-gray-300 flex items-center justify-center">
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-500">Refund Processed</p>
+                                    <p class="text-xs text-gray-500">Pending</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Return Items -->
+                <h3 class="text-lg font-light mb-4">Return Items</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Product</th>
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Price</th>
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Quantity</th>
+                                <th class="py-3 text-left text-xs font-medium uppercase tracking-wider">Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Item 1 -->
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4">
+                                    <div class="flex items-center">
+                                        <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                            alt="Designer Backpack" class="w-16 h-16 object-cover mr-4">
+                                        <div>
+                                            <p class="text-sm font-light">Designer Backpack</p>
+                                            <p class="text-xs text-gray-500">Balenciaga</p>
+                                            <p class="text-xs text-gray-500">Color: Navy</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-4 text-sm font-light">€895.00</td>
+                                <td class="py-4 text-sm font-light">1</td>
+                                <td class="py-4 text-sm font-light">Item does not match description</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Return Instructions -->
+                <div class="mt-8 bg-gray-50 p-6">
+                    <h3 class="text-sm font-medium uppercase tracking-widest mb-4">Return Instructions</h3>
+                    <ol class="list-decimal pl-5 space-y-2 text-sm font-light">
+                        <li>Print the return label provided in your email.</li>
+                        <li>Pack the item(s) securely in the original packaging if possible.</li>
+                        <li>Attach the return label to the outside of the package.</li>
+                        <li>Drop off the package at your nearest courier location.</li>
+                        <li>Keep your receipt as proof of return.</li>
+                    </ol>
+                    <div class="mt-4">
+                        <a href="#" class="text-sm font-light text-gold hover:underline">Download Return Label</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Returns State (Hidden) -->
+            <div id="no-returns" class="text-center py-16 hidden">
+                <div class="inline-flex items-center justify-center h-16 w-16 border border-gray-200 rounded-none mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-400" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M16 15v-1a4 4 0 00-4-4H8m0 0l3 3m-3-3l3-3m9 14V5a2 2 0 00-2-2H6a2 2 0 00-2 2v16l4-2 4 2 4-2 4 2z" />
+                    </svg>
+                </div>
+                <h2 class="text-xl font-light mb-3">You have no return requests</h2>
+                <p class="text-gray-600 font-light mb-8">When you've initiated a return, you'll find all the details
+                    here</p>
+                <a href="#"
+                    class="inline-block border border-black text-black px-8 py-3 text-sm font-light uppercase tracking-widest hover:bg-black hover:text-white transition duration-300">
+                    View Orders
+                </a>
+            </div>
+        </div>
+
+        <!-- Return Form Modal (Hidden by default) -->
+        <div id="return-form-modal"
+            class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center hidden" aria-hidden="true"
+            role="dialog" aria-modal="true" aria-labelledby="return-form-title">
+            <div class="bg-white p-6 max-w-lg w-full mx-4 relative">
+                <button id="close-return-form" class="absolute right-6 top-6 text-gray-500 hover:text-gray-900"
+                    aria-label="Close return form">
+                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+                <h2 id="return-form-title" class="text-2xl font-light mb-4 font-display text-center">Initiate Return
+                </h2>
+                <p class="text-center text-gray-600 mb-6 font-light">Please complete the form below to initiate your
+                    return request.</p>
+
+                <form id="return-form" class="space-y-4">
+                    <div>
+                        <label for="return-reason" class="block text-sm font-light text-gray-700 mb-1">Reason for
+                            Return</label>
+                        <select id="return-reason" name="return-reason" required
+                            class="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black text-gray-900 text-sm font-light">
+                            <option value="">Select a reason</option>
+                            <option value="wrong-item">Received wrong item</option>
+                            <option value="defective">Item is defective/damaged</option>
+                            <option value="not-as-described">Item not as described</option>
+                            <option value="fit-issue">Fit issue</option>
+                            <option value="changed-mind">Changed my mind</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div id="other-reason-container" class="hidden">
+                        <label for="other-reason" class="block text-sm font-light text-gray-700 mb-1">Please
+                            specify</label>
+                        <textarea id="other-reason" name="other-reason" rows="3"
+                            class="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black text-gray-900 text-sm font-light"></textarea>
+                    </div>
+
+                    <div>
+                        <label for="return-comments" class="block text-sm font-light text-gray-700 mb-1">Additional
+                            Comments</label>
+                        <textarea id="return-comments" name="return-comments" rows="3"
+                            class="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black text-gray-900 text-sm font-light"></textarea>
+                    </div>
+
+                    <div class="custom-checkbox">
+                        <input id="return-policy" name="return-policy" type="checkbox" required>
+                        <label for="return-policy" class="text-sm font-light text-gray-700">
+                            I have read and agree to the <a href="#" class="text-black hover:underline">Return
+                                Policy</a>
+                        </label>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition-all duration-300">
+                        Submit Return Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const orderTab = document.getElementById('orders-tab');
+            const returnsTab = document.getElementById('returns-tab');
+            const ordersContent = document.getElementById('orders-content');
+            const returnsContent = document.getElementById('returns-content');
+
+            // Order detail view elements
+            const ordersList = document.getElementById('orders-list');
+            const orderDetails = document.getElementById('order-details');
+            const backToOrders = document.getElementById('back-to-orders');
+            const noOrders = document.getElementById('no-orders');
+
+            // Return detail view elements
+            const returnsList = document.getElementById('returns-list');
+            const returnDetails = document.getElementById('return-details');
+            const backToReturns = document.getElementById('back-to-returns');
+            const noReturns = document.getElementById('no-returns');
+
+            // Return form modal elements
+            const initiateReturn = document.getElementById('initiate-return');
+            const returnFormModal = document.getElementById('return-form-modal');
+            const closeReturnForm = document.getElementById('close-return-form');
+            const returnForm = document.getElementById('return-form');
+            const returnReason = document.getElementById('return-reason');
+            const otherReasonContainer = document.getElementById('other-reason-container');
+
+            // Tab switching
+            orderTab.addEventListener('click', function () {
+                // Update tab styles
+                orderTab.classList.add('active');
+                returnsTab.classList.remove('active');
+                returnsTab.classList.add('text-gray-500');
+                orderTab.classList.remove('text-gray-500');
+
+                // Show/hide content
+                ordersContent.classList.remove('hidden');
+                returnsContent.classList.add('hidden');
+            });
+
+            returnsTab.addEventListener('click', function () {
+                // Update tab styles
+                returnsTab.classList.add('active');
+                orderTab.classList.remove('active');
+                orderTab.classList.add('text-gray-500');
+                returnsTab.classList.remove('text-gray-500');
+
+                // Show/hide content
+                returnsContent.classList.remove('hidden');
+                ordersContent.classList.add('hidden');
+            });
+
+            // View order details functionality
+            const viewOrderLinks = document.querySelectorAll('#orders-list a[href="#"]:first-child');
+            viewOrderLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    ordersList.classList.add('hidden');
+                    orderDetails.classList.remove('hidden');
+                });
+            });
+
+            // Back to orders list
+            if (backToOrders) {
+                backToOrders.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    orderDetails.classList.add('hidden');
+                    ordersList.classList.remove('hidden');
+                });
+            }
+
+            // View return details functionality
+            const viewReturnLinks = document.querySelectorAll('#returns-list a[href="#"]');
+            viewReturnLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    returnsList.classList.add('hidden');
+                    returnDetails.classList.remove('hidden');
+                });
+            });
+
+            // Back to returns list
+            if (backToReturns) {
+                backToReturns.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    returnDetails.classList.add('hidden');
+                    returnsList.classList.remove('hidden');
+                });
+            }
+
+            // Initiate return button
+            if (initiateReturn) {
+                initiateReturn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    returnFormModal.classList.remove('hidden');
+                });
+            }
+
+            // Close return form modal
+            if (closeReturnForm) {
+                closeReturnForm.addEventListener('click', function () {
+                    returnFormModal.classList.add('hidden');
+                });
+            }
+
+            // Close return form when clicking outside
+            returnFormModal.addEventListener('click', function (e) {
+                if (e.target === returnFormModal) {
+                    returnFormModal.classList.add('hidden');
+                }
+            });
+
+            // Show/hide other reason field based on selection
+            if (returnReason) {
+                returnReason.addEventListener('change', function () {
+                    if (this.value === 'other') {
+                        otherReasonContainer.classList.remove('hidden');
+                    } else {
+                        otherReasonContainer.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Return form submission
+            if (returnForm) {
+                returnForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Here you would implement the actual return submission logic
+                    alert('Return request submitted successfully!');
+
+                    // Close the modal
+                    returnFormModal.classList.add('hidden');
+
+                    // Redirect to returns tab
+                    returnsTab.click();
+                });
+            }
+
+            // Return links in orders list
+            const returnLinks = document.querySelectorAll('#orders-list a[href="#"]:nth-child(2)');
+            returnLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    returnFormModal.classList.remove('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+/* Address Book Page Specific Styles */
+
+/* Gold Accent Color */
+:root {
+    --color-gold: #c9a96e;
+}
+
+/* Form Styling */
+input[type="text"],
+input[type="tel"],
+select,
+textarea {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 1px var(--color-gold);
+}
+
+/* Custom Checkbox Styling */
+.custom-checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #e5e7eb;
+    border-radius: 2px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    background-color: white;
+}
+
+.custom-checkbox input[type="checkbox"]:checked {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+.custom-checkbox input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.custom-checkbox input[type="checkbox"]:hover {
+    border-color: var(--color-gold);
+}
+
+.custom-checkbox input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(201, 169, 110, 0.3);
+}
+
+.custom-checkbox label {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Button Styling */
+.inline-block.border.border-black {
+    transition: all 0.3s ease;
+}
+
+.inline-block.border.border-black:hover {
+    background-color: #000;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Address Card Styling */
+.address-card {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.address-card:hover {
+    border-color: var(--color-gold);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Status Badge Styling */
+.px-2.py-1.text-xs.font-medium {
+    display: inline-block;
+    border-radius: 0.125rem;
+}
+
+/* Delete Modal Styling */
+#delete-address-modal .bg-white {
+    animation: modal-slide-in 0.4s ease forwards;
+}
+
+@keyframes modal-slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gold text color utility class */
+.text-gold {
+    color: var(--color-gold) !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .grid.grid-cols-1.md\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    #address-form {
+        padding: 1.5rem;
+    }
+
+    .address-card {
+        padding: 1.5rem;
+    }
+
+    .address-card .absolute {
+        position: static;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 1rem;
+    }
+}

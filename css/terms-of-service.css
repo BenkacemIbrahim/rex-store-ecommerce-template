@@ -1,0 +1,68 @@
+/* Terms of Service specific styles */
+.terms-section {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.terms-section:last-of-type {
+    border-bottom: none;
+}
+
+.terms-section h2 {
+    position: relative;
+}
+
+.terms-section h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #c9a96e;
+}
+
+.terms-list li {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.terms-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #c9a96e;
+}
+
+/* Back to top button */
+#back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #000;
+    color: #fff;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 50;
+    border: 1px solid #c9a96e;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top:hover {
+    background-color: #c9a96e;
+}

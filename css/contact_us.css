@@ -1,0 +1,122 @@
+/* Contact Us Page Specific Styles */
+
+/* Gold accent color */
+:root {
+    --color-gold: #c9a96e;
+}
+
+/* Contact Information Cards */
+.bg-gray-50 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-gray-50:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon containers */
+.flex-shrink-0 .h-10.w-10 {
+    transition: all 0.3s ease;
+    border-color: var(--color-gold);
+}
+
+.bg-gray-50:hover .flex-shrink-0 .h-10.w-10 {
+    background-color: var(--color-gold);
+    color: white;
+}
+
+/* Contact links hover effect */
+.bg-gray-50 a {
+    transition: color 0.3s ease;
+}
+
+.bg-gray-50 a:hover {
+    color: var(--color-gold);
+}
+
+/* Form Input Styling */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 1px var(--color-gold);
+}
+
+/* Custom Checkbox Styling */
+.custom-checkbox input[type="checkbox"]:checked {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+.custom-checkbox input[type="checkbox"]:hover {
+    border-color: var(--color-gold);
+}
+
+.custom-checkbox input[type="checkbox"]:focus {
+    box-shadow: 0 0 0 2px rgba(201, 169, 110, 0.3);
+}
+
+/* Submit Button Hover Effect */
+button[type="submit"].bg-black.text-white:hover {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+/* Map Container Styling */
+.relative.h-96.w-full {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.relative.h-96.w-full:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Newsletter Section Enhancements */
+#email-input,
+#phone-input {
+    transition: border-color 0.3s ease;
+}
+
+#email-input:focus,
+#phone-input:focus {
+    border-color: var(--color-gold);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .grid-cols-1.md\:grid-cols-3 > div {
+        margin-bottom: 1.5rem;
+    }
+    
+    .py-16 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .py-24 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .bg-gray-50 {
+        padding: 1.5rem;
+    }
+    
+    .relative.h-96.w-full {
+        height: 300px;
+    }
+}

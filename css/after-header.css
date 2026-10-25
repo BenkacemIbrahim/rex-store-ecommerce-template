@@ -1,0 +1,471 @@
+/* User Dropdown Styles */
+.user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.user-dropdown.active,
+.user-dropdown:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* User Avatar Styles */
+#user-menu-button div {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+#user-menu-button:hover div {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+    transform: scale(1.05);
+}
+
+/* User Dropdown Menu Item Hover Effects */
+.user-dropdown a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.user-dropdown a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-gold);
+    transition: width 0.3s ease;
+    opacity: 0;
+}
+
+.user-dropdown a:hover {
+    color: var(--color-gold);
+    background-color: rgba(201, 169, 110, 0.05);
+}
+
+.user-dropdown a:hover::before {
+    width: 100%;
+    opacity: 1;
+}
+
+/* Badge Styles */
+.absolute.top-0.right-0.inline-flex {
+    transition: all 0.3s ease;
+}
+
+a:hover .absolute.top-0.right-0.inline-flex {
+    background-color: var(--color-gold);
+    transform: translate(50%, -50%) scale(1.1);
+}
+ /* Responsive styles */
+ @media (max-width: 1023px) {
+     .mega-dropdown {
+         display: none !important;
+     }
+
+     /* Remove the !important for tablet view */
+     .mega-dropdown.active {
+         display: block !important;
+     }
+ }
+
+ @media (max-width: 768px) {
+     .mobile-menu-expanded {
+         max-height: 100vh;
+         overflow-y: auto;
+     }
+ }
+
+ @media (max-width: 640px) {
+     .announcement-bar {
+         font-size: 0.65rem;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .announcement-bar {
+         font-size: 0.6rem;
+     }
+ }
+
+ /* Animation for announcement bar */
+ @keyframes slide {
+     0% {
+         transform: translateX(0);
+     }
+
+     100% {
+         transform: translateX(-50%);
+     }
+ }
+
+ /* Fixed header styles */
+ header.fixed {
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     z-index: 50;
+     background-color: white;
+     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+ }
+
+ /* New Mobile Menu Styles */
+ #mobile-menu {
+     position: fixed;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     /* Changed to 100% for full width */
+     background-color: white;
+     z-index: 100;
+     overflow-y: auto;
+     transform: translateX(-100%);
+     transition: transform 0.3s ease-in-out;
+     display: flex;
+     flex-direction: column;
+     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+ }
+
+ #mobile-menu.active {
+     transform: translateX(0);
+ }
+
+ .mobile-menu-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1rem;
+     border-bottom: 1px solid #f3f4f6;
+ }
+
+ .mobile-menu-content {
+     flex: 1;
+     overflow-y: auto;
+     padding: 1rem;
+ }
+
+ .mobile-menu-item {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0.75rem 0;
+     border-bottom: 1px solid #f3f4f6;
+ }
+
+ .mobile-menu-item:last-child {
+     border-bottom: none;
+ }
+
+ body.menu-open {
+     overflow: hidden;
+ }
+
+ .mobile-menu-tabs {
+     display: flex;
+     border-bottom: 1px solid #f3f4f6;
+ }
+
+ .mobile-menu-tab {
+     flex: 1;
+     text-align: center;
+     padding: 0.75rem 0;
+     font-size: 0.75rem;
+     text-transform: uppercase;
+     letter-spacing: 0.05em;
+ }
+
+ .mobile-menu-tab.active {
+     color: #000;
+     font-weight: 500;
+     border-bottom: 2px solid #000;
+ }
+
+ /* Mobile Submenu Styles */
+ .mobile-submenu {
+     position: fixed;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     /* Changed to 100% for full width */
+     background-color: white;
+     z-index: 101;
+     overflow-y: auto;
+     transform: translateX(-100%);
+     transition: transform 0.3s ease-in-out;
+     display: flex;
+     flex-direction: column;
+     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+ }
+
+ .mobile-submenu.active {
+     transform: translateX(0);
+ }
+
+ .mobile-submenu-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1rem;
+     border-bottom: 1px solid #f3f4f6;
+ }
+
+ .mobile-submenu-content {
+     flex: 1;
+     overflow-y: auto;
+     padding: 1rem;
+ }
+
+ .mobile-submenu-item {
+     padding: 0.75rem 0;
+     border-bottom: 1px solid #f3f4f6;
+ }
+
+ .mobile-submenu-item:last-child {
+     border-bottom: none;
+ }
+
+ /* Mobile Menu Overlay */
+ .mobile-menu-overlay {
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: rgba(0, 0, 0, 0.5);
+     z-index: 99;
+     opacity: 0;
+     visibility: hidden;
+     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+ }
+
+ .mobile-menu-overlay.active {
+     opacity: 1;
+     visibility: visible;
+ }
+
+ /* Language Submenu */
+ #language-submenu {
+     z-index: 102;
+ }
+
+ /* Search input style - stop before search icon */
+ #search-input {
+     padding-right: 40px;
+     /* Add padding to prevent text from reaching the search icon */
+ }
+
+ /* Tablet Category Selector Styles - MODIFIED for language dropdown */
+ @media (min-width: 640px) and (max-width: 1023px) {
+     .tablet-category-selector {
+         display: flex;
+         align-items: center;
+         font-size: 0.875rem;
+         font-weight: 500;
+         padding: 0.5rem;
+         cursor: pointer;
+         position: relative;
+     }
+
+     .tablet-category-selector svg {
+         margin-left: 0.25rem;
+         width: 0.875rem;
+         height: 0.875rem;
+         transition: transform 0.2s ease;
+     }
+
+     .tablet-category-selector.active svg {
+         transform: rotate(180deg);
+     }
+
+     .tablet-nav-container {
+         display: flex;
+         align-items: center;
+         margin-right: 0.5rem;
+         position: relative;
+     }
+
+     /* MODIFIED: Remove the display:none for language selector elements */
+     .language-selector .language-name {
+         display: inline;
+         /* Show language name in tablet view */
+         font-size: 0.75rem;
+         margin-left: 0.25rem;
+     }
+
+     .language-selector .language-code {
+         display: none;
+         /* Keep code hidden */
+     }
+
+     /* Add styles for active tablet selector */
+     .tablet-category-selector.active {
+         color: #000;
+         font-weight: 600;
+     }
+
+     /* Tablet Category Dropdown Styles */
+     .tablet-category-dropdown {
+         position: absolute;
+         top: 100%;
+         left: 0;
+         width: 180px;
+         background-color: white;
+         border: 1px solid #f3f4f6;
+         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+         z-index: 45;
+         display: none;
+     }
+
+     .tablet-category-dropdown.active {
+         display: block;
+     }
+
+     .tablet-category-dropdown a {
+         display: block;
+         padding: 0.75rem 1rem;
+         font-size: 0.875rem;
+         color: #333;
+         border-bottom: 1px solid #f3f4f6;
+         transition: background-color 0.2s ease;
+     }
+
+     .tablet-category-dropdown a:last-child {
+         border-bottom: none;
+     }
+
+     .tablet-category-dropdown a:hover {
+         background-color: #f9fafb;
+     }
+
+     /* ADDED: Style for language dropdown in tablet view */
+     .language-dropdown {
+         right: 0;
+         width: 180px;
+         background-color: white;
+         border: 1px solid #f3f4f6;
+         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+         z-index: 45;
+     }
+
+     .language-dropdown a {
+         display: flex;
+         align-items: center;
+         padding: 0.75rem 1rem;
+         font-size: 0.875rem;
+         color: #333;
+         border-bottom: 1px solid #f3f4f6;
+         transition: background-color 0.2s ease;
+     }
+
+     .language-dropdown a:last-child {
+         border-bottom: none;
+     }
+
+     .language-dropdown a:hover {
+         background-color: #f9fafb;
+     }
+ }
+
+ /* User dropdown styles */
+ .user-dropdown {
+     position: absolute;
+     right: 0;
+     top: 100%;
+     width: 220px;
+     background-color: white;
+     border: 1px solid #f3f4f6;
+     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+     z-index: 50;
+     display: none;
+ }
+
+ .user-dropdown.active {
+     display: block;
+ }
+
+ /* Add styles for the user account section in mobile menu */
+ .user-account-section {
+     border-top: 1px solid #f3f4f6;
+     margin-top: 1rem;
+     padding-top: 1rem;
+ }
+
+ .user-account-header {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-bottom: 0.5rem;
+ }
+
+ .user-account-title {
+     font-size: 0.875rem;
+     font-weight: 500;
+     text-transform: uppercase;
+     letter-spacing: 0.05em;
+ }
+
+ .user-account-trigger {
+     display: flex;
+     align-items: center;
+     padding: 0.5rem 0;
+     width: 100%;
+     justify-content: space-between;
+     border-bottom: 1px solid #f3f4f6;
+ }
+
+ .user-account-trigger .user-icon {
+     display: flex;
+     align-items: center;
+ }
+
+ .user-account-trigger .user-icon .avatar {
+     width: 1.75rem;
+     height: 1.75rem;
+     border-radius: 50%;
+     background-color: black;
+     color: white;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 0.75rem;
+     margin-right: 0.75rem;
+ }
+
+ .user-account-menu {
+     padding-left: 2.5rem;
+     max-height: 0;
+     overflow: hidden;
+     transition: max-height 0.3s ease-out;
+ }
+
+ .user-account-menu.active {
+     max-height: 200px;
+     transition: max-height 0.3s ease-in;
+ }
+
+ .user-account-menu a {
+     display: block;
+     padding: 0.5rem 0;
+     font-size: 0.875rem;
+     color: #4b5563;
+ }
+
+ .user-account-menu a:hover {
+     color: #000;
+ }

@@ -1,0 +1,238 @@
+/* Bags Page Specific Styles */
+
+/* Filter Panel Styles */
+#filter-panel,
+#sort-panel {
+    transition: all 0.3s ease;
+}
+
+.sort-option {
+    position: relative;
+    padding-left: 24px;
+}
+
+.sort-option.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M5 13l4 4L19 7'%3E%3C/path%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Size Button Active State */
+.grid-cols-4 button.border-black {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+    font-weight: 400;
+}
+
+/* Filter Toggle Button Hover */
+#filter-toggle:hover,
+#sort-toggle:hover {
+    color: var(--color-gold);
+}
+
+#filter-toggle:hover svg,
+#sort-toggle:hover svg {
+    stroke: var(--color-gold);
+}
+
+/* Product Search Input */
+#product-search {
+    transition: all 0.3s ease;
+}
+
+#product-search:focus {
+    border-color: var(--color-gold);
+}
+
+#product-search:focus+button svg {
+    stroke: var(--color-gold);
+}
+
+/* Apply Filters Button Hover */
+#apply-filters:hover {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+/* Clear Filters Button Hover */
+#clear-filters:hover {
+    color: var(--color-gold);
+    text-decoration: none;
+}
+
+/* Category Tabs Styling */
+.category-tab {
+    transition: all 0.3s ease;
+}
+
+.category-tab.active {
+    color: var(--color-gold);
+}
+
+.category-tab::after {
+    background-color: var(--color-gold);
+}
+
+.category-tab:hover {
+    color: var(--color-gold);
+}
+
+/* Subcategory Navigation Links */
+.category-content a.text-sm.font-light:hover {
+    color: var(--color-gold) !important;
+}
+
+/* Product Grid Hover Effects */
+.group:hover h3 {
+    color: var(--color-gold);
+    transition: color 0.3s ease;
+}
+
+/* Load More Button */
+.text-center a.inline-block:hover {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+/* Back to Top Button */
+#back-to-top {
+    border: 1px solid var(--color-gold);
+}
+
+#back-to-top:hover {
+    background-color: var(--color-gold);
+}
+
+/* Enhanced Product Card Hover Effects */
+.group .relative.overflow-hidden {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.group:hover .relative.overflow-hidden {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Quick View Button Animation */
+.group:hover .absolute.bottom-0 button {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(201, 169, 110, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(201, 169, 110, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(201, 169, 110, 0);
+    }
+}
+
+/* Wishlist Button Enhanced Hover */
+.absolute.top-4.right-4 button:hover {
+    background-color: var(--color-gold);
+}
+
+.absolute.top-4.right-4 button:hover svg {
+    stroke: white;
+}
+
+/* Collection Highlights Enhanced Hover */
+.relative.group.overflow-hidden:hover .text-white {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Gold text color utility class */
+.text-gold {
+    color: var(--color-gold) !important;
+}
+
+/* Recommendation Slider Navigation */
+#prev-recommendations,
+#next-recommendations {
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    transition: all 0.3s ease;
+}
+
+#prev-recommendations:hover,
+#next-recommendations:hover {
+    background-color: var(--color-gold);
+    color: white;
+}
+
+#prev-recommendations:hover svg,
+#next-recommendations:hover svg {
+    stroke: white;
+}
+
+/* Bag-specific styles */
+.category-content .grid-cols-1.md\:grid-cols-2.gap-8 .relative.group.overflow-hidden {
+    transition: transform 0.3s ease;
+}
+
+.category-content .grid-cols-1.md\:grid-cols-2.gap-8 .relative.group.overflow-hidden:hover {
+    transform: translateY(-5px);
+}
+
+/* Featured banner overlay transition */
+#featured-content .relative .absolute {
+    transition: background-color 0.3s ease;
+}
+
+#featured-content .relative:hover .absolute {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Designer spotlight section hover effects */
+.py-24.bg-white .grid-cols-1.md\:grid-cols-3 .flex.flex-col img {
+    transition: transform 0.5s ease;
+}
+
+.py-24.bg-white .grid-cols-1.md\:grid-cols-3 .flex.flex-col:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .grid-cols-4 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .category-tabs {
+        flex-wrap: wrap;
+    }
+
+    .category-tab {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .grid-cols-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .category-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+
+    .category-tab {
+        flex-shrink: 0;
+        margin-right: 1.5rem;
+    }
+}

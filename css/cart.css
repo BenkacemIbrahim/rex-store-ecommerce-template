@@ -1,0 +1,689 @@
+/* Cart Page Specific Styles */
+
+/* Cart Item Styles */
+#cart-items {
+    border-top: 1px solid #f3f4f6;
+}
+
+/* Custom Quantity Selector */
+.custom-quantity-selector {
+    display: flex;
+    align-items: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.quantity-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.quantity-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.quantity-input {
+    width: 40px;
+    height: 32px;
+    border: none;
+    border-left: 1px solid #e5e7eb;
+    border-right: 1px solid #e5e7eb;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Move to Wishlist and Remove Item Buttons */
+.move-to-wishlist,
+.remove-item {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.move-to-wishlist:hover,
+.remove-item:hover {
+    color: var(--color-gold);
+}
+
+.move-to-wishlist::after,
+.remove-item::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-gold);
+    transition: width 0.3s ease;
+}
+
+.move-to-wishlist:hover::after,
+.remove-item:hover::after {
+    width: 100%;
+}
+
+/* Order Summary Styles */
+.bg-gray-50 {
+    background-color: #f9fafb;
+}
+
+/* Proceed to Checkout Button Hover */
+button.w-full.bg-black:hover {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+/* Payment Icons - REMOVED HOVER EFFECT */
+.flex.justify-center.space-x-4 img {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+/* Promo Code Input */
+input[type="text"] {
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--color-gold);
+}
+
+/* Continue Shopping Link */
+.inline-flex.items-center svg {
+    transition: transform 0.3s ease;
+}
+
+.inline-flex.items-center:hover svg {
+    transform: translateX(-5px);
+}
+
+/* Empty Cart Message */
+#empty-cart-message {
+    padding: 3rem 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .custom-quantity-selector {
+        margin-bottom: 1rem;
+    }
+
+    .move-to-wishlist,
+    .remove-item {
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .flex.flex-col.md\:flex-row {
+        padding: 1.5rem 0;
+    }
+
+    /* Taller product images */
+    .w-24.h-24 {
+        width: 5rem;
+        height: 10rem;
+    }
+}
+
+/* Recommendation Slider Navigation */
+#prev-recommendations,
+#next-recommendations {
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    transition: all 0.3s ease;
+}
+
+#prev-recommendations:hover,
+#next-recommendations:hover {
+    background-color: var(--color-gold);
+    color: white;
+}
+
+#prev-recommendations:hover svg,
+#next-recommendations:hover svg {
+    stroke: white;
+}
+
+/* View All Recommendations Button */
+.text-center a.inline-block:hover {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+/* Size and Color Selectors */
+select.appearance-none {
+    background-color: white;
+    border-radius: 0;
+    cursor: pointer;
+    min-width: 100px;
+    transition: all 0.3s ease;
+}
+
+select.appearance-none:focus {
+    border-color: var(--color-gold);
+    box-shadow: 0 0 0 1px var(--color-gold);
+}
+
+select.appearance-none:hover {
+    border-color: var(--color-gold);
+}
+
+/* Custom dropdown arrow positioning */
+.pointer-events-none {
+    height: 34px;
+    margin-top: 6px;
+}
+/* Empty Cart Icon Styles */
+.cart-icon-container {
+    width: 180px;
+    height: 150px;
+    /* Reduced from 180px to 150px */
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.cart-icon {
+    stroke: #333;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.empty-dot {
+    fill: #ccc;
+}
+
+/* Added negative margin to the text to bring it closer to the icon */
+.empty-cart-text {
+    margin-top: -10px;
+}
+
+/* Empty cart section padding adjustments */
+.empty-cart-section {
+    padding-top: 3rem;
+    /* Reduced from py-16 (4rem) to 3rem */
+    padding-bottom: 3rem;
+    /* Reduced from py-16 (4rem) to 3rem */
+}
+
+.empty-cart-content {
+    padding-top: 2.5rem;
+    /* Reduced from py-16 (4rem) to 2.5rem */
+    padding-bottom: 2.5rem;
+    /* Reduced from py-16 (4rem) to 2.5rem */
+}
+/* Enhanced Select Dropdown Styles */
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-width: 120px;
+}
+
+/* Hide the original select element but keep it in the DOM */
+.custom-select select {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    z-index: -1;
+    /* Place it behind the custom dropdown */
+}
+
+/* Fixed height for the select-selected element to prevent size changes */
+.select-selected {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    padding: 0.5rem 2rem 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    min-width: 120px;
+    height: 2.5rem;
+    /* Fixed height */
+    box-sizing: border-box;
+}
+
+.select-selected:hover {
+    border-color: #c9a96e;
+    box-shadow: 0 0 0 1px rgba(201, 169, 110, 0.3);
+}
+
+/* New chevron icon style */
+.select-selected::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    width: 12px;
+    height: 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease, background-image 0.3s ease;
+}
+
+.select-selected:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c9a96e' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+/* Rotate the chevron when dropdown is open */
+.select-selected.active::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Custom dropdown styles */
+.custom-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-top: none;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.custom-dropdown-option {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Remove hover effect for selected option */
+.custom-dropdown-option.selected {
+    background-color: rgba(201, 169, 110, 0.2);
+    font-weight: 500;
+}
+
+/* Only apply hover effect to non-selected options */
+.custom-dropdown-option:not(.selected):hover {
+    background-color: rgba(201, 169, 110, 0.1);
+}
+
+.color-option {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 20px;
+    /* Fixed height for color options */
+}
+
+.color-circle {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+/* Color-specific circles */
+.color-black {
+    background-color: #000000;
+}
+
+.color-white {
+    background-color: #ffffff;
+}
+
+.color-red {
+    background-color: #e53e3e;
+}
+
+.color-brown {
+    background-color: #8b4513;
+}
+
+/* Payment methods - REMOVED HOVER EFFECT */
+.flex.justify-center.space-x-4 img {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+
+@media (max-width: 767px) {
+    #prev-recommendations svg,
+    #next-recommendations svg {
+        height: 1rem;
+        width: 1rem;
+    }
+
+}
+/* Responsive styles for tablet and mobile */
+@media (max-width: 1023px) {
+    /* Tablet view adjustments */
+
+    /* Scale down elements for tablet */
+    .page-title {
+        font-size: 2.5rem;
+    }
+
+    .page-subtitle {
+        font-size: 0.95rem;
+    }
+
+    /* Cart items adjustments */
+    #cart-items h3 {
+        font-size: 0.95rem;
+    }
+
+    #cart-items p {
+        font-size: 0.85rem;
+    }
+
+    #cart-items button {
+        font-size: 0.75rem;
+    }
+
+    /* Adjust select dropdown for tablet */
+    .select-selected {
+        height: 2.3rem;
+        font-size: 0.8rem;
+        padding: 0.45rem 1.8rem 0.45rem 0.7rem;
+    }
+
+    .select-selected::after {
+        width: 11px;
+        height: 11px;
+        right: 0.7rem;
+    }
+
+    .custom-dropdown-option {
+        padding: 7px 11px;
+        font-size: 0.8rem;
+    }
+
+    /* Adjust recommendations section */
+    #recommendations-section h2 {
+        font-size: 2.2rem;
+    }
+
+    #recommendations-section p {
+        font-size: 0.9rem;
+        margin-bottom: 2.5rem;
+    }
+
+    /* Adjust recommendation items */
+    #recommendations-slider .flex-shrink-0 {
+        width: 250px;
+    }
+
+    #recommendations-slider img {
+        height: 320px;
+    }
+
+    #recommendations-slider h3 {
+        font-size: 0.9rem;
+    }
+
+    #recommendations-slider p {
+        font-size: 0.8rem;
+    }
+
+    #recommendations-slider button {
+        font-size: 0.8rem;
+        padding: 0.6rem;
+    }
+
+    /* Move recommendation navigation buttons higher on tablet */
+    #prev-recommendations,
+    #next-recommendations {
+        top: 35%;
+        /* Move up from 50% to 35% on tablet */
+    }
+}
+
+@media (max-width: 767px) {
+    /* Mobile view adjustments */
+
+    /* Scale down elements for mobile */
+    .page-title {
+        font-size: 2rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .page-subtitle {
+        font-size: 0.9rem;
+    }
+
+    /* Cart items adjustments for mobile - NEW LAYOUT */
+    /* Make cart items display in a row on mobile */
+    #cart-items .cart-item-mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 10px;
+        position: relative;
+    }
+
+    /* Product image takes less width */
+    #cart-items .cart-item-mobile .product-image {
+        width: 35%;
+        flex-shrink: 0;
+        height: 180px;
+        /* INCREASED HEIGHT */
+        overflow: hidden;
+    }
+
+    /* Make all product images the same size and centered */
+    #cart-items .cart-item-mobile .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Product details take remaining width */
+    #cart-items .cart-item-mobile .product-details {
+        width: 65%;
+        padding-right: 10px;
+    }
+
+    /* Product title and brand */
+    #cart-items .cart-item-mobile h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.25rem;
+    }
+
+    #cart-items .cart-item-mobile .brand {
+        font-size: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Size and color selectors */
+    #cart-items .cart-item-mobile .selectors {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 0.5rem;
+    }
+
+    #cart-items .cart-item-mobile .selector-group {
+        width: calc(50% - 4px);
+        min-width: 0;
+    }
+
+    #cart-items .cart-item-mobile label {
+        font-size: 0.7rem;
+        margin-bottom: 0.25rem;
+    }
+
+    /* Adjust select dropdown for mobile */
+    #cart-items .cart-item-mobile .select-selected {
+        height: 2rem;
+        font-size: 0.7rem;
+        padding: 0.3rem 1.5rem 0.3rem 0.5rem;
+        min-width: 0;
+    }
+
+    #cart-items .cart-item-mobile .select-selected::after {
+        width: 10px;
+        height: 10px;
+        right: 0.5rem;
+    }
+
+    /* Quantity and action buttons */
+    #cart-items .cart-item-mobile .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+    }
+
+    /* Adjust quantity selector */
+    #cart-items .cart-item-mobile .custom-quantity-selector {
+        transform: scale(0.85);
+        transform-origin: left;
+        margin-right: 5px;
+    }
+
+    /* Action buttons */
+    #cart-items .cart-item-mobile .action-btn {
+        font-size: 0.65rem;
+        white-space: nowrap;
+    }
+
+    /* Price display */
+    #cart-items .cart-item-mobile .price {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 0.9rem;
+        font-weight: 400;
+    }
+
+    /* Adjust order summary */
+    .order-summary h2 {
+        font-size: 1.8rem;
+    }
+
+    .order-summary p {
+        font-size: 0.9rem;
+    }
+
+    .order-summary button {
+        font-size: 0.75rem;
+        padding: 0.8rem 0;
+    }
+
+    /* Adjust recommendations section */
+    #recommendations-section h2 {
+        font-size: 1.8rem;
+    }
+
+    #recommendations-section p {
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Make "You May Also Like" section content smaller on mobile */
+    #recommendations-slider .flex-shrink-0 {
+        width: 220px;
+        /* Smaller width for recommendation items */
+    }
+
+    #recommendations-slider img {
+        height: 280px;
+        /* Smaller height for recommendation images */
+    }
+
+    #recommendations-slider h3 {
+        font-size: 0.8rem;
+        /* Smaller product title */
+    }
+
+    #recommendations-slider p {
+        font-size: 0.7rem;
+        /* Smaller text */
+    }
+
+    #recommendations-slider button {
+        font-size: 0.7rem;
+        padding: 0.5rem;
+    }
+
+    #recommendations-slider .absolute.top-4.right-4 button {
+        padding: 0.35rem;
+    }
+
+    #recommendations-slider .absolute.top-4.right-4 svg {
+        height: 0.9rem;
+        width: 0.9rem;
+    }
+
+    #prev-recommendations,
+    #next-recommendations {
+        padding: 0.5rem;
+    }
+
+    /* Adjust position of recommendation navigation buttons on mobile */
+    #prev-recommendations,
+    #next-recommendations {
+        padding: 0.5rem;
+        top: 40%;
+        /* Move up from 50% to 40% */
+    }
+
+    /* Promo code section */
+    input[type="text"] {
+        font-size: 0.8rem;
+        padding: 0.6rem 0.8rem;
+    }
+}
+/* Responsive adjustments for size/color selectors */
+@media (max-width: 640px) {
+    .flex.flex-wrap.gap-4 {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .flex.flex-wrap.gap-4 .relative {
+        width: 100%;
+    }
+
+    select.appearance-none {
+        width: 100%;
+    }
+}

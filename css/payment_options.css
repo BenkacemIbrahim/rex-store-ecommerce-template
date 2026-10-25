@@ -1,0 +1,208 @@
+/* Payment Options Page Specific Styles */
+
+/* Gold Accent Color */
+:root {
+    --color-gold: #c9a96e;
+}
+
+.text-gold {
+    color: var(--color-gold) !important;
+}
+
+.border-gold {
+    border-color: var(--color-gold) !important;
+}
+
+.bg-gold {
+    background-color: var(--color-gold) !important;
+}
+
+/* Section Enhancements */
+.py-24 .grid-cols-1.md\:grid-cols-2 img {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.6s ease;
+}
+
+.py-24 .grid-cols-1.md\:grid-cols-2:hover img {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Feature Icons */
+.flex-col.items-center .h-16.w-16 {
+    transition: all 0.3s ease;
+    border-color: var(--color-gold);
+}
+
+.flex-col.items-center:hover .h-16.w-16 {
+    background-color: var(--color-gold);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.flex-col.items-center h3 {
+    transition: color 0.3s ease;
+}
+
+.flex-col.items-center:hover h3 {
+    color: var(--color-gold);
+}
+
+/* Payment Method Icons */
+.flex.space-x-4 img {
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+}
+
+.flex.space-x-4:hover img {
+    opacity: 1;
+}
+
+.flex.space-x-4 img:hover {
+    transform: translateY(-3px);
+}
+
+/* FAQ Accordion Styles */
+.faq-item {
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 1rem;
+}
+
+.faq-question {
+    position: relative;
+    width: 100%;
+    padding: 1.5rem 2.5rem 1.5rem 0;
+    text-align: left;
+    font-weight: 400;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question:hover {
+    color: var(--color-gold);
+}
+
+.faq-question.active {
+    color: var(--color-gold);
+}
+
+.faq-icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.faq-icon.rotate-180 {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 0 0 0;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    color: #333333;
+    line-height: 1.6;
+}
+
+.faq-question.active+.faq-answer {
+    padding-bottom: 1.5rem;
+}
+
+/* Info Boxes */
+.bg-gray-50.p-8 {
+    transition: all 0.3s ease;
+}
+
+.bg-gray-50.p-8:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.bg-gray-50.p-8 h3 {
+    position: relative;
+    display: inline-block;
+}
+
+.bg-gray-50.p-8 h3::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 30px;
+    height: 1px;
+    background-color: var(--color-gold);
+    transition: width 0.3s ease;
+}
+
+.bg-gray-50.p-8:hover h3::after {
+    width: 100%;
+}
+
+/* Newsletter Section */
+#email-input,
+#phone-input {
+    transition: border-color 0.3s ease;
+}
+
+#email-input:focus,
+#phone-input:focus {
+    border-color: var(--color-gold);
+}
+
+/* Custom Checkbox Styling */
+.custom-checkbox input[type="checkbox"]:checked {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+.custom-checkbox input[type="checkbox"]:hover {
+    border-color: var(--color-gold);
+}
+
+.custom-checkbox input[type="checkbox"]:focus {
+    box-shadow: 0 0 0 2px rgba(201, 169, 110, 0.3);
+}
+
+/* Subscribe Button Hover */
+button[type="submit"].bg-black.text-white:hover {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .py-24 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .grid-cols-1.md\:grid-cols-2 .absolute {
+        position: relative;
+        margin-top: 1rem;
+        margin-left: 0;
+        margin-right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .grid-cols-1.md\:grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .bg-gray-50.p-8 {
+        margin-bottom: 1rem;
+    }
+}

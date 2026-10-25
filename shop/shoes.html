@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="REX STORE - Shoes Collection | Premium Footwear for Men and Kids">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>Shoes Collection | REX STORE - Premium Men's & Kids' Footwear</title>
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/shoes.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Fixed filter section styles */
+        .filter-section-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 30;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Add padding to body when filter is fixed to prevent content jump */
+        body.filter-fixed {
+            padding-top: 76px;
+            /* Adjust based on your filter section height */
+        }
+
+        /* Category tabs styling */
+        .category-tabs {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .category-tab {
+            position: relative;
+            padding-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-tab.active {
+            color: var(--color-gold);
+        }
+
+        .category-tab::after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-gold);
+            transition: width 0.3s ease;
+        }
+
+        .category-tab.active::after {
+            width: 100%;
+        }
+
+        .category-tab:hover {
+            color: var(--color-gold);
+        }
+
+        .category-content {
+            display: none;
+        }
+
+        .category-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased bg-white text-gray-900 transition-colors duration-300">
+    <!-- Page Title Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-light text-center font-display" data-aos="fade-up">Shoes Collection</h1>
+            <p class="text-center text-gray-600 mt-4 max-w-2xl mx-auto font-light" data-aos="fade-up"
+                data-aos-delay="100">
+                Discover our curated selection of premium footwear from the world's most prestigious fashion brands.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter and Search Section -->
+    <section class="py-8 border-b border-gray-100" id="filter-section">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
+                <!-- Filter Toggles -->
+                <div class="flex flex-wrap items-center gap-4" data-aos="fade-right">
+                    <button id="filter-toggle"
+                        class="flex items-center text-sm font-light hover:text-gray-500 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                        </svg>
+                        Filter
+                    </button>
+                    <div class="h-4 border-r border-gray-300"></div>
+                    <button id="sort-toggle"
+                        class="flex items-center text-sm font-light hover:text-gray-500 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+                        </svg>
+                        Sort by: <span class="font-medium ml-1">Featured</span>
+                    </button>
+                    <div class="h-4 border-r border-gray-300 hidden md:block"></div>
+                    <span class="text-sm text-gray-500 hidden md:inline-block">Showing 68 products</span>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="relative w-full md:w-64 flex-shrink-0" data-aos="fade-left">
+                    <input type="text" id="product-search" placeholder="Search shoes..."
+                        class="w-full px-4 py-2 border border-gray-200 focus:outline-none focus:border-black text-gray-900 text-sm font-light">
+                    <button class="absolute right-3 top-2 text-gray-500 hover:text-black" aria-label="Search products">
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Panel (Hidden by default) -->
+    <section id="filter-panel" class="py-8 bg-gray-50 hidden">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Category Filter -->
+                <div>
+                    <h3 class="text-sm font-medium uppercase tracking-widest mb-4">Category</h3>
+                    <div class="space-y-3">
+                        <div class="custom-checkbox">
+                            <input id="category-all" name="category" type="checkbox" checked>
+                            <label for="category-all" class="text-sm font-light">All Categories</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="category-sneakers" name="category" type="checkbox">
+                            <label for="category-sneakers" class="text-sm font-light">Sneakers</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="category-formal" name="category" type="checkbox">
+                            <label for="category-formal" class="text-sm font-light">Formal Shoes</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="category-boots" name="category" type="checkbox">
+                            <label for="category-boots" class="text-sm font-light">Boots</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="category-sandals" name="category" type="checkbox">
+                            <label for="category-sandals" class="text-sm font-light">Sandals & Slides</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="category-loafers" name="category" type="checkbox">
+                            <label for="category-loafers" class="text-sm font-light">Loafers & Slip-ons</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brand Filter -->
+                <div>
+                    <h3 class="text-sm font-medium uppercase tracking-widest mb-4">Brand</h3>
+                    <div class="space-y-3">
+                        <div class="custom-checkbox">
+                            <input id="brand-all" name="brand" type="checkbox" checked>
+                            <label for="brand-all" class="text-sm font-light">All Brands</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="brand-gucci" name="brand" type="checkbox">
+                            <label for="brand-gucci" class="text-sm font-light">Gucci</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="brand-balenciaga" name="brand" type="checkbox">
+                            <label for="brand-balenciaga" class="text-sm font-light">Balenciaga</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="brand-saint-laurent" name="brand" type="checkbox">
+                            <label for="brand-saint-laurent" class="text-sm font-light">Saint Laurent</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="brand-prada" name="brand" type="checkbox">
+                            <label for="brand-prada" class="text-sm font-light">Prada</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="brand-louis-vuitton" name="brand" type="checkbox">
+                            <label for="brand-louis-vuitton" class="text-sm font-light">Louis Vuitton</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Size Filter -->
+                <div>
+                    <h3 class="text-sm font-medium uppercase tracking-widest mb-4">Size</h3>
+                    <div class="grid grid-cols-4 gap-2">
+                        <button
+                            class="border border-gray-200 py-2 text-sm font-light hover:border-black transition-colors">38</button>
+                        <button
+                            class="border border-gray-200 py-2 text-sm font-light hover:border-black transition-colors">39</button>
+                        <button
+                            class="border border-gray-200 py-2 text-sm font-light hover:border-black transition-colors">40</button>
+                        <button
+                            class="border border-gray-200 py-2 text-sm font-light hover:border-black transition-colors">41</button>
+                        <button
+                            class="border border-gray-200 py-2 text-sm font-light hover:border-black transition-colors">42</button>
+                        <button
+                            class="border border-gray-200 py-2 text-sm font-light hover:border-black transition-colors">43</button>
+                        <button
+                            class="border border-gray-200 py-2 text-sm font-light hover:border-black transition-colors">44</button>
+                        <button
+                            class="border border-gray-200 py-2 text-sm font-light hover:border-black transition-colors">45</button>
+                        <button
+                            class="border border-gray-200 py-2 text-sm font-light hover:border-black transition-colors">46</button>
+                        <button
+                            class="border border-gray-200 py-2 text-sm font-light hover:border-black transition-colors">47</button>
+                        <button
+                            class="border border-gray-200 py-2 text-sm font-light hover:border-black transition-colors">48</button>
+                        <button
+                            class="border border-gray-200 py-2 text-sm font-light hover:border-black transition-colors">49</button>
+                    </div>
+                </div>
+
+                <!-- Materials Filter -->
+                <div>
+                    <h3 class="text-sm font-medium uppercase tracking-widest mb-4">Materials</h3>
+                    <div class="space-y-3">
+                        <div class="custom-checkbox">
+                            <input id="material-all" name="material" type="checkbox" checked>
+                            <label for="material-all" class="text-sm font-light">All Materials</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="material-leather" name="material" type="checkbox">
+                            <label for="material-leather" class="text-sm font-light">Leather</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="material-suede" name="material" type="checkbox">
+                            <label for="material-suede" class="text-sm font-light">Suede</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="material-canvas" name="material" type="checkbox">
+                            <label for="material-canvas" class="text-sm font-light">Canvas</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="material-synthetic" name="material" type="checkbox">
+                            <label for="material-synthetic" class="text-sm font-light">Synthetic</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="material-rubber" name="material" type="checkbox">
+                            <label for="material-rubber" class="text-sm font-light">Rubber</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 flex justify-between">
+                <button id="clear-filters"
+                    class="text-sm font-light underline hover:text-gray-500 transition-colors">Clear All
+                    Filters</button>
+                <button id="apply-filters"
+                    class="bg-black text-white px-8 py-2 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition-colors">Apply
+                    Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sort Panel (Hidden by default) -->
+    <section id="sort-panel" class="py-4 bg-gray-50 hidden">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="space-y-2">
+                <button
+                    class="w-full text-left py-2 text-sm font-light hover:text-gray-500 transition-colors sort-option active"
+                    data-sort="featured">Featured</button>
+                <button
+                    class="w-full text-left py-2 text-sm font-light hover:text-gray-500 transition-colors sort-option"
+                    data-sort="newest">Newest</button>
+                <button
+                    class="w-full text-left py-2 text-sm font-light hover:text-gray-500 transition-colors sort-option"
+                    data-sort="price-low">Price: Low to High</button>
+                <button
+                    class="w-full text-left py-2 text-sm font-light hover:text-gray-500 transition-colors sort-option"
+                    data-sort="price-high">Price: High to Low</button>
+                <button
+                    class="w-full text-left py-2 text-sm font-light hover:text-gray-500 transition-colors sort-option"
+                    data-sort="bestselling">Bestselling</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Banner -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-light mb-6 font-display">Luxury Footwear</h2>
+                    <p class="text-lg mb-8 font-light leading-relaxed">Discover our exclusive collection of premium
+                        shoes
+                        from the world's most prestigious fashion brands. Crafted with exceptional materials and
+                        unparalleled attention to detail.</p>
+                    <a href="#"
+                        class="inline-block bg-white text-black px-10 py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-200 transition duration-300">Shop
+                        Now</a>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Luxury Designer Sneakers" class="w-full h-auto">
+                    <div
+                        class="absolute -bottom-8 -left-8 bg-white text-black p-6 shadow-xl transform transition-transform duration-300 hover:translate-y-1">
+                        <p class="text-sm font-light uppercase tracking-widest">Featured</p>
+                        <p class="text-2xl font-display">Designer Collection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Tabs Section -->
+    <section class="py-16">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="category-tabs flex justify-center space-x-8 mb-12" data-aos="fade-up">
+                <div class="category-tab active" data-category="sneakers">
+                    <h2 class="text-xl font-light uppercase tracking-widest">Sneakers</h2>
+                </div>
+                <div class="category-tab" data-category="formal">
+                    <h2 class="text-xl font-light uppercase tracking-widest">Formal</h2>
+                </div>
+                <div class="category-tab" data-category="boots">
+                    <h2 class="text-xl font-light uppercase tracking-widest">Boots</h2>
+                </div>
+                <div class="category-tab" data-category="sandals">
+                    <h2 class="text-xl font-light uppercase tracking-widest">Sandals</h2>
+                </div>
+            </div>
+
+            <!-- SNEAKERS Category Content -->
+            <div id="sneakers-content" class="category-content active">
+                <!-- Subcategories Navigation -->
+                <div class="flex flex-wrap justify-center gap-6 mb-12" data-aos="fade-up" data-aos-delay="100">
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Luxury Sneakers</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Athletic Sneakers</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">High-Top Sneakers</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Low-Top Sneakers</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Slip-On Sneakers</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Limited Edition</a>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+                    <!-- Product 1 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Designer Sneakers"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                <button
+                                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                    View</button>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button
+                                    class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                    aria-label="Add to wishlist">
+                                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                NEW ARRIVAL
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-base font-light">Triple S Sneakers</h3>
+                            <p class="text-sm text-gray-500">Balenciaga</p>
+                        </div>
+                        <p class="text-gray-900 font-light mb-2">€895</p>
+                        <div class="flex space-x-2" role="radiogroup" aria-label="Available colors">
+                            <button
+                                class="w-4 h-4 rounded-full bg-black border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Black" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-white border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="White" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-red-600 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Red" role="radio" aria-checked="false"></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Designer Sneakers"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                <button
+                                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                    View</button>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button
+                                    class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                    aria-label="Add to wishlist">
+                                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-base font-light">Ace Leather Sneakers</h3>
+                            <p class="text-sm text-gray-500">Gucci</p>
+                        </div>
+                        <p class="text-gray-900 font-light mb-2">€650</p>
+                        <div class="flex space-x-2" role="radiogroup" aria-label="Available colors">
+                            <button
+                                class="w-4 h-4 rounded-full bg-white border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="White" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-green-700 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Green" role="radio" aria-checked="false"></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Designer Sneakers"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                <button
+                                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                    View</button>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button
+                                    class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                    aria-label="Add to wishlist">
+                                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                SALE
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-base font-light">Court Classic Sneakers</h3>
+                            <p class="text-sm text-gray-500">Saint Laurent</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <p class="text-gray-500 line-through font-light">€590</p>
+                            <p class="text-gray-900 font-light">€450</p>
+                        </div>
+                        <div class="flex space-x-2 mt-2" role="radiogroup" aria-label="Available colors">
+                            <button
+                                class="w-4 h-4 rounded-full bg-white border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="White" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-black border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Black" role="radio" aria-checked="false"></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1543508282-6319a3e2621f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Designer Sneakers"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                <button
+                                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                    View</button>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button
+                                    class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                    aria-label="Add to wishlist">
+                                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-base font-light">Cloudbust Thunder Sneakers</h3>
+                            <p class="text-sm text-gray-500">Prada</p>
+                        </div>
+                        <p class="text-gray-900 font-light mb-2">€750</p>
+                        <div class="flex space-x-2" role="radiogroup" aria-label="Available colors">
+                            <button
+                                class="w-4 h-4 rounded-full bg-black border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Black" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-blue-600 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Blue" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-red-600 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Red" role="radio" aria-checked="false"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="#"
+                        class="inline-block border border-black text-black px-10 py-3 text-sm font-light uppercase tracking-widest hover:bg-black hover:text-white transition duration-300">View
+                        All Sneakers</a>
+                </div>
+            </div>
+
+            <!-- FORMAL Category Content -->
+            <div id="formal-content" class="category-content">
+                <!-- Subcategories Navigation -->
+                <div class="flex flex-wrap justify-center gap-6 mb-12" data-aos="fade-up" data-aos-delay="100">
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Oxford Shoes</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Derby Shoes</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Loafers</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Monk Straps</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Dress Boots</a>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+                    <!-- Product 1 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Oxford Shoes"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                <button
+                                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                    View</button>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button
+                                    class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                    aria-label="Add to wishlist">
+                                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                NEW ARRIVAL
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-base font-light">Leather Oxford Shoes</h3>
+                            <p class="text-sm text-gray-500">Saint Laurent</p>
+                        </div>
+                        <p class="text-gray-900 font-light mb-2">€795</p>
+                        <div class="flex space-x-2" role="radiogroup" aria-label="Available colors">
+                            <button
+                                class="w-4 h-4 rounded-full bg-black border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Black" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-yellow-800 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Brown" role="radio" aria-checked="false"></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1531310197839-ccf54634509e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Loafers"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                <button
+                                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                    View</button>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button
+                                    class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                    aria-label="Add to wishlist">
+                                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-base font-light">Horsebit Leather Loafers</h3>
+                            <p class="text-sm text-gray-500">Gucci</p>
+                        </div>
+                        <p class="text-gray-900 font-light mb-2">€730</p>
+                        <div class="flex space-x-2" role="radiogroup" aria-label="Available colors">
+                            <button
+                                class="w-4 h-4 rounded-full bg-black border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Black" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-yellow-700 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Brown" role="radio" aria-checked="false"></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Derby Shoes"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                <button
+                                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                    View</button>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button
+                                    class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                    aria-label="Add to wishlist">
+                                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                SALE
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-base font-light">Patent Leather Derby Shoes</h3>
+                            <p class="text-sm text-gray-500">Prada</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <p class="text-gray-500 line-through font-light">€850</p>
+                            <p class="text-gray-900 font-light">€680</p>
+                        </div>
+                        <div class="flex space-x-2 mt-2" role="radiogroup" aria-label="Available colors">
+                            <button
+                                class="w-4 h-4 rounded-full bg-black border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Black" role="radio" aria-checked="false"></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1607522370275-f14206abe5d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Monk Strap Shoes"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                <button
+                                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                    View</button>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button
+                                    class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                    aria-label="Add to wishlist">
+                                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-base font-light">Double Monk Strap Shoes</h3>
+                            <p class="text-sm text-gray-500">Louis Vuitton</p>
+                        </div>
+                        <p class="text-gray-900 font-light mb-2">€920</p>
+                        <div class="flex space-x-2" role="radiogroup" aria-label="Available colors">
+                            <button
+                                class="w-4 h-4 rounded-full bg-yellow-800 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Brown" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-black border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Black" role="radio" aria-checked="false"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="#"
+                        class="inline-block border border-black text-black px-10 py-3 text-sm font-light uppercase tracking-widest hover:bg-black hover:text-white transition duration-300">View
+                        All Formal Shoes</a>
+                </div>
+            </div>
+
+            <!-- BOOTS Category Content -->
+            <div id="boots-content" class="category-content">
+                <!-- Subcategories Navigation -->
+                <div class="flex flex-wrap justify-center gap-6 mb-12" data-aos="fade-up" data-aos-delay="100">
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Chelsea Boots</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Combat Boots</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Ankle Boots</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Dress Boots</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Desert Boots</a>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+                    <!-- Product 1 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Chelsea Boots"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                <button
+                                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                    View</button>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button
+                                    class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                    aria-label="Add to wishlist">
+                                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                NEW ARRIVAL
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-base font-light">Wyatt Chelsea Boots</h3>
+                            <p class="text-sm text-gray-500">Saint Laurent</p>
+                        </div>
+                        <p class="text-gray-900 font-light mb-2">€895</p>
+                        <div class="flex space-x-2" role="radiogroup" aria-label="Available colors">
+                            <button
+                                class="w-4 h-4 rounded-full bg-black border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Black" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-yellow-800 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Brown" role="radio" aria-checked="false"></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1605812860427-4024433a70fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Combat Boots"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                <button
+                                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                    View</button>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button
+                                    class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                    aria-label="Add to wishlist">
+                                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-base font-light">Combat Leather Boots</h3>
+                            <p class="text-sm text-gray-500">Balenciaga</p>
+                        </div>
+                        <p class="text-gray-900 font-light mb-2">€950</p>
+                        <div class="flex space-x-2" role="radiogroup" aria-label="Available colors">
+                            <button
+                                class="w-4 h-4 rounded-full bg-black border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Black" role="radio" aria-checked="false"></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Ankle Boots"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                <button
+                                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                    View</button>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button
+                                    class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                    aria-label="Add to wishlist">
+                                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                SALE
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-base font-light">Suede Ankle Boots</h3>
+                            <p class="text-sm text-gray-500">Gucci</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <p class="text-gray-500 line-through font-light">€780</p>
+                            <p class="text-gray-900 font-light">€625</p>
+                        </div>
+                        <div class="flex space-x-2 mt-2" role="radiogroup" aria-label="Available colors">
+                            <button
+                                class="w-4 h-4 rounded-full bg-yellow-700 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Tan" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-gray-800 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Charcoal" role="radio" aria-checked="false"></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1638247025967-b4e38f787b76?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Desert Boots"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                <button
+                                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                    View</button>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button
+                                    class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                    aria-label="Add to wishlist">
+                                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-base font-light">Desert Boots</h3>
+                            <p class="text-sm text-gray-500">Prada</p>
+                        </div>
+                        <p class="text-gray-900 font-light mb-2">€720</p>
+                        <div class="flex space-x-2" role="radiogroup" aria-label="Available colors">
+                            <button
+                                class="w-4 h-4 rounded-full bg-yellow-600 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Camel" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-gray-400 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Gray" role="radio" aria-checked="false"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="#"
+                        class="inline-block border border-black text-black px-10 py-3 text-sm font-light uppercase tracking-widest hover:bg-black hover:text-white transition duration-300">View
+                        All Boots</a>
+                </div>
+            </div>
+
+            <!-- SANDALS Category Content -->
+            <div id="sandals-content" class="category-content">
+                <!-- Subcategories Navigation -->
+                <div class="flex flex-wrap justify-center gap-6 mb-12" data-aos="fade-up" data-aos-delay="100">
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Slides</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Flip Flops</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Leather Sandals</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Pool Slides</a>
+                    <a href="#" class="text-sm font-light hover:text-gold transition-colors">Outdoor Sandals</a>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+                    <!-- Product 1 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1603487742131-4160ec999306?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Designer Slides"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                <button
+                                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                    View</button>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button
+                                    class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                    aria-label="Add to wishlist">
+                                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                NEW ARRIVAL
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-base font-light">Logo Slides</h3>
+                            <p class="text-sm text-gray-500">Gucci</p>
+                        </div>
+                        <p class="text-gray-900 font-light mb-2">€350</p>
+                        <div class="flex space-x-2" role="radiogroup" aria-label="Available colors">
+                            <button
+                                class="w-4 h-4 rounded-full bg-black border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Black" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-white border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="White" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-red-600 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Red" role="radio" aria-checked="false"></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1562273138-f46be4ebdf33?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Leather Sandals"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                <button
+                                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                    View</button>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button
+                                    class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                    aria-label="Add to wishlist">
+                                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-base font-light">Leather Strap Sandals</h3>
+                            <p class="text-sm text-gray-500">Saint Laurent</p>
+                        </div>
+                        <p class="text-gray-900 font-light mb-2">€495</p>
+                        <div class="flex space-x-2" role="radiogroup" aria-label="Available colors">
+                            <button
+                                class="w-4 h-4 rounded-full bg-yellow-800 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Brown" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-black border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Black" role="radio" aria-checked="false"></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Pool Slides"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                <button
+                                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                    View</button>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button
+                                    class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                    aria-label="Add to wishlist">
+                                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                SALE
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-base font-light">Rubber Pool Slides</h3>
+                            <p class="text-sm text-gray-500">Balenciaga</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <p class="text-gray-500 line-through font-light">€295</p>
+                            <p class="text-gray-900 font-light">€235</p>
+                        </div>
+                        <div class="flex space-x-2 mt-2" role="radiogroup" aria-label="Available colors">
+                            <button
+                                class="w-4 h-4 rounded-full bg-black border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Black" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-white border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="White" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-blue-600 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Blue" role="radio" aria-checked="false"></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1575537302964-96cd47c06b1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Flip Flops"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                <button
+                                    class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Quick
+                                    View</button>
+                            </div>
+                            <div class="absolute top-4 right-4">
+                                <button
+                                    class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                    aria-label="Add to wishlist">
+                                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-base font-light">Leather Flip Flops</h3>
+                            <p class="text-sm text-gray-500">Prada</p>
+                        </div>
+                        <p class="text-gray-900 font-light mb-2">€320</p>
+                        <div class="flex space-x-2" role="radiogroup" aria-label="Available colors">
+                            <button
+                                class="w-4 h-4 rounded-full bg-black border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Black" role="radio" aria-checked="false"></button>
+                            <button
+                                class="w-4 h-4 rounded-full bg-yellow-700 border border-gray-300 cursor-pointer hover:ring-1 hover:ring-gray-400 transition duration-300"
+                                aria-label="Brown" role="radio" aria-checked="false"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <a href="#"
+                        class="inline-block border border-black text-black px-10 py-3 text-sm font-light uppercase tracking-widest hover:bg-black hover:text-white transition duration-300">View
+                        All Sandals</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Designer Spotlight Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-light text-center mb-4 font-display" data-aos="fade-up">Designer Spotlight</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-light" data-aos="fade-up"
+                data-aos-delay="100">
+                Explore the latest footwear collections from our featured designers.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Designer 1 -->
+                <div class="flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Balenciaga Collection" class="w-full h-80 object-cover mb-6">
+                    <h3 class="text-xl font-light mb-2 font-display">Balenciaga</h3>
+                    <p class="text-gray-600 font-light mb-4">Innovative Spanish luxury fashion house known for its
+                        avant-garde designs and architectural shapes.</p>
+                    <a href="#"
+                        class="text-black text-sm border-b border-black pb-1 hover:border-transparent transition duration-300 mt-auto inline-block">Explore
+                        Collection</a>
+                </div>
+
+                <!-- Designer 2 -->
+                <div class="flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Gucci Collection" class="w-full h-80 object-cover mb-6">
+                    <h3 class="text-xl font-light mb-2 font-display">Gucci</h3>
+                    <p class="text-gray-600 font-light mb-4">Iconic Italian luxury fashion house known for its
+                        eclectic and contemporary designs with a distinctive aesthetic.</p>
+                    <a href="#"
+                        class="text-black text-sm border-b border-black pb-1 hover:border-transparent transition duration-300 mt-auto inline-block">Explore
+                        Collection</a>
+                </div>
+
+                <!-- Designer 3 -->
+                <div class="flex flex-col" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Saint Laurent Collection" class="w-full h-80 object-cover mb-6">
+                    <h3 class="text-xl font-light mb-2 font-display">Saint Laurent</h3>
+                    <p class="text-gray-600 font-light mb-4">French luxury fashion house known for its modern and
+                        youthful aesthetic with a rock 'n' roll edge.</p>
+                    <a href="#"
+                        class="text-black text-sm border-b border-black pb-1 hover:border-transparent transition duration-300 mt-auto inline-block">Explore
+                        Collection</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section class="py-24 bg-gray-50" id="recommendations-section">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-light text-center mb-4 font-display" data-aos="fade-up">You May Also Like</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-light" data-aos="fade-up"
+                data-aos-delay="100">
+                Curated recommendations based on your browsing history.
+            </p>
+            <div class="relative" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex overflow-x-auto pb-8 space-x-8 no-scrollbar" id="recommendations-slider">
+                    <!-- Recommendation 1 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Luxury Sneakers"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                    RECOMMENDED
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Luxury Sneakers</h3>
+                                <p class="text-sm text-gray-500">Balenciaga</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€795</p>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 2 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1607522370275-f14206abe5d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Formal Shoes"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                    RECOMMENDED
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Oxford Shoes</h3>
+                                <p class="text-sm text-gray-500">Prada</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€850</p>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 3 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1603487742131-4160ec999306?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Designer Slides"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                    RECOMMENDED
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Designer Slides</h3>
+                                <p class="text-sm text-gray-500">Gucci</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€350</p>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 4 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1605812860427-4024433a70fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Combat Boots"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                    RECOMMENDED
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Combat Boots</h3>
+                                <p class="text-sm text-gray-500">Saint Laurent</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€950</p>
+                        </div>
+                    </div>
+
+                    <!-- Recommendation 5 -->
+                    <div class="flex-shrink-0 w-72">
+                        <div class="group">
+                            <div class="relative overflow-hidden mb-6">
+                                <img src="https://images.unsplash.com/photo-1531310197839-ccf54634509e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                    alt="Loafers"
+                                    class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                                <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                                    RECOMMENDED
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center mb-1">
+                                <h3 class="text-base font-light">Leather Loafers</h3>
+                                <p class="text-sm text-gray-500">Louis Vuitton</p>
+                            </div>
+                            <p class="text-gray-900 font-light">€780</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button id="prev-recommendations"
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-3 shadow-md z-10 focus:outline-none hover:bg-gray-50 transition duration-300"
+                    aria-label="Previous items">
+                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="next-recommendations"
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-3 shadow-md z-10 focus:outline-none hover:bg-gray-50 transition duration-300"
+                    aria-label="Next items">
+                    <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- View All Button -->
+            <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="300">
+                <a href="#"
+                    class="inline-block border border-black text-black px-10 py-3 text-sm font-light uppercase tracking-widest hover:bg-black hover:text-white transition duration-300">
+                    View All Recommendations
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <!-- Left Column - Newsletter Signup -->
+                <div class="lg:w-3/5">
+                    <div class="max-w-2xl">
+                        <h2 class="text-3xl font-display font-light mb-4">Join our mailing list</h2>
+                        <p class="text-gray-600 text-lg mb-10 font-light leading-relaxed">Be the first to know about new
+                            brand arrivals, seasonal collections, and exclusive promotions from REX STORE.</p>
+
+                        <form class="space-y-8">
+                            <div class="space-y-6">
+                                <h3 class="text-sm font-light uppercase tracking-widest mb-3">Receive updates via</h3>
+
+                                <!-- Email Option -->
+                                <div>
+                                    <div class="custom-checkbox mb-3">
+                                        <input id="email-option" name="notification-method" type="checkbox" checked>
+                                        <label for="email-option" class="text-sm font-light text-gray-700">Email</label>
+                                    </div>
+
+                                    <div class="relative" id="email-input-container">
+                                        <input type="email" id="email-input" placeholder="Your email address"
+                                            class="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-all duration-300 font-light">
+                                    </div>
+                                </div>
+
+                                <!-- SMS Option -->
+                                <div>
+                                    <div class="custom-checkbox mb-3">
+                                        <input id="sms-option" name="notification-method" type="checkbox">
+                                        <label for="sms-option" class="text-sm font-light text-gray-700">SMS</label>
+                                    </div>
+
+                                    <div class="relative" id="phone-input-container" style="display: none;">
+                                        <input type="tel" id="phone-input" placeholder="Your phone number"
+                                            class="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-all duration-300 font-light">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-4">
+                                <button type="submit"
+                                    class="w-full sm:w-auto bg-black text-white px-10 py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition-all duration-300">
+                                    Subscribe
+                                </button>
+
+                                <p class="text-xs text-gray-500 mt-4 max-w-lg font-light">
+                                    By subscribing, you consent to receiving marketing communications and acknowledge
+                                    you
+                                    have read our
+                                    <a href="#"
+                                        class="underline hover:text-black transition-colors duration-200">Privacy
+                                        Policy</a>.
+                                    You may unsubscribe at any time.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Column - Benefits & Social Proof -->
+                <div class="lg:w-2/5 mt-12 lg:mt-0">
+                    <div class="bg-gray-50 p-10 h-full">
+                        <h3 class="text-xl font-light mb-8 font-display">Subscriber benefits</h3>
+
+                        <ul class="space-y-8">
+                            <li class="flex">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="flex items-center justify-center h-10 w-10 border border-black text-black">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M12 8v13m0-13V6a4 4 0 00-4-4H8.8a4 4 0 00-3.6 2.3L3 8m9 4v5m0-5H4.5a2 2 0 01-2-2v-.5a2 2 0 01.6-1.4L9 2.8M3.2 7.8L2 9.5M15 8h5.5a2 2 0 012 2v.5a2 2 0 01-.6 1.4L16 13.2m5.8-5.4L22.8 9.5" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-light">Early Access</h4>
+                                    <p class="mt-2 text-gray-600 font-light">Be the first to shop new arrivals from your
+                                        favorite brands.</p>
+                                </div>
+                            </li>
+
+                            <li class="flex">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="flex items-center justify-center h-10 w-10 border border-black text-black">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-light">Exclusive Offers</h4>
+                                    <p class="mt-2 text-gray-600 font-light">Receive special promotions and discounts
+                                        available only to subscribers.</p>
+                                </div>
+                            </li>
+
+                            <li class="flex">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="flex items-center justify-center h-10 w-10 border border-black text-black">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-light">Styling Tips</h4>
+                                    <p class="mt-2 text-gray-600 font-light">Get expert advice on how to style the
+                                        latest brand collections.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-black text-white p-3 opacity-0 invisible transition-all duration-300 z-40"
+        aria-label="Back to top">
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 1000,
+            delay: 100
+        });
+
+        // Filter Toggle
+        const filterToggle = document.getElementById('filter-toggle');
+        const filterPanel = document.getElementById('filter-panel');
+
+        filterToggle.addEventListener('click', () => {
+            filterPanel.classList.toggle('hidden');
+            sortPanel.classList.add('hidden'); // Close sort panel if open
+        });
+
+        // Sort Toggle
+        const sortToggle = document.getElementById('sort-toggle');
+        const sortPanel = document.getElementById('sort-panel');
+        const sortOptions = document.querySelectorAll('.sort-option');
+
+        sortToggle.addEventListener('click', () => {
+            sortPanel.classList.toggle('hidden');
+            filterPanel.classList.add('hidden'); // Close filter panel if open
+        });
+
+        // Sort Option Selection
+        sortOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove active class from all options
+                sortOptions.forEach(opt => opt.classList.remove('active'));
+
+                // Add active class to clicked option
+                option.classList.add('active');
+
+                // Update sort toggle text
+                const sortText = option.textContent;
+                const sortSpan = sortToggle.querySelector('span');
+                sortSpan.textContent = sortText;
+
+                // Close sort panel
+                sortPanel.classList.add('hidden');
+
+                // Here you would implement the actual sorting logic
+                console.log(`Sorting products by: ${option.getAttribute('data-sort')}`);
+            });
+        });
+
+        // Clear Filters
+        const clearFilters = document.getElementById('clear-filters');
+
+        clearFilters.addEventListener('click', () => {
+            // Reset all checkboxes to default state
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                if (checkbox.id.includes('all')) {
+                    checkbox.checked = true;
+                } else {
+                    checkbox.checked = false;
+                }
+            });
+
+            // Reset size buttons (remove any active state)
+            document.querySelectorAll('.grid-cols-4 button').forEach(button => {
+                button.classList.remove('border-black');
+                button.classList.add('border-gray-200');
+            });
+        });
+
+        // Apply Filters
+        const applyFilters = document.getElementById('apply-filters');
+
+        applyFilters.addEventListener('click', () => {
+            // Here you would implement the actual filtering logic
+            console.log('Applying filters...');
+
+            // Close the filter panel
+            filterPanel.classList.add('hidden');
+        });
+
+        // Size Button Selection
+        const sizeButtons = document.querySelectorAll('.grid-cols-4 button');
+
+        sizeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Toggle active state
+                button.classList.toggle('border-black');
+                button.classList.toggle('border-gray-200');
+            });
+        });
+
+        // Recommendations Slider
+        const recommendationsSlider = document.getElementById('recommendations-slider');
+        const prevRecommendations = document.getElementById('prev-recommendations');
+        const nextRecommendations = document.getElementById('next-recommendations');
+
+        const scrollStep = 300;
+
+        nextRecommendations.addEventListener('click', () => {
+            recommendationsSlider.scrollBy({ left: scrollStep, behavior: 'smooth' });
+        });
+
+        prevRecommendations.addEventListener('click', () => {
+            recommendationsSlider.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Color swatch selection
+        const colorButtons = document.querySelectorAll('[role="radio"]');
+        colorButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Find all buttons in the same radiogroup
+                const radiogroup = button.closest('[role="radiogroup"]');
+                const buttons = radiogroup.querySelectorAll('[role="radio"]');
+
+                // Reset all buttons
+                buttons.forEach(btn => {
+                    btn.setAttribute('aria-checked', 'false');
+                    btn.classList.remove('ring-1');
+                });
+
+                // Set the clicked button as checked
+                button.setAttribute('aria-checked', 'true');
+                button.classList.add('ring-1');
+            });
+        });
+
+        // Newsletter form toggle functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Email toggle functionality
+            const emailCheckbox = document.getElementById('email-option');
+            const emailInputContainer = document.getElementById('email-input-container');
+
+            if (emailCheckbox && emailInputContainer) {
+                // Initial state check
+                emailInputContainer.style.display = emailCheckbox.checked ? 'block' : 'none';
+
+                // Add event listener
+                emailCheckbox.addEventListener('change', function () {
+                    emailInputContainer.style.display = this.checked ? 'block' : 'none';
+                });
+            }
+
+            // SMS toggle functionality
+            const smsCheckbox = document.getElementById('sms-option');
+            const phoneInputContainer = document.getElementById('phone-input-container');
+
+            if (smsCheckbox && phoneInputContainer) {
+                // Initial state check
+                phoneInputContainer.style.display = smsCheckbox.checked ? 'block' : 'none';
+
+                // Add event listener
+                smsCheckbox.addEventListener('change', function () {
+                    phoneInputContainer.style.display = this.checked ? 'block' : 'none';
+                });
+            }
+
+            // Form submission handling (prevent default for demo)
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Validate that at least one option is selected
+                    if (!emailCheckbox.checked && !smsCheckbox.checked) {
+                        alert('Please select at least one contact method (Email or SMS)');
+                        return;
+                    }
+
+                    // Validate email if that option is checked
+                    if (emailCheckbox.checked) {
+                        const emailInput = document.getElementById('email-input');
+                        if (!emailInput.value.trim()) {
+                            alert('Please enter your email address');
+                            emailInput.focus();
+                            return;
+                        }
+                    }
+
+                    // Validate phone if SMS option is checked
+                    if (smsCheckbox.checked) {
+                        const phoneInput = document.getElementById('phone-input');
+                        if (!phoneInput.value.trim()) {
+                            alert('Please enter your phone number');
+                            phoneInput.focus();
+                            return;
+                        }
+                    }
+
+                    alert('Thank you for subscribing to REX STORE');
+                });
+            }
+        });
+
+        // Product Search
+        const productSearch = document.getElementById('product-search');
+
+        productSearch.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') {
+                // Here you would implement the search logic
+                console.log(`Searching for: ${productSearch.value}`);
+            }
+        });
+
+        // Category Tabs Functionality
+        const categoryTabs = document.querySelectorAll('.category-tab');
+        const categoryContents = document.querySelectorAll('.category-content');
+
+        categoryTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const category = tab.getAttribute('data-category');
+
+                // Remove active class from all tabs and contents
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                categoryContents.forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(`${category}-content`).classList.add('active');
+            });
+        });
+
+        // Fixed Filter Section on Scroll
+        const filterSection = document.getElementById('filter-section');
+        const body = document.body;
+
+        // Get initial positions
+        let filterSectionHeight = filterSection.offsetHeight;
+        let filterSectionTop = filterSection.offsetTop;
+
+        // Function to handle scroll events
+        function handleScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // If we've scrolled past the filter section
+            if (scrollTop > filterSectionTop) {
+                // Add fixed class to filter section
+                if (!filterSection.classList.contains('filter-section-fixed')) {
+                    filterSection.classList.add('filter-section-fixed');
+                    body.classList.add('filter-fixed');
+                    body.style.paddingTop = `${filterSectionHeight}px`;
+                }
+            } else {
+                // Remove fixed class from filter section
+                filterSection.classList.remove('filter-section-fixed');
+                body.classList.remove('filter-fixed');
+                body.style.paddingTop = '0';
+            }
+        }
+
+        // Listen for scroll events
+        window.addEventListener('scroll', handleScroll);
+
+        // Recalculate positions on window resize
+        window.addEventListener('resize', function () {
+            filterSectionHeight = filterSection.offsetHeight;
+            filterSectionTop = filterSection.offsetTop;
+
+            // Update body padding if filter section is fixed
+            if (filterSection.classList.contains('filter-section-fixed')) {
+                body.style.paddingTop = `${filterSectionHeight}px`;
+            }
+        });
+    </script>
+</body>
+
+</html>

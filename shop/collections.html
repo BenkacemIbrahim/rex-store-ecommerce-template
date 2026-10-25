@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="REX STORE - Collections | Premium Fashion for Men and Kids">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>Collections | REX STORE - Premium Men's & Kids' Fashion</title>
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/collections.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* Fixed filter section styles */
+        .filter-section-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 30;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Add padding to body when filter is fixed to prevent content jump */
+        body.filter-fixed {
+            padding-top: 76px;
+            /* Adjust based on your filter section height */
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased bg-white text-gray-900 transition-colors duration-300">
+    <!-- Page Title Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-light text-center font-display" data-aos="fade-up">Collections</h1>
+            <p class="text-center text-gray-600 mt-4 max-w-2xl mx-auto font-light" data-aos="fade-up"
+                data-aos-delay="100">
+                Explore our curated collections of premium fashion for men and kids, featuring the world's most
+                prestigious brands.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter and Search Section -->
+    <section class="py-8 border-b border-gray-100" id="filter-section">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
+                <!-- Filter Toggles -->
+                <div class="flex flex-wrap items-center gap-4" data-aos="fade-right">
+                    <button id="filter-toggle"
+                        class="flex items-center text-sm font-light hover:text-gray-500 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                        </svg>
+                        Filter
+                    </button>
+                    <div class="h-4 border-r border-gray-300"></div>
+                    <button id="sort-toggle"
+                        class="flex items-center text-sm font-light hover:text-gray-500 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+                        </svg>
+                        Sort by: <span class="font-medium ml-1">Featured</span>
+                    </button>
+                    <div class="h-4 border-r border-gray-300 hidden md:block"></div>
+                    <span class="text-sm text-gray-500 hidden md:inline-block">Showing 24 collections</span>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="relative w-full md:w-64 flex-shrink-0" data-aos="fade-left">
+                    <input type="text" id="product-search" placeholder="Search collections..."
+                        class="w-full px-4 py-2 border border-gray-200 focus:outline-none focus:border-black text-gray-900 text-sm font-light">
+                    <button class="absolute right-3 top-2 text-gray-500 hover:text-black"
+                        aria-label="Search collections">
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Panel (Hidden by default) -->
+    <section id="filter-panel" class="py-8 bg-gray-50 hidden">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Collection Type Filter -->
+                <div>
+                    <h3 class="text-sm font-medium uppercase tracking-widest mb-4">Collection Type</h3>
+                    <div class="space-y-3">
+                        <div class="custom-checkbox">
+                            <input id="type-all" name="type" type="checkbox" checked>
+                            <label for="type-all" class="text-sm font-light">All Collections</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="type-seasonal" name="type" type="checkbox">
+                            <label for="type-seasonal" class="text-sm font-light">Seasonal</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="type-limited" name="type" type="checkbox">
+                            <label for="type-limited" class="text-sm font-light">Limited Edition</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="type-exclusive" name="type" type="checkbox">
+                            <label for="type-exclusive" class="text-sm font-light">Exclusive</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="type-capsule" name="type" type="checkbox">
+                            <label for="type-capsule" class="text-sm font-light">Capsule</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brand Filter -->
+                <div>
+                    <h3 class="text-sm font-medium uppercase tracking-widest mb-4">Brand</h3>
+                    <div class="space-y-3">
+                        <div class="custom-checkbox">
+                            <input id="brand-all" name="brand" type="checkbox" checked>
+                            <label for="brand-all" class="text-sm font-light">All Brands</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="brand-gucci" name="brand" type="checkbox">
+                            <label for="brand-gucci" class="text-sm font-light">Gucci</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="brand-balenciaga" name="brand" type="checkbox">
+                            <label for="brand-balenciaga" class="text-sm font-light">Balenciaga</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="brand-saint-laurent" name="brand" type="checkbox">
+                            <label for="brand-saint-laurent" class="text-sm font-light">Saint Laurent</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="brand-prada" name="brand" type="checkbox">
+                            <label for="brand-prada" class="text-sm font-light">Prada</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="brand-louis-vuitton" name="brand" type="checkbox">
+                            <label for="brand-louis-vuitton" class="text-sm font-light">Louis Vuitton</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Season Filter -->
+                <div>
+                    <h3 class="text-sm font-medium uppercase tracking-widest mb-4">Season</h3>
+                    <div class="space-y-3">
+                        <div class="custom-checkbox">
+                            <input id="season-all" name="season" type="checkbox" checked>
+                            <label for="season-all" class="text-sm font-light">All Seasons</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="season-spring" name="season" type="checkbox">
+                            <label for="season-spring" class="text-sm font-light">Spring</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="season-summer" name="season" type="checkbox">
+                            <label for="season-summer" class="text-sm font-light">Summer</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="season-fall" name="season" type="checkbox">
+                            <label for="season-fall" class="text-sm font-light">Fall</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="season-winter" name="season" type="checkbox">
+                            <label for="season-winter" class="text-sm font-light">Winter</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="season-resort" name="season" type="checkbox">
+                            <label for="season-resort" class="text-sm font-light">Resort</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Style Filter -->
+                <div>
+                    <h3 class="text-sm font-medium uppercase tracking-widest mb-4">Style</h3>
+                    <div class="space-y-3">
+                        <div class="custom-checkbox">
+                            <input id="style-all" name="style" type="checkbox" checked>
+                            <label for="style-all" class="text-sm font-light">All Styles</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="style-casual" name="style" type="checkbox">
+                            <label for="style-casual" class="text-sm font-light">Casual</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="style-formal" name="style" type="checkbox">
+                            <label for="style-formal" class="text-sm font-light">Formal</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="style-streetwear" name="style" type="checkbox">
+                            <label for="style-streetwear" class="text-sm font-light">Streetwear</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="style-athleisure" name="style" type="checkbox">
+                            <label for="style-athleisure" class="text-sm font-light">Athleisure</label>
+                        </div>
+                        <div class="custom-checkbox">
+                            <input id="style-business" name="style" type="checkbox">
+                            <label for="style-business" class="text-sm font-light">Business</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 flex justify-between">
+                <button id="clear-filters"
+                    class="text-sm font-light underline hover:text-gray-500 transition-colors">Clear All
+                    Filters</button>
+                <button id="apply-filters"
+                    class="bg-black text-white px-8 py-2 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition-colors">Apply
+                    Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sort Panel (Hidden by default) -->
+    <section id="sort-panel" class="py-4 bg-gray-50 hidden">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="space-y-2">
+                <button
+                    class="w-full text-left py-2 text-sm font-light hover:text-gray-500 transition-colors sort-option active"
+                    data-sort="featured">Featured</button>
+                <button
+                    class="w-full text-left py-2 text-sm font-light hover:text-gray-500 transition-colors sort-option"
+                    data-sort="newest">Newest</button>
+                <button
+                    class="w-full text-left py-2 text-sm font-light hover:text-gray-500 transition-colors sort-option"
+                    data-sort="alphabetical-asc">Name: A to Z</button>
+                <button
+                    class="w-full text-left py-2 text-sm font-light hover:text-gray-500 transition-colors sort-option"
+                    data-sort="alphabetical-desc">Name: Z to A</button>
+                <button
+                    class="w-full text-left py-2 text-sm font-light hover:text-gray-500 transition-colors sort-option"
+                    data-sort="trending">Trending</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collections Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-light text-center mb-4 font-display" data-aos="fade-up">Featured Collections</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-light" data-aos="fade-up"
+                data-aos-delay="100">
+                Discover our most exclusive and sought-after collections from the world's leading luxury brands.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Featured Collection 1 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Gucci Fall 2025 Collection"
+                            class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                            <button
+                                class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Explore
+                                Collection</button>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                aria-label="Add to favorites">
+                                <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                            EXCLUSIVE
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-light mb-2">Gucci Fall 2025</h3>
+                    <p class="text-gray-600 font-light mb-4">A bold exploration of modern luxury with timeless appeal.
+                    </p>
+                    <a href="#" class="text-sm font-medium flex items-center hover:text-gray-600 transition-colors">
+                        View Collection
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Featured Collection 2 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Balenciaga Summer Resort Collection"
+                            class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                            <button
+                                class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Explore
+                                Collection</button>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                aria-label="Add to favorites">
+                                <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                            NEW SEASON
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-light mb-2">Balenciaga Summer Resort</h3>
+                    <p class="text-gray-600 font-light mb-4">Effortless elegance for the modern gentleman's getaway.</p>
+                    <a href="#" class="text-sm font-medium flex items-center hover:text-gray-600 transition-colors">
+                        View Collection
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Featured Collection 3 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Saint Laurent Essentials Collection"
+                            class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                            <button
+                                class="w-full bg-black text-white py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition duration-300">Explore
+                                Collection</button>
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                aria-label="Add to favorites">
+                                <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="absolute top-4 left-4 bg-black text-white text-xs font-light px-3 py-1">
+                            BESTSELLER
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-light mb-2">Saint Laurent Essentials</h3>
+                    <p class="text-gray-600 font-light mb-4">Timeless pieces that form the foundation of a refined
+                        wardrobe.</p>
+                    <a href="#" class="text-sm font-medium flex items-center hover:text-gray-600 transition-colors">
+                        View Collection
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Collections Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-light text-center mb-4 font-display" data-aos="fade-up">Seasonal Collections</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-light" data-aos="fade-up"
+                data-aos-delay="100">
+                Explore our latest seasonal collections, curated to reflect the spirit of each season.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Fall/Winter Collection -->
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Fall/Winter Collection"
+                            class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70">
+                        </div>
+                        <div class="absolute bottom-8 left-8 right-8 text-white">
+                            <h3 class="text-2xl font-light mb-2">Fall/Winter 2025</h3>
+                            <p class="font-light mb-4 text-white text-opacity-90">Embrace the cooler months with our
+                                luxurious Fall/Winter collection.</p>
+                            <a href="#"
+                                class="inline-block border border-white text-white px-6 py-2 text-sm font-light uppercase tracking-widest hover:bg-white hover:text-black transition duration-300">Explore
+                                Collection</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spring/Summer Collection -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Spring/Summer Collection"
+                            class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70">
+                        </div>
+                        <div class="absolute bottom-8 left-8 right-8 text-white">
+                            <h3 class="text-2xl font-light mb-2">Spring/Summer 2025</h3>
+                            <p class="font-light mb-4 text-white text-opacity-90">Refresh your wardrobe with our vibrant
+                                Spring/Summer collection.</p>
+                            <a href="#"
+                                class="inline-block border border-white text-white px-6 py-2 text-sm font-light uppercase tracking-widest hover:bg-white hover:text-black transition duration-300">Explore
+                                Collection</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resort Collection -->
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden mb-6  data-aos-delay=" 300">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1554412933-514a83d2f3c8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Resort Collection"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70">
+                            </div>
+                            <div class="absolute bottom-8 left-8 right-8 text-white">
+                                <h3 class="text-2xl font-light mb-2">Resort Collection</h3>
+                                <p class="font-light mb-4 text-white text-opacity-90">Discover our exclusive resort wear
+                                    for your luxury getaways.</p>
+                                <a href="#"
+                                    class="inline-block border border-white text-white px-6 py-2 text-sm font-light uppercase tracking-widest hover:bg-white hover:text-black transition duration-300">Explore
+                                    Collection</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Capsule Collection -->
+                    <div class="group" data-aos="fade-up" data-aos-delay="400">
+                        <div class="relative overflow-hidden mb-6">
+                            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                alt="Capsule Collection"
+                                class="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70">
+                            </div>
+                            <div class="absolute bottom-8 left-8 right-8 text-white">
+                                <h3 class="text-2xl font-light mb-2">Capsule Collection</h3>
+                                <p class="font-light mb-4 text-white text-opacity-90">Limited edition pieces designed
+                                    for the discerning gentleman.</p>
+                                <a href="#"
+                                    class="inline-block border border-white text-white px-6 py-2 text-sm font-light uppercase tracking-widest hover:bg-white hover:text-black transition duration-300">Explore
+                                    Collection</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Designer Collections Grid -->
+    <section class="py-16 bg-white">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-light text-center mb-4 font-display" data-aos="fade-up">Designer Collections</h2>
+            <p class="text-center text-gray-600 mb-16 max-w-2xl mx-auto font-light" data-aos="fade-up"
+                data-aos-delay="100">
+                Explore our curated collections from the world's most prestigious fashion designers.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Designer Collection 1 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Gucci Collection"
+                            class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                aria-label="Add to favorites">
+                                <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-light mb-1">Gucci</h3>
+                    <p class="text-gray-600 font-light mb-3">Iconic designs with a contemporary twist</p>
+                    <a href="#" class="text-sm font-medium flex items-center hover:text-gray-600 transition-colors">
+                        View Collections
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Designer Collection 2 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Balenciaga Collection"
+                            class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                aria-label="Add to favorites">
+                                <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-light mb-1">Balenciaga</h3>
+                    <p class="text-gray-600 font-light mb-3">Bold, innovative designs for the modern man</p>
+                    <a href="#" class="text-sm font-medium flex items-center hover:text-gray-600 transition-colors">
+                        View Collections
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Designer Collection 3 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Saint Laurent Collection"
+                            class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                aria-label="Add to favorites">
+                                <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-light mb-1">Saint Laurent</h3>
+                    <p class="text-gray-600 font-light mb-3">Timeless elegance with a rock-inspired edge</p>
+                    <a href="#" class="text-sm font-medium flex items-center hover:text-gray-600 transition-colors">
+                        View Collections
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Designer Collection 4 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1556306535-0f09a537f0a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Prada Collection"
+                            class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                aria-label="Add to favorites">
+                                <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-light mb-1">Prada</h3>
+                    <p class="text-gray-600 font-light mb-3">Sophisticated minimalism with innovative materials</p>
+                    <a href="#" class="text-sm font-medium flex items-center hover:text-gray-600 transition-colors">
+                        View Collections
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Designer Collection 5 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Louis Vuitton Collection"
+                            class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                aria-label="Add to favorites">
+                                <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-light mb-1">Louis Vuitton</h3>
+                    <p class="text-gray-600 font-light mb-3">Iconic luxury with a heritage of craftsmanship</p>
+                    <a href="#" class="text-sm font-medium flex items-center hover:text-gray-600 transition-colors">
+                        View Collections
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Designer Collection 6 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Burberry Collection"
+                            class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                aria-label="Add to favorites">
+                                <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-light mb-1">Burberry</h3>
+                    <p class="text-gray-600 font-light mb-3">British heritage with a contemporary vision</p>
+                    <a href="#" class="text-sm font-medium flex items-center hover:text-gray-600 transition-colors">
+                        View Collections
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Designer Collection 7 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1521223890158-f9f7c3d5d504?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Fendi Collection"
+                            class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                aria-label="Add to favorites">
+                                <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-light mb-1">Fendi</h3>
+                    <p class="text-gray-600 font-light mb-3">Italian craftsmanship with bold, distinctive designs</p>
+                    <a href="#" class="text-sm font-medium flex items-center hover:text-gray-600 transition-colors">
+                        View Collections
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Designer Collection 8 -->
+                <div class="group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Versace Collection"
+                            class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute top-4 right-4">
+                            <button
+                                class="bg-white p-2 rounded-full shadow-sm hover:shadow-md transition duration-300 transform hover:scale-105"
+                                aria-label="Add to favorites">
+                                <svg class="h-5 w-5 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-light mb-1">Versace</h3>
+                    <p class="text-gray-600 font-light mb-3">Opulent designs with a distinctive Mediterranean flair</p>
+                    <a href="#" class="text-sm font-medium flex items-center hover:text-gray-600 transition-colors">
+                        View Collections
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="500">
+                <a href="#"
+                    class="inline-block border border-black text-black px-10 py-3 text-sm font-light uppercase tracking-widest hover:bg-black hover:text-white transition duration-300">View
+                    All Designers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exclusive Collection Banner -->
+    <section class="py-24 bg-gray-900 text-white">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-light mb-6 font-display">Limited Edition Collection</h2>
+                    <p class="text-lg mb-8 font-light leading-relaxed">Discover our exclusive limited edition
+                        collection, featuring unique pieces crafted with exceptional materials and unparalleled
+                        attention to detail. Available for a limited time only.</p>
+                    <a href="#"
+                        class="inline-block bg-white text-black px-10 py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-200 transition duration-300">Shop
+                        Limited Edition</a>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1600574691453-499962cc0611?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="Limited Edition Collection" class="w-full h-auto">
+                    <div
+                        class="absolute -bottom-8 -left-8 bg-white text-black p-6 shadow-xl transform transition-transform duration-300 hover:translate-y-1">
+                        <p class="text-sm font-light uppercase tracking-widest">Exclusive</p>
+                        <p class="text-2xl font-display">Limited Pieces</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <!-- Left Column - Newsletter Signup -->
+                <div class="lg:w-3/5">
+                    <div class="max-w-2xl">
+                        <h2 class="text-3xl font-display font-light mb-4">Join our mailing list</h2>
+                        <p class="text-gray-600 text-lg mb-10 font-light leading-relaxed">Be the first to know about new
+                            brand arrivals, seasonal collections, and exclusive promotions from REX STORE.</p>
+
+                        <form class="space-y-8">
+                            <div class="space-y-6">
+                                <h3 class="text-sm font-light uppercase tracking-widest mb-3">Receive updates via</h3>
+
+                                <!-- Email Option -->
+                                <div>
+                                    <div class="custom-checkbox mb-3">
+                                        <input id="email-option" name="notification-method" type="checkbox" checked>
+                                        <label for="email-option" class="text-sm font-light text-gray-700">Email</label>
+                                    </div>
+
+                                    <div class="relative" id="email-input-container">
+                                        <input type="email" id="email-input" placeholder="Your email address"
+                                            class="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-all duration-300 font-light">
+                                    </div>
+                                </div>
+
+                                <!-- SMS Option -->
+                                <div>
+                                    <div class="custom-checkbox mb-3">
+                                        <input id="sms-option" name="notification-method" type="checkbox">
+                                        <label for="sms-option" class="text-sm font-light text-gray-700">SMS</label>
+                                    </div>
+
+                                    <div class="relative" id="phone-input-container" style="display: none;">
+                                        <input type="tel" id="phone-input" placeholder="Your phone number"
+                                            class="w-full px-0 py-3 border-0 border-b border-gray-200 focus:outline-none focus:border-black transition-all duration-300 font-light">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-4">
+                                <button type="submit"
+                                    class="w-full sm:w-auto bg-black text-white px-10 py-3 text-sm font-light uppercase tracking-widest hover:bg-gray-900 transition-all duration-300">
+                                    Subscribe
+                                </button>
+
+                                <p class="text-xs text-gray-500 mt-4 max-w-lg font-light">
+                                    By subscribing, you consent to receiving marketing communications and acknowledge
+                                    you
+                                    have read our
+                                    <a href="#"
+                                        class="underline hover:text-black transition-colors duration-200">Privacy
+                                        Policy</a>.
+                                    You may unsubscribe at any time.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Column - Benefits & Social Proof -->
+                <div class="lg:w-2/5 mt-12 lg:mt-0">
+                    <div class="bg-gray-50 p-10 h-full">
+                        <h3 class="text-xl font-light mb-8 font-display">Subscriber benefits</h3>
+
+                        <ul class="space-y-8">
+                            <li class="flex">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="flex items-center justify-center h-10 w-10 border border-black text-black">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M12 8v13m0-13V6a4 4 0 00-4-4H8.8a4 4 0 00-3.6 2.3L3 8m9 4v5m0-5H4.5a2 2 0 01-2-2v-.5a2 2 0 01.6-1.4L9 2.8M3.2 7.8L2 9.5M15 8h5.5a2 2 0 012 2v.5a2 2 0 01-.6 1.4L16 13.2m5.8-5.4L22.8 9.5" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-light">Early Access</h4>
+                                    <p class="mt-2 text-gray-600 font-light">Be the first to shop new arrivals from your
+                                        favorite brands.</p>
+                                </div>
+                            </li>
+
+                            <li class="flex">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="flex items-center justify-center h-10 w-10 border border-black text-black">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-light">Exclusive Offers</h4>
+                                    <p class="mt-2 text-gray-600 font-light">Receive special promotions and discounts
+                                        available only to subscribers.</p>
+                                </div>
+                            </li>
+
+                            <li class="flex">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="flex items-center justify-center h-10 w-10 border border-black text-black">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-light">Styling Tips</h4>
+                                    <p class="mt-2 text-gray-600 font-light">Get expert advice on how to style the
+                                        latest brand collections.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-black text-white p-3 opacity-0 invisible transition-all duration-300 z-40"
+        aria-label="Back to top">
+        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 1000,
+            delay: 100
+        });
+
+        // Filter Toggle
+        const filterToggle = document.getElementById('filter-toggle');
+        const filterPanel = document.getElementById('filter-panel');
+
+        filterToggle.addEventListener('click', () => {
+            filterPanel.classList.toggle('hidden');
+            sortPanel.classList.add('hidden'); // Close sort panel if open
+        });
+
+        // Sort Toggle
+        const sortToggle = document.getElementById('sort-toggle');
+        const sortPanel = document.getElementById('sort-panel');
+        const sortOptions = document.querySelectorAll('.sort-option');
+
+        sortToggle.addEventListener('click', () => {
+            sortPanel.classList.toggle('hidden');
+            filterPanel.classList.add('hidden'); // Close filter panel if open
+        });
+
+        // Sort Option Selection
+        sortOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove active class from all options
+                sortOptions.forEach(opt => opt.classList.remove('active'));
+
+                // Add active class to clicked option
+                option.classList.add('active');
+
+                // Update sort toggle text
+                const sortText = option.textContent;
+                const sortSpan = sortToggle.querySelector('span');
+                sortSpan.textContent = sortText;
+
+                // Close sort panel
+                sortPanel.classList.add('hidden');
+
+                // Here you would implement the actual sorting logic
+                console.log(`Sorting collections by: ${option.getAttribute('data-sort')}`);
+            });
+        });
+
+        // Clear Filters
+        const clearFilters = document.getElementById('clear-filters');
+
+        clearFilters.addEventListener('click', () => {
+            // Reset all checkboxes to default state
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                if (checkbox.id.includes('all')) {
+                    checkbox.checked = true;
+                } else {
+                    checkbox.checked = false;
+                }
+            });
+        });
+
+        // Apply Filters
+        const applyFilters = document.getElementById('apply-filters');
+
+        applyFilters.addEventListener('click', () => {
+            // Here you would implement the actual filtering logic
+            console.log('Applying filters...');
+
+            // Close the filter panel
+            filterPanel.classList.add('hidden');
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Fixed Filter Section on Scroll
+        const filterSection = document.getElementById('filter-section');
+        const body = document.body;
+
+        // Get initial positions
+        let filterSectionHeight = filterSection.offsetHeight;
+        let filterSectionTop = filterSection.offsetTop;
+
+        // Function to handle scroll events
+        function handleScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            // If we've scrolled past the filter section
+            if (scrollTop > filterSectionTop) {
+                // Add fixed class to filter section
+                if (!filterSection.classList.contains('filter-section-fixed')) {
+                    filterSection.classList.add('filter-section-fixed');
+                    body.classList.add('filter-fixed');
+                    body.style.paddingTop = `${filterSectionHeight}px`;
+                }
+            } else {
+                // Remove fixed class from filter section
+                filterSection.classList.remove('filter-section-fixed');
+                body.classList.remove('filter-fixed');
+                body.style.paddingTop = '0';
+            }
+        }
+
+        // Listen for scroll events
+        window.addEventListener('scroll', handleScroll);
+
+        // Recalculate positions on window resize
+        window.addEventListener('resize', function () {
+            filterSectionHeight = filterSection.offsetHeight;
+            filterSectionTop = filterSection.offsetTop;
+
+            // Update body padding if filter section is fixed
+            if (filterSection.classList.contains('filter-section-fixed')) {
+                body.style.paddingTop = `${filterSectionHeight}px`;
+            }
+        });
+
+        // Newsletter form toggle functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Email toggle functionality
+            const emailCheckbox = document.getElementById('email-option');
+            const emailInputContainer = document.getElementById('email-input-container');
+
+            if (emailCheckbox && emailInputContainer) {
+                // Initial state check
+                emailInputContainer.style.display = emailCheckbox.checked ? 'block' : 'none';
+
+                // Add event listener
+                emailCheckbox.addEventListener('change', function () {
+                    emailInputContainer.style.display = this.checked ? 'block' : 'none';
+                });
+            }
+
+            // SMS toggle functionality
+            const smsCheckbox = document.getElementById('sms-option');
+            const phoneInputContainer = document.getElementById('phone-input-container');
+
+            if (smsCheckbox && phoneInputContainer) {
+                // Initial state check
+                phoneInputContainer.style.display = smsCheckbox.checked ? 'block' : 'none';
+
+                // Add event listener
+                smsCheckbox.addEventListener('change', function () {
+                    phoneInputContainer.style.display = this.checked ? 'block' : 'none';
+                });
+            }
+
+            // Form submission handling (prevent default for demo)
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Validate that at least one option is selected
+                    if (!emailCheckbox.checked && !smsCheckbox.checked) {
+                        alert('Please select at least one contact method (Email or SMS)');
+                        return;
+                    }
+
+                    // Validate email if that option is checked
+                    if (emailCheckbox.checked) {
+                        const emailInput = document.getElementById('email-input');
+                        if (!emailInput.value.trim()) {
+                            alert('Please enter your email address');
+                            emailInput.focus();
+                            return;
+                        }
+                    }
+
+                    // Validate phone if SMS option is checked
+                    if (smsCheckbox.checked) {
+                        const phoneInput = document.getElementById('phone-input');
+                        if (!phoneInput.value.trim()) {
+                            alert('Please enter your phone number');
+                            phoneInput.focus();
+                            return;
+                        }
+                    }
+
+                    alert('Thank you for subscribing to REX STORE');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

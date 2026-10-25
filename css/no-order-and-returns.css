@@ -1,0 +1,95 @@
+/* Order and Returns Page Specific Styles */
+
+/* Gold Accent Color */
+:root {
+    --color-gold: #c9a96e;
+}
+
+/* Tab Styling */
+.tab-button {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.tab-button::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width 0.3s ease;
+}
+
+.tab-button.active::after {
+    width: 100%;
+}
+
+.tab-button:hover {
+    color: var(--color-gold);
+}
+
+.tab-button.active {
+    color: #000;
+}
+
+/* Button Styling */
+.inline-block.border.border-black {
+    transition: all 0.3s ease;
+}
+
+.inline-block.border.border-black:hover {
+    background-color: #000;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Icon Container */
+.inline-flex.items-center.justify-center.h-16.w-16 {
+    transition: all 0.3s ease;
+}
+
+.inline-flex.items-center.justify-center.h-16.w-16:hover {
+    border-color: var(--color-gold);
+}
+
+.inline-flex.items-center.justify-center.h-16.w-16:hover svg {
+    color: var(--color-gold);
+}
+
+/* Table Styling */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+table thead th {
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #000;
+}
+
+table tbody tr {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+table tbody tr:hover {
+    background-color: rgba(201, 169, 110, 0.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 640px) {
+    .tab-button {
+        font-size: 0.75rem;
+    }
+}

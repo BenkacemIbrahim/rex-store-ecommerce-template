@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page Not Found | REX STORE - Premium Fashion Retailer">
+    <meta name="theme-color" content="#1a1a1a">
+    <title>Page Not Found | REX STORE - Premium Men's & Kids' Fashion</title>
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/404.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body class="font-sans antialiased bg-white text-gray-900 transition-colors duration-300">
+    <main class="error-container">
+        <!-- Decorative Elements -->
+        <div class="decorative-element decorative-element-1"></div>
+        <div class="decorative-element decorative-element-2"></div>
+        <div class="decorative-element decorative-element-3"></div>
+
+        <!-- Error Content -->
+        <div data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="error-code">404</h1>
+        </div>
+        <h2 class="error-title text-3xl" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Page Not Found
+        </h2>
+        <p class="error-message text-gray-600" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+        </p>
+
+        <div class="error-buttons flex" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+            <a href="index.html" class="error-button error-button-primary">Return Home</a>
+            <a href="#" onclick="goBack(); return false;" class="error-button error-button-secondary">Go Back</a>
+        </div>
+
+        <!-- Logo -->
+        <div class="mt-16" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+            <a href="index.html" class="flex items-center" aria-label="REX STORE Home">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot_2025-04-17-02-08-56-207_com.zhiliaoapp.musically-Photoroom-Islpi1NVMMAb1OrIBTJq14a4AqrHNn.png"
+                    alt="REX STORE Logo" class="h-10 mr-3">
+                <h1 class="text-2xl font-light tracking-widest font-display">REX STORE</h1>
+            </a>
+        </div>
+    </main>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 1000,
+            delay: 100
+        });
+
+        // Go Back Function
+        function goBack() {
+            if (document.referrer && document.referrer.indexOf(window.location.host) !== -1) {
+                window.history.back();
+            } else {
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+
+</html>
