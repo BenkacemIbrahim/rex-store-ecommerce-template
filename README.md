@@ -14,9 +14,13 @@ A premium, responsive fashion e-commerce front-end template for men's and kids' 
 
 ## Preview
 
-| Shop listing | Product detail |
+| Men's listing | Accessories |
 | --- | --- |
-| ![Shop listing](docs/screenshots/shop-menswear.png) | ![Product detail](docs/screenshots/product-detail.png) |
+| ![Men's listing](docs/screenshots/shop-menswear.png) | ![Accessories listing](docs/screenshots/shop-accessories.png) |
+
+| Shopping cart | Sign in |
+| --- | --- |
+| ![Shopping cart](docs/screenshots/cart.png) | ![Sign in](docs/screenshots/sign-in.png) |
 
 ## Features
 
