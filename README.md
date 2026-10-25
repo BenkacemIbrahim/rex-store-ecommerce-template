@@ -10,17 +10,14 @@ A premium, responsive fashion e-commerce front-end template for men's and kids' 
 ![Google Fonts](https://img.shields.io/badge/Google_Fonts-4285F4?style=flat-square&logo=googlefonts&logoColor=white)
 ![License MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
 
-![Home page](docs/screenshots/home.png)
-
 ## Preview
 
-| Men's listing | Accessories |
-| --- | --- |
-| ![Men's listing](docs/screenshots/shop-menswear.png) | ![Accessories listing](docs/screenshots/shop-accessories.png) |
+![Home page](docs/screenshots/home.png)
 
-| Shopping cart | Sign in |
-| --- | --- |
-| ![Shopping cart](docs/screenshots/cart.png) | ![Sign in](docs/screenshots/sign-in.png) |
+| Men's listing | Accessories | Shopping cart |
+| --- | --- | --- |
+| ![Men's listing](docs/screenshots/shop-menswear.png) | ![Accessories listing](docs/screenshots/shop-accessories.png) | ![Shopping cart](docs/screenshots/cart.png) |
+| ![Sign in](docs/screenshots/sign-in.png) | | |
 
 ## Features
 
