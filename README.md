@@ -1,4 +1,4 @@
-# REX STORE
+# Rex Store Ecommerce Template
 
 A premium, responsive fashion e-commerce front-end template for men's and kids' collections. Built with semantic HTML5, Tailwind CSS (CDN) and vanilla JavaScript — no build step required.
 
