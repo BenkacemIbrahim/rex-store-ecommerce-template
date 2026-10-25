@@ -1,0 +1,23 @@
+# Normalize line endings on commit, keep the working copy native
+* text=auto
+
+# Explicit text files
+*.html   text
+*.css    text
+*.js     text
+*.json   text
+*.md     text
+*.yml    text
+
+# Binary files
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.webp   binary
+*.ico    binary
+*.webm   binary
+*.mp4    binary
+
+# Keep generated screenshots out of the diff language stats
+docs/screenshots/*.png binary

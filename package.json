@@ -1,0 +1,22 @@
+{
+  "name": "rex-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A premium, responsive fashion e-commerce front-end template built with semantic HTML5, Tailwind CSS and vanilla JavaScript.",
+  "keywords": [
+    "html5",
+    "css3",
+    "javascript",
+    "tailwindcss",
+    "ecommerce",
+    "template",
+    "fashion",
+    "frontend"
+  ],
+  "license": "MIT",
+  "author": "Ibrahim Benkacem",
+  "scripts": {
+    "start": "npx --yes serve .",
+    "dev": "npx --yes serve ."
+  }
+}
