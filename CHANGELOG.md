@@ -38,5 +38,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Guarded `AOS.init()` in the shared footer script so pages without the AOS library no longer throw an error.
 
-[Unreleased]: https://github.com/OWNER/rex-store/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/OWNER/rex-store/releases/tag/v1.0.0
+[Unreleased]: https://github.com/OWNER/rex-store-ecommerce-template/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/OWNER/rex-store-ecommerce-template/releases/tag/v1.0.0

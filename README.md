@@ -37,7 +37,7 @@ A premium, responsive fashion e-commerce front-end template for men's and kids' 
 ## Project structure
 
 ```text
-rex-store/
+rex-store-ecommerce-template/
 ├── index.html              # Home page
 ├── assets/
 │   └── videos/             # Background media
@@ -56,7 +56,7 @@ Clone the repository and open `index.html` in a browser, or serve the folder loc
 
 ```bash
 git clone <repository-url>
-cd rex-store
+cd rex-store-ecommerce-template
 npx serve .
 ```
 
