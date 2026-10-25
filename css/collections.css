@@ -229,3 +229,21 @@
 .seasonal-btn {
     transition: all 0.3s ease;
 }
+
+/* --- inline overrides (extracted from shop/collections.html) --- */
+/* Fixed filter section styles */
+        .filter-section-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 30;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Add padding to body when filter is fixed to prevent content jump */
+        body.filter-fixed {
+            padding-top: 76px;
+            /* Adjust based on your filter section height */
+        }

@@ -93,3 +93,44 @@
         font-size: 1.25rem;
     }
 }
+
+/* --- inline overrides (extracted from pages/privacy-policy.html) --- */
+/* Custom styles for privacy policy page */
+        .privacy-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .privacy-section h2 {
+            position: relative;
+            display: inline-block;
+        }
+
+        .privacy-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--color-gold);
+        }
+
+        .privacy-section ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+        }
+
+        .privacy-section ol {
+            list-style-type: decimal;
+            margin-left: 1.5rem;
+        }
+
+        .privacy-section a {
+            color: var(--color-gold);
+            transition: all 0.3s ease;
+        }
+
+        .privacy-section a:hover {
+            text-decoration: underline;
+        }
