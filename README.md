@@ -2,6 +2,14 @@
 
 A premium, responsive fashion e-commerce front-end template for men's and kids' collections. Built with semantic HTML5, Tailwind CSS (CDN) and vanilla JavaScript — no build step required.
 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38BDF8?style=flat-square&logo=tailwindcss&logoColor=white)
+![AOS](https://img.shields.io/badge/AOS-2.3.1-1A1A1A?style=flat-square)
+![Google Fonts](https://img.shields.io/badge/Google_Fonts-4285F4?style=flat-square&logo=googlefonts&logoColor=white)
+![License MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
+
 ![Home page](docs/screenshots/home.png)
 
 ## Preview
